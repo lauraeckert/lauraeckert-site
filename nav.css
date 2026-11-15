@@ -1,0 +1,78 @@
+/* ======================= Nav (pedido da Laura, 15/11/2026) =======================
+   "som vai na navbar..e trabalhe nessa nav quero algo de componente único de motion ta muito comum".
+   No topo a barra continua a v8. Ao rolar, ela se recolhe numa pílula azul-noite no centro (largura animada em JS,
+   cantos e cor em CSS). O sublinhado sai: a joaninha da marca é o indicador. Ela anda até a seção ativa, vira para o
+   link sob o cursor e voa quando o destino está longe. Na pílula, anda pela borda de cima; no celular, acompanha a
+   leitura da página. O som mora dentro da pílula. Seletores com #nv para vencer o <style> da v8. */
+#nv.nv{display:block;padding:0;background:none;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none;pointer-events:none}
+#nv .nv-in{position:relative;display:flex;align-items:center;gap:28px;margin:0 auto;padding:18px 40px;pointer-events:auto;
+  background:color-mix(in srgb,var(--bg) 94%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-radius:0;
+  box-shadow:0 0 0 0 transparent;
+  transition:padding .55s cubic-bezier(.23,1,.32,1),translate .55s cubic-bezier(.23,1,.32,1),margin .55s cubic-bezier(.23,1,.32,1),border-radius .55s cubic-bezier(.23,1,.32,1),
+    background-color .45s ease,box-shadow .55s ease,gap .55s cubic-bezier(.23,1,.32,1)}
+#nv.compact .nv-in{width:fit-content;translate:0 36px;padding:6px 6px 6px 22px;gap:10px;border-radius:99px;
+  background:var(--creme-50);-webkit-backdrop-filter:none;backdrop-filter:none;
+  box-shadow:0 0 0 1.5px var(--azul-900),0 3px 0 var(--azul-900),0 18px 40px -16px rgba(7,0,60,.55)}
+#nv .nv-logo svg{transition:height .55s cubic-bezier(.23,1,.32,1),color .45s}
+#nv.compact .nv-logo{color:var(--azul-700)}
+#nv.compact .nv-logo svg{height:26px}
+#nv .nv-links{position:relative;z-index:1}
+#nv .nv-links a.on{box-shadow:none}
+#nv.compact .nv-links{margin:0 6px 0 14px}
+#nv.compact .nv-links a{color:var(--creme-700);padding:12px 12px}
+#nv.compact .nv-links a:hover,#nv.compact .nv-links a.on{color:var(--azul-900)}
+#nv.compact .nv-links a:focus-visible{outline-color:var(--amarelo-300)}
+#nv .nv-cta{display:flex;align-items:center;gap:8px}
+#nv.compact .nv-cta .btn{border-radius:99px;padding:12px 18px}
+
+#nv .nv-prog,#nv .nv-dot,#nv .nv-walk{display:none}
+
+/* a joaninha: um canvas por cima da barra inteira, vazando para cima para ela andar na borda da pílula */
+#nv .nv-bug{position:absolute;left:0;right:0;top:-40px;bottom:0;width:100%;height:calc(100% + 40px);pointer-events:none;z-index:2}
+
+/* som: ícone redondo dentro da nav; ligado, as barras dançam */
+#nv .som{position:relative;left:auto;right:auto;bottom:auto;transform:none;box-shadow:none;display:grid;place-items:center;width:44px;height:44px;padding:0;border-radius:50%;flex:none;cursor:pointer;
+  border:1.5px dashed color-mix(in srgb,var(--azul) 45%,transparent);background:none;color:var(--azul-700);transition:border-color .3s,background .3s,color .3s,transform .4s cubic-bezier(.23,1,.32,1)}
+#nv .som:hover{border-style:solid;transform:translateY(-1px)}
+#nv .som:active{transform:scale(.94)}
+#nv .som:focus-visible{outline:3px solid var(--laranja,var(--amarelo-300));outline-offset:3px}
+#nv.compact .som{border-color:rgba(17,13,114,.35);color:var(--azul-700)}
+#nv .nvsi{display:inline-flex;align-items:center;gap:2.5px;height:16px}
+#nv .nvsi b{width:2.5px;height:var(--h,6px);border-radius:2px;background:currentColor;transition:height .3s cubic-bezier(.23,1,.32,1)}
+#nv .som[aria-pressed="true"]{border-style:solid;background:var(--azul);color:var(--creme-50);border-color:var(--azul)}
+
+#nv .som[aria-pressed="true"] .nvsi b{animation:nvsom .9s ease-in-out infinite}
+#nv .som[aria-pressed="true"] .nvsi b:nth-child(2){animation-delay:-.3s}
+#nv .som[aria-pressed="true"] .nvsi b:nth-child(3){animation-delay:-.6s}
+#nv .som[aria-pressed="true"] .nvsi b:nth-child(4){animation-delay:-.15s}
+@keyframes nvsom{0%,100%{height:4px}50%{height:15px}}
+#nv .som-t{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+@media (max-width:1000px){
+  #nv .nv-in{padding:12px 16px;gap:12px}
+  #nv.compact .nv-in{translate:0 34px;padding:5px 5px 5px 16px;gap:8px}
+  #nv.compact .nv-logo svg{height:24px}
+  #nv .nv-cta{margin-left:auto}
+  #nv.compact .nv-cta{margin-left:10px}
+  #nv .som{width:40px;height:40px}
+  #nv.compact .nv-cta .btn{padding:10px 14px;font-size:14px}
+}
+#nv .nvsi b:nth-child(1){--h:6px}#nv .nvsi b:nth-child(2){--h:11px}#nv .nvsi b:nth-child(3){--h:8px}#nv .nvsi b:nth-child(4){--h:4px}
+#nv .som[aria-pressed="false"] .nvsi{opacity:.75}
+
+
+/* idioma: uma chave PT/EN; o marcador desliza para a língua ativa */
+#nv .lang{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;width:76px;height:44px;padding:4px;border-radius:99px;flex:none;cursor:pointer;
+  border:1.5px dashed color-mix(in srgb,var(--azul) 45%,transparent);background:none;color:var(--azul-700);font:400 12px 'Monocraft',monospace;letter-spacing:.02em}
+#nv .lang::before{content:'';position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:99px;background:var(--azul);transition:translate .45s cubic-bezier(.34,1.4,.5,1)}
+#nv .lang[aria-pressed="true"]::before{translate:100% 0}
+#nv .lang span{position:relative;text-align:center;transition:color .3s}
+#nv .lang span:first-child,#nv .lang[aria-pressed="true"] span:last-child{color:var(--creme-50)}
+#nv .lang[aria-pressed="true"] span:first-child{color:var(--azul-700)}
+#nv .lang:hover{border-style:solid}
+#nv .lang:focus-visible{outline:3px solid var(--laranja,var(--amarelo-300));outline-offset:3px}
+html.troca-lang body{transition:opacity .18s}html.troca-lang #site,html.troca-lang #case{opacity:.25}
+#site,#case{transition:opacity .25s}
+@media (max-width:1000px){#nv .lang{width:68px;height:40px}}
+/* banca r6: alvo de toque de 44 px também no celular */
+@media (max-width:1000px){#nv .som{width:44px;height:44px}#nv .lang{width:72px;height:44px}}

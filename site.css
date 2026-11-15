@@ -1,0 +1,265 @@
+/* Home v2, simples. Base v8 (tokens, navbar, rodapé, joaninha, aquarela). Alvo: ALVO.md */
+#v8stub{display:none}
+#site section{position:relative}
+#site h2{font:600 clamp(44px,6vw,96px)/.92 'Familjen Grotesk';letter-spacing:-.05em;margin:0}
+#site .btn .ar{font-family:'Monocraft',monospace}
+.btn-c{background:var(--creme-100);color:var(--creme-900)}.btn-c:hover{background:var(--amarelo-300)}
+.btn-lg{font-size:19px;min-height:60px;padding:0 30px}
+:root{--escuro:#16130F;--escuro-2:#211D17}
+
+/* 1 · hero */
+.s-hero{background:var(--creme-100);overflow:hidden;padding:24px 0 0}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:end;height:calc(100svh - 104px);min-height:620px;max-height:900px}
+.h-foto{height:100%;display:flex;align-items:flex-end;justify-content:flex-end}.moldura{height:100%;width:auto;max-width:100%}
+.h-txt{align-self:center;padding-bottom:0}
+.h-txt{padding-bottom:96px;position:relative;z-index:6}
+.h-tit{font:600 clamp(60px,8.2vw,140px)/.86 'Familjen Grotesk';letter-spacing:-.06em;color:var(--creme-900);margin:0}
+.h-who{font:500 clamp(22px,2vw,30px)/1.1 'Familjen Grotesk';letter-spacing:-.03em;color:var(--azul-700);margin:36px 0 10px}
+.h-lead{font:400 19px/1.45 'Familjen Grotesk';color:var(--creme-700);margin:0 0 28px;max-width:34ch}
+.h-foto{position:relative;z-index:2;align-self:end}
+.moldura{margin:0;aspect-ratio:4/5;border-radius:8px 8px 0 0;overflow:hidden;background:var(--creme-300)}
+.moldura img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.h-flores,.h-bug{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.h-flores{z-index:4}.h-bug{z-index:5}
+
+/* 2 · sobre mim (escuro): duas fotos presas com clipe, biografia, experiência e GitHub */
+.s-sobre{background:var(--escuro);color:var(--creme-100);padding:120px 0 150px}
+.sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:start}
+.sobre-esq{position:sticky;top:110px}
+.fotos{position:relative;height:clamp(400px,34vw,500px)}
+.clip{position:absolute;margin:0;padding:12px 12px 44px;background:var(--creme-50);border-radius:3px;box-shadow:0 2px 0 rgba(0,0,0,.25),0 24px 40px -18px rgba(0,0,0,.7)}
+.clip img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.c1{left:0;top:24px;width:58%;transform:rotate(-4deg);z-index:1}
+.c2{right:0;top:0;width:52%;transform:rotate(5deg);z-index:2}
+.c2 img{object-position:60% 50%}
+.clipe{position:absolute;top:-22px;left:50%;width:22px;height:62px;margin-left:-11px;border:3px solid var(--creme-400);border-radius:11px;z-index:3}
+.clipe::after{content:'';position:absolute;left:3px;right:3px;top:9px;bottom:-1px;border:3px solid var(--creme-400);border-top:0;border-radius:0 0 8px 8px}
+.c1 .clipe{left:38%}.c2 .clipe{left:58%}
+.gh{display:grid;gap:14px;margin-top:40px;text-decoration:none;color:var(--creme-200)}
+.gh-t{font:400 17px/1.4 'Familjen Grotesk'}.gh-t b{font:500 24px 'Familjen Grotesk';color:var(--creme-100);margin-right:4px}
+.gh-grid{width:100%;height:auto;display:block}
+.gh-u{font:400 14px 'Monocraft',monospace;color:var(--amarelo-300)}
+.gh:hover .gh-u,.gh:focus-visible .gh-u{text-decoration:underline}
+.gh:focus-visible{outline:2px solid var(--amarelo-300);outline-offset:6px}
+.s-sobre h2{color:var(--creme-100)}
+.sobre-p{font:400 clamp(19px,1.6vw,24px)/1.45 'Familjen Grotesk';color:var(--creme-200);margin:28px 0 48px;max-width:34ch;text-wrap:pretty}
+.sobre-h3{font:400 14px 'Monocraft',monospace;color:var(--amarelo-300);margin:0 0 10px}
+.exp{list-style:none;padding:0;margin:0 0 44px;border-top:1px solid #3a342b}
+.exp li{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid #3a342b}
+.exp-d{font:400 14px/1.6 'Monocraft',monospace;color:var(--creme-400)}
+.exp b{display:block;font:500 20px/1.25 'Familjen Grotesk';letter-spacing:-.01em;color:var(--creme-100)}
+.exp p{margin:4px 0 0;font:400 16px/1.45 'Familjen Grotesk';color:var(--creme-400)}
+.cred{list-style:none;padding:0;margin:0 0 40px;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px}
+.cred li{display:grid;gap:2px;font:400 15px/1.4 'Familjen Grotesk';color:var(--creme-200)}
+.cred span{font:400 13px 'Monocraft',monospace;color:var(--creme-400)}
+
+/* 3 · projetos (o ponto de azul) */
+.s-proj{background:var(--azul-700);color:var(--creme-100);padding:140px 0 150px}
+.s-proj h2{color:var(--creme-100)}
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px}
+.pj{display:flex;flex-direction:column;gap:18px;text-decoration:none;color:inherit}
+.pj-main{grid-column:1/-1;display:grid;grid-template-columns:1.7fr 1fr;gap:40px;align-items:end}
+.pj figure{margin:0;border-radius:8px;overflow:hidden;aspect-ratio:16/10;background:var(--azul-800);box-shadow:0 0 0 1px var(--azul-600),0 30px 60px -30px rgba(7,0,75,.8);transition:transform .42s cubic-bezier(.23,1,.32,1)}
+.pj figure img{display:block;width:100%;height:100%;object-fit:cover;object-position:0 0}
+.pj:hover figure,.pj:focus-visible figure{transform:translateY(-6px)}
+.pj:focus-visible{outline:3px solid var(--amarelo-300);outline-offset:6px;border-radius:8px}
+.pj h3{font:600 clamp(28px,2.6vw,40px)/1 'Familjen Grotesk';letter-spacing:-.04em;margin:0}
+.pj-main h3{font-size:clamp(40px,4.4vw,68px)}
+.pj-txt p{font:400 20px/1.4 'Familjen Grotesk';color:var(--azul-100);margin:14px 0 18px;max-width:26ch}
+.pj-m{display:block;margin-top:8px;font:400 14px/1.5 'Monocraft',monospace;color:var(--azul-200)}
+
+/* 4 · trabalhos (escuro) */
+.s-trab{background:var(--escuro);color:var(--creme-100);padding:140px 0 150px}
+.s-trab h2{color:var(--creme-100)}
+.trab-grid{list-style:none;padding:0;margin:56px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:56px 24px}
+.tb figure{margin:0 0 20px;border-radius:8px;overflow:hidden;aspect-ratio:16/10;background:var(--escuro-2);transition:transform .42s cubic-bezier(.23,1,.32,1)}
+.tb:hover figure{transform:translateY(-6px)}
+.tb figure img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 0}
+.tb h3{font:600 30px/1 'Familjen Grotesk';letter-spacing:-.03em;margin:0 0 8px}
+.tb p{font:400 18px/1.4 'Familjen Grotesk';color:var(--creme-300);margin:0 0 8px}
+.tb-m{font:400 14px 'Monocraft',monospace;color:var(--amarelo-300)}
+
+/* 5 · CTA */
+.s-cta{background:var(--creme-100);padding:120px 0 130px;overflow:hidden}
+.cta-in{position:relative;z-index:2;display:grid;gap:40px;justify-items:start}
+.s-cta h2{color:var(--creme-900);max-width:12ch;font-size:clamp(48px,6.4vw,104px)!important}
+.cta-flores{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+
+@media (max-width:860px){
+  .s-hero{padding-top:24px;min-height:0}
+  .hero-grid{grid-template-columns:1fr;gap:28px;min-height:0}
+  .h-txt{padding-bottom:0}
+  .h-tit{font-size:15.5vw}
+  .h-foto{width:100%;height:auto}.moldura{height:auto;width:100%}
+  .s-sobre,.s-proj,.s-trab{padding:96px 0}
+  .s-cta{padding:88px 0 240px}
+  .sobre-grid,.proj-grid,.pj-main,.trab-grid{grid-template-columns:1fr;gap:32px}
+  .fotos{height:84vw;margin:0 8px}.sobre-txt{order:-1}.sobre-esq{position:static}.sobre-jardim #garden{margin-top:-10%}.exp li{grid-template-columns:1fr;gap:4px}.cred{grid-template-columns:1fr}
+  .pj-main{gap:18px}
+}
+
+/* rodapé sem a chamada: a coluna de contato ocupa a linha */
+#rodape .ft-grid{grid-template-columns:1fr}
+#rodape .ft-col{display:flex!important;flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:32px 64px;text-align:left!important;width:100%;justify-self:stretch}
+#rodape .ft-col>*{text-align:left!important;justify-self:auto}
+
+/* jardim do DS (v8) no Sobre: a mesma fileira de flores com a joaninha */
+.sobre-jardim{margin:0 0 8px;overflow:hidden}
+.sobre-jardim #garden{display:block;width:100%;height:auto;margin:-14% 0 0;border-radius:0}
+
+/* redes e mentoria (dentro do Sobre) */
+.sobre-acoes{display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px}
+.redes{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px 22px}
+.redes a{font:500 17px 'Familjen Grotesk';color:var(--creme-100);text-decoration:none;background:linear-gradient(var(--amarelo-300),var(--amarelo-300)) 0 100%/0 2px no-repeat;padding-bottom:3px;transition:background-size .28s cubic-bezier(.23,1,.32,1)}
+.redes a::after{content:' ↗';font-family:'Monocraft',monospace;font-size:13px;color:var(--amarelo-300)}
+.redes a:hover,.redes a:focus-visible{background-size:100% 2px;outline:none}
+.mentoria{display:grid;grid-template-columns:5fr 6fr;gap:88px;align-items:center;margin-top:140px;padding-top:100px;border-top:1px solid #3a342b}
+.c3{position:relative;transform:rotate(-3deg);width:88%;justify-self:center}
+.c3 img{aspect-ratio:4/3}
+.c3 .clipe{left:50%}
+.ment-txt h2{color:var(--creme-100)}
+.ment-txt p{font:400 clamp(19px,1.6vw,24px)/1.45 'Familjen Grotesk';color:var(--creme-200);margin:24px 0 32px;max-width:32ch;text-wrap:pretty}
+.btn-y{background:var(--amarelo-300);color:var(--escuro)}.btn-y:hover{background:var(--creme-100)}
+@media (max-width:860px){.mentoria{grid-template-columns:1fr;gap:48px;margin-top:88px;padding-top:72px}.c3{width:92%}}
+
+/* credenciais sob o GitHub, equilibrando as colunas do Sobre (banca r2) */
+.sobre-esq .cred{margin:44px 0 0;padding-top:28px;border-top:1px solid #3a342b}
+
+/* banca r3: título do celular menos comprimido; Sobre do celular como um conjunto; CTA do celular mais curto */
+@media (max-width:860px){
+  .h-tit{font-size:14.6vw;letter-spacing:-.045em}
+  .sobre-grid{gap:56px}.sobre-acoes{margin-top:-8px}
+  .sobre-esq .gh{margin-top:28px}.sobre-esq .cred{margin-top:28px;padding-top:22px}
+  .s-cta{padding:80px 0 170px}
+}
+
+/* ===================== v3: escala e movimento (ALVO-v3.md) ===================== */
+/* hero: o título fica com a maior escala da página, sem invadir a moldura */
+.h-tit{font-size:clamp(64px,9.1vw,150px)}@media (min-width:860px){.h-tit{white-space:nowrap}}
+.h-tit .ln,.ln{padding-bottom:.12em;margin-bottom:-.12em}
+/* polaroides: o ângulo de repouso vira variável para o pêndulo */
+.c1{--rot:-4deg}.c2{--rot:5deg}.c3{--rot:-3deg}
+.clip{transform-origin:50% 0}
+.c1{transform-origin:38% 0}.c2{transform-origin:58% 0}
+/* experiência: o fio de 1 px é desenhado antes da linha */
+.mo .exp li{border-bottom:0;position:relative}
+.mo .exp li::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:#3a342b;transform:scaleX(var(--fio,1));transform-origin:0 50%}
+/* telas dos projetos: Ghofi inteiro sobre o fundo do próprio app; Youbbe termina numa linha inteira */
+.pj-contain figure{background:#0d0d0d}.pj-contain figure img{object-fit:contain;object-position:50% 50%}
+/* CTA na escala da hero */
+.s-cta h2{font-size:clamp(60px,8.2vw,140px)!important;max-width:11ch}
+/* botão magnético: o preenchimento nasce do ponto por onde o cursor entrou */
+.mg{position:relative;overflow:hidden;will-change:transform}
+.mg-fill{position:absolute;inset:-1px;display:flex;align-items:center;justify-content:center;gap:inherit;padding:inherit;pointer-events:none;clip-path:circle(0px at var(--mx,50%) var(--my,50%));transition:clip-path .46s cubic-bezier(.23,1,.32,1)}
+.mg-fill{transition-duration:.32s}
+.mg.on .mg-fill{clip-path:circle(160% at var(--mx,50%) var(--my,50%));transition-duration:.46s}
+.btn-y.mg:hover{background:var(--amarelo-300)}.btn-y .mg-fill{background:var(--creme-100);color:var(--escuro)}
+.btn-p.mg:hover{background:var(--azul-700)}.btn-p .mg-fill{background:var(--creme-900);color:var(--creme-100)}
+/* Akrus como palco (só desktop com movimento): a tela ocupa a largura e começa em escala de cartão */
+@media (min-width:860px){
+  .mo .pj-main{display:block;position:relative;container-type:inline-size}
+  .mo .pj-main figure{width:100%;transform-origin:0 0;will-change:transform}
+  .mo .pj-main .pj-txt{position:absolute;left:calc(64% + 48px);right:0;bottom:calc(62.5cqw - 40cqw)}
+  .mo .pj-main:hover figure{transform:none}
+}
+#site{overflow-x:clip}
+
+/* banca r1 (design-critic): CTA como a maior escala da página; Akrus sem vazio; fins de seção mais curtos */
+.s-cta h2{font-size:clamp(64px,11vw,190px)!important;max-width:9ch}
+@media (max-width:859px){.s-cta h2{font-size:15vw!important}}
+@media (min-width:860px){.mo .pj-main{height:50cqw}.mo .pj-main .pj-txt{left:calc(64% + 40px);bottom:auto;top:calc(40cqw - 190px)}}
+.s-proj,.s-trab{padding-bottom:104px}
+@media (min-width:860px){.mo .proj-grid{container-type:inline-size}}
+
+/* banca v3 r1 (lady-site-critic) */
+/* jardim de borda a borda abrindo o Sobre: a linha do chão vira a costura com a hero */
+.s-sobre{padding-top:24px}
+.sobre-jardim{margin:0 auto 56px;overflow:hidden}
+.sobre-jardim #garden{margin:-12% 0 0!important;width:100%}
+/* Ghofi: a coluna de compra via Pix, nítida e inteira, no fundo do próprio app */
+.pj-contain figure{background:rgb(24,23,21)}.pj-contain figure img{object-fit:contain;padding:22px 0}
+/* mentoria como continuação do Sobre */
+.mentoria{margin-top:96px;padding-top:0;border-top:0}
+@media (max-width:859px){
+  .mentoria{margin-top:72px}
+  /* Sobre no celular: bio → fotos → experiência → GitHub → CV/redes → credenciais */
+  .sobre-grid{display:flex;flex-direction:column;gap:0;align-items:stretch}
+  .sobre-esq,.sobre-txt{display:contents}
+  .sobre-txt h2{order:1}.sobre-p{order:2;margin-bottom:36px}.fotos{order:3;margin-bottom:48px}
+  .sobre-h3{order:4}.exp{order:5}.sobre-esq .gh{order:6;margin:8px 0 32px}.sobre-acoes{order:7;margin-top:0}.sobre-esq .cred{order:8}
+  .sobre-jardim{margin-bottom:24px}.sobre-jardim #garden{margin-top:-10%!important}
+  /* CTA no celular: o buquê fica embaixo, longe do botão */
+  .s-cta{padding-bottom:300px}
+}
+
+/* banca a11y v3 r1 */
+.skip{position:absolute;left:16px;top:-80px;z-index:1000;background:var(--creme-900);color:var(--creme-100);padding:12px 18px;border-radius:6px;font:500 16px 'Familjen Grotesk';text-decoration:none}
+.skip:focus{top:12px}
+#site:focus{outline:none}
+@media (max-width:0px){.pj figure,.tb figure{transition:none}.pj:hover figure,.tb:hover figure,.pj:focus-visible figure{transform:none}}
+@media (max-width:859px){.redes a{display:inline-flex;align-items:center;min-height:44px}}
+/* r2: o texto da Akrus cabe ao lado da tela no fim do pin; a placa de Projetos recorta sobre o escuro do Sobre */
+@media (min-width:860px){
+  .mo .pj-main .pj-txt{right:16%}
+  .mo .s-proj{margin-top:-120px}
+  .mo .s-sobre{padding-bottom:270px}
+}
+@media (min-width:860px){.mo .pj-main .pj-txt{top:auto;bottom:10cqw}}
+/* r2: o que aparece nos cantos das placas é sempre a seção anterior, nunca o fundo da página */
+@media (min-width:860px){
+  .mo #site{background:var(--escuro)}
+  .mo .s-hero{padding-bottom:120px}.mo .s-sobre{margin-top:-120px}
+}
+/* banca r2 */
+.h-tit{font-size:clamp(64px,10vw,158px)}
+@media (max-width:859px){.h-tit{font-size:14.6vw}}
+@media (min-width:860px){.mo .pj-main .pj-txt{left:calc(70% + 40px);right:10%;bottom:6.25cqw}}
+/* Ghofi tipográfico até a tela definitiva: mesmo peso do cartão ao lado, sem imagem */
+.pj-tipo{border:1px solid var(--azul-500);border-radius:8px;padding:clamp(24px,3vw,40px);justify-content:flex-end;min-height:clamp(260px,26vw,400px);transition:background .3s}
+.pj-tipo:hover,.pj-tipo:focus-visible{background:var(--azul-800)}
+.pj-tipo h3{font-size:clamp(48px,5.4vw,88px)!important}
+.pj-tipo .pj-txt p{margin:16px 0 14px}
+.pj-ver{display:inline-block;margin-top:22px;font:500 17px 'Familjen Grotesk';color:var(--amarelo-300)}
+@media (max-width:859px){.pj-tipo{min-height:0}}
+/* r2: o jardim mostra o topo das flores, onde a joaninha pousa (faixa mais alta, como abertura do Sobre) */
+@media (min-width:860px){.sobre-jardim #garden{margin-top:-5%!important}.sobre-jardim{margin-bottom:40px}}
+
+/* 14/11 (pedido da Laura): a joaninha viva acima da mentoria e as redes acima do GitHub */
+.sobre-lady{margin-top:96px;display:grid;justify-items:center}
+.sobre-lady .runners{margin:0;width:min(100%,960px);background:transparent;border-radius:0}
+.sobre-lady .acts{justify-content:center}
+.sobre-lady .pill{border-color:var(--creme-400);color:var(--creme-100);min-height:44px}
+.sobre-lady .pill:hover{background:var(--creme-100);color:var(--escuro);border-color:var(--creme-100)}
+.sobre-lady .pill[aria-pressed="true"]{background:var(--amarelo-300);color:var(--escuro);border-color:var(--amarelo-300)}
+.sobre-lady .pill:focus-visible{outline-color:var(--amarelo-300)}
+.mentoria{margin-top:72px}
+.sobre-esq .redes{margin-top:40px}
+.sobre-esq .redes+.gh{margin-top:28px}
+@media (max-width:859px){
+  .sobre-lady{margin-top:64px}
+  .sobre-esq .redes{order:6;margin:8px 0 0}.sobre-esq .gh{order:7}.sobre-acoes{order:8;margin-top:8px}.sobre-esq .cred{order:9}
+}
+
+/* ============ CTA B (escolhida pela Laura, 14/11): centralizado, jardim nascendo pela borda de baixo ============ */
+html[data-cta] .s-cta h2{max-width:none!important;letter-spacing:-.05em}
+html[data-cta] .s-cta .btn-lg{min-height:64px;font-size:20px;padding:0 32px}
+/* B · centralizado, com o jardim nascendo pela borda de baixo */
+html[data-cta="b"] .s-cta{padding:150px 0 300px;text-align:center}
+html[data-cta="b"] .cta-in{justify-items:center;gap:44px}
+html[data-cta="b"] .s-cta h2{font-size:clamp(48px,6.6vw,112px)!important;max-width:13ch!important;line-height:.94}
+@media (max-width:859px){
+  html[data-cta] .s-cta h2{font-size:13vw!important}
+  html[data-cta="b"] .s-cta{padding:88px 0 200px}
+}
+
+/* ================= botões: um formato só no site e no case (pedido da Laura, 15/11: "os botões nem todos estão consistentes")
+   Pílula em três tamanhos: 44 (nav recolhida e celular), 52 (padrão) e 60 (chamada principal). Cor diz a hierarquia:
+   azul = ação principal, creme/amarelo = ação sobre fundo escuro, contorno = secundária. ================= */
+.btn{border-radius:99px!important;min-height:52px;padding:0 26px!important;justify-content:center;line-height:1}
+.btn-lg{min-height:60px;padding:0 32px!important;font-size:18px!important}
+#nv .nv-cta .btn{min-height:48px;padding:0 22px!important}
+#nv.compact .nv-cta .btn{min-height:44px;padding:0 18px!important}
+.ft-top{border-radius:99px!important;min-height:44px;padding:0 20px!important}
+@media (max-width:860px){.btn{min-height:48px;padding:0 22px!important}.btn-lg{min-height:52px;font-size:17px!important}#nv .nv-cta .btn{min-height:44px;padding:0 16px!important}}
+/* banca r6: "Voltar ao topo" com alvo de 44 px (o all:unset do rodapé anulava) */
+#rodape .ft-top{display:inline-flex!important;align-items:center;min-height:44px!important;padding:0 20px!important;box-sizing:border-box}

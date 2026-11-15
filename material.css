@@ -1,0 +1,146 @@
+/* ======================= v3 · material (pedido da Laura: "tá muito sem graça", 14/11/2026) =======================
+   Linguagem do bento aprovado da Akrus (régua: "Akrus Business — bento", reação "isso"):
+   uma luz só (em cima, à esquerda), grão nas superfícies, telas como lajes com espessura,
+   aresta acesa, sombra de contato e de projeção; secundárias inclinadas no espaço. Só cores do DS. */
+
+/* luz única e grão nas superfícies escuras e no azul */
+.s-sobre,.s-proj,.s-trab{isolation:isolate}
+.s-sobre::before,.s-proj::before,.s-trab::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(80% 60% at 10% -8%,rgba(255,255,255,.075),transparent 62%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  opacity:.5;mix-blend-mode:soft-light}
+.s-proj::before{opacity:.6;background:
+    radial-gradient(70% 55% at 8% -6%,rgba(255,255,255,.16),transparent 60%),
+    radial-gradient(60% 50% at 100% 110%,rgba(7,0,75,.35),transparent 70%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+/* telas = lajes: moldura com espessura, aresta acesa, contato e projeção */
+.pj figure,.tb figure{position:relative;padding:7px;border-radius:12px;overflow:visible;
+  background:linear-gradient(180deg,#2b2c33 0%,#17181d 55%,#0e0f12 100%);
+  box-shadow:0 1px 0 rgba(255,255,255,.06),0 2px 0 #0a0a0c,0 4px 8px rgba(0,0,0,.4),0 26px 46px -18px rgba(0,0,0,.75),0 70px 96px -48px rgba(0,0,0,.85)}
+.pj figure::after,.tb figure::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.2),inset 0 0 0 1px rgba(255,255,255,.07),inset 0 -1px 0 rgba(0,0,0,.6)}
+.pj figure img,.tb figure img{border-radius:6px;box-shadow:0 0 0 1px rgba(0,0,0,.5)}
+/* reflexo do vidro: a mesma luz de cima à esquerda */
+.pj figure::before,.tb figure::before{content:'';position:absolute;left:7px;right:7px;top:7px;height:38%;border-radius:6px 6px 0 0;pointer-events:none;z-index:1;
+  background:linear-gradient(165deg,rgba(255,255,255,.10),rgba(255,255,255,0) 60%)}
+.pj-main figure{border-radius:14px;padding:9px}
+.pj-main figure::before{left:9px;right:9px;top:9px}
+/* no azul, a sombra é do próprio azul, mais funda */
+.s-proj .pj figure{box-shadow:0 1px 0 rgba(255,255,255,.08),0 2px 0 #0c0a3a,0 6px 12px rgba(7,0,75,.45),0 30px 50px -18px rgba(7,0,75,.8),0 80px 110px -50px rgba(4,0,50,.9)}
+
+/* secundárias inclinadas no espaço; o hover endireita e levanta */
+@media (min-width:860px) and (min-width:0px){
+  /* perspective() no próprio transform: perspective no pai vira bloco de contenção e quebra o pin da Akrus */
+  .pj:not(.pj-main) figure,.tb figure{transform:perspective(1600px) rotateX(6deg) rotateY(var(--ry,0deg));transform-origin:50% 100%;transition:transform .6s cubic-bezier(.23,1,.32,1)}
+  .tb:nth-child(odd) figure{--ry:5deg}.tb:nth-child(even) figure{--ry:-5deg}
+  .pj:not(.pj-main):nth-child(3) figure{--ry:-5deg}
+  .pj:not(.pj-main):hover figure,.tb:hover figure,.pj:focus-visible figure{transform:perspective(1600px) rotateX(0) rotateY(0) translateY(-8px)}
+}
+
+/* Ghofi como laje de vidro sobre o azul (sem tela até chegar a definitiva) */
+.pj-tipo{border:0;background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.03));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.28),inset 0 0 0 1px rgba(255,255,255,.12),inset 0 -1px 0 rgba(7,0,75,.4),0 2px 0 rgba(7,0,75,.5),0 30px 50px -18px rgba(7,0,75,.7)}
+.pj-tipo:hover,.pj-tipo:focus-visible{background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.05))}
+
+/* ---------- design-critic (opções de CTA e Sobre, 14/11) ---------- */
+/* CTA B: as raízes encostam no azul do rodapé; respiro do botão no celular */
+footer#rodape{margin-top:0}
+@media (max-width:859px){html[data-cta="b"] .s-cta{padding-bottom:220px}}
+/* joaninha viva com chão; botões em repouso mais quietos, na largura do canvas */
+.sobre-lady{margin-top:40px}
+.sobre-lady .runners{position:relative}
+.sobre-lady .runners::after{content:'';position:absolute;left:0;right:0;bottom:13.5%;height:1px;background:var(--creme-400);opacity:.3}
+.sobre-lady .acts{width:100%;max-width:1120px;gap:8px}
+@media (min-width:860px){.sobre-lady .pill{padding:8px 13px}}
+.sobre-lady .pill{border-color:rgba(232,221,196,.4)}
+.mentoria{margin-top:112px}
+.redes a::after{margin-left:4px}
+@media (max-width:859px){
+  .sobre-lady .acts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .sobre-lady .pill{width:100%;padding:0 6px;font-size:13px;margin-top:0}
+  .sobre-lady .acts{margin-top:16px}
+}
+
+/* ======================= banca r3: o material precisa aparecer com a página parada ======================= */
+/* azul de Projetos com poça de luz (cima à esquerda → azul-800 embaixo à direita) e grão visível */
+.s-proj{background:
+  radial-gradient(75% 60% at 12% 0%,var(--azul-600) 0%,transparent 70%),
+  linear-gradient(160deg,var(--azul-700) 35%,var(--azul-800) 100%)}
+.s-proj::before{opacity:.85}
+.s-trab::before,.s-sobre::before{opacity:.7}
+
+/* Akrus: termina em 1:1 com a captura (moldura com 80% da largura, sem reamostrar) e vira laje com espessura */
+@media (min-width:860px){.mo .pj-main figure{width:80%}}
+.pj-main figure{padding:8px;
+  background:linear-gradient(160deg,#34353d 0%,#1b1c21 45%,#0f1013 100%);
+  box-shadow:
+    1px 1px 0 #1c1d23,2px 2px 0 #18191e,3px 3px 0 #141519,4px 4px 0 #111215,5px 5px 0 #0e0f12,6px 6px 0 #0c0c0f,
+    8px 10px 6px rgba(7,0,60,.55),
+    30px 60px 90px -20px rgba(7,0,75,.75),
+    60px 110px 160px -40px rgba(4,0,50,.7)}
+.pj-main figure::after{box-shadow:inset 1px 1px 0 rgba(255,255,255,.42),inset 0 0 0 1px rgba(255,255,255,.08),inset -1px -1px 0 rgba(0,0,0,.6)}
+.pj-main .pj-txt{max-width:240px}
+.pj-main h3{font-size:clamp(48px,5vw,80px)!important}
+@media (max-width:859px){
+  /* celular: recorte 4:5 com o valor e o gráfico legíveis, maior que as outras */
+  .pj-main figure{aspect-ratio:4/5}.pj-main figure img{object-position:28% 0}
+}
+
+/* Ghofi: placa creme opaca, inclinada, com espessura (tratamento do QR "Pague com Pix" do bento aprovado) */
+.pj-tipo{align-self:start;min-height:0;padding:clamp(28px,3vw,44px);border-radius:14px;color:var(--creme-900);
+  background:linear-gradient(170deg,#fffaf0 0%,var(--creme-100) 55%,#e9dfc6 100%);
+  transform:rotate(-2.5deg);transform-origin:50% 100%;
+  box-shadow:inset 1px 1px 0 #fff,inset -1px -1px 0 rgba(120,100,60,.25),
+    1px 1px 0 #ddd2b6,2px 3px 0 #d3c6a6,3px 5px 0 #c7b895,
+    6px 10px 8px rgba(7,0,60,.45),24px 50px 70px -20px rgba(7,0,75,.7)}
+.pj-tipo:hover,.pj-tipo:focus-visible{background:linear-gradient(170deg,#fffaf0 0%,var(--creme-100) 55%,#e9dfc6 100%);transform:rotate(-1deg) translateY(-6px)}
+.pj-tipo h3{color:var(--creme-900)}
+.pj-tipo .pj-txt p{color:var(--creme-700)}
+.pj-tipo .pj-m{color:var(--azul-700)}
+.pj-tipo .pj-ver{color:var(--azul-700)}
+@media (max-width:0px){.pj-tipo{transform:none}.pj-tipo:hover{transform:none}}
+
+/* Trabalhos: aro fino, aresta acesa em cima à esquerda, inclinadas para o centro da grade */
+.tb figure{padding:4px;border-radius:10px}
+.tb figure::before{left:4px;right:4px;top:4px}
+.tb figure::after{box-shadow:inset 1px 1px 0 rgba(255,255,255,.3),inset 0 0 0 1px rgba(255,255,255,.06),inset -1px -1px 0 rgba(0,0,0,.6)}
+.tb figure{box-shadow:1px 1px 0 #1c1d23,2px 2px 0 #141519,3px 3px 0 #0e0f12,8px 12px 8px rgba(0,0,0,.45),30px 60px 80px -30px rgba(0,0,0,.8)}
+@media (min-width:860px) and (min-width:0px){.tb:nth-child(odd) figure{--ry:7deg}.tb:nth-child(even) figure{--ry:-7deg}}
+
+/* joaninha viva: quatro comandos junto dela, não um painel de teste; menos vazio acima */
+.sobre-lady .pill:not([data-act="pular"]):not([data-act="esconder"]):not([data-act="feliz"]):not([data-act="voar"]){display:none}
+.sobre-lady .runners canvas{margin-top:-7%}
+@media (max-width:859px){.sobre-lady .acts{grid-template-columns:repeat(4,1fr)}}
+
+/* GitHub como laje, com o total em destaque */
+.sobre-esq .gh{padding:22px 22px 18px;border-radius:12px;
+  background:linear-gradient(170deg,#24211b 0%,#1a1813 60%,#14120e 100%);
+  box-shadow:inset 1px 1px 0 rgba(255,255,255,.14),inset -1px -1px 0 rgba(0,0,0,.5),2px 3px 0 #0d0c09,10px 22px 40px -14px rgba(0,0,0,.75)}
+.sobre-esq .gh-t b{display:block;font:600 clamp(40px,3.6vw,56px)/1 'Familjen Grotesk';letter-spacing:-.04em;font-variant-numeric:tabular-nums;margin:0 0 4px}
+.s-sobre{padding-bottom:200px}
+@media (min-width:860px){.mo .s-sobre{padding-bottom:240px}}
+
+/* ======================= banca r4: composição ======================= */
+/* Akrus: tela termina em 70% da largura (896 px, reduzida da captura de 1024: nítida); texto com ~340 px estáveis */
+@media (min-width:860px){
+  .mo .pj-main{height:43.75cqw}
+  .mo .pj-main figure{width:70%}
+  .mo .pj-main .pj-txt{left:calc(61.25% + 48px);right:auto;width:calc(30% - 48px);max-width:none;bottom:5.47cqw}
+}
+/* Ghofi: placa na largura do conteúdo, inclinada também parada, centrada ao lado do Youbbe */
+.pj-tipo{width:min(100%,460px);justify-self:center;align-self:center}
+@media (max-width:0px){.pj-tipo{transform:rotate(-2.5deg)}}
+/* credenciais agora sob a Experiência */
+.sobre-txt .cred{margin:0 0 40px;padding-top:0;border-top:0}
+.mentoria{margin-top:96px}
+.s-sobre{padding-bottom:150px}
+@media (min-width:860px){.mo .s-sobre{padding-bottom:190px}}
+@media (max-width:859px){
+  .sobre-txt .cred{order:6;margin:8px 0 32px}
+  .sobre-esq .redes{order:7}.sobre-esq .gh{order:8}.sobre-acoes{order:9}
+  .sobre-lady .runners canvas{margin-top:-14%;margin-bottom:-6%}
+  /* Akrus no celular: região inteira, da barra lateral ao fim da segunda métrica, sem número cortado */
+  .pj-main figure{aspect-ratio:7/8}.pj-main figure img{object-position:0 0}
+}

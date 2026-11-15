@@ -1,0 +1,616 @@
+/* ======================= Projetos: uma seção só, a Akrus em destaque e os demais como showcase =======================
+   Pedido da Laura (14/11/2026): "quero uma section só de projetos, com a Akrus em destaque e os demais como showcase".
+   Mesma linguagem de material do bento aprovado: uma luz (cima à esquerda), lajes com espessura, aresta acesa,
+   sombra de contato e projeção no próprio azul. Sem pin e sem placas de seção ("tá muito quebrado"). */
+
+/* desfaz os encaixes das placas removidas */
+.mo #site{background:transparent}
+.mo .s-hero{padding-bottom:0}
+.mo .s-sobre,.s-sobre{margin-top:0;padding:120px 0 150px}
+.mo .s-proj{margin-top:0}
+
+/* hero: o título nunca encosta na foto (1024–1920) */
+.h-tit{font-size:clamp(56px,8.3vw,138px)}
+@media (max-width:859px){.h-tit{font-size:14.6vw}}
+
+/* grama do jardim acima da mentoria */
+.sobre-jardim{margin:88px auto 0!important;overflow:hidden}
+.sobre-jardim #garden{margin-top:-5%!important}
+.mentoria{margin-top:24px!important}
+
+.s-proj{padding:130px 0 150px}
+.s-proj h2{margin-bottom:56px!important}
+
+/* ---------- destaque: Akrus ---------- */
+.pk-destaque{display:grid;grid-template-columns:minmax(0,1024px) minmax(240px,1fr);gap:56px;align-items:end;text-decoration:none;color:inherit}
+.pk-destaque figure{margin:0;position:relative;padding:8px;border-radius:14px;aspect-ratio:1024/599;
+  background:linear-gradient(160deg,#34353d 0%,#1b1c21 45%,#0f1013 100%);
+  box-shadow:1px 1px 0 #1c1d23,2px 2px 0 #18191e,3px 3px 0 #141519,4px 4px 0 #111215,5px 5px 0 #0e0f12,6px 6px 0 #0c0c0f,
+    8px 10px 6px rgba(7,0,60,.55),30px 60px 90px -20px rgba(7,0,75,.75),60px 110px 160px -40px rgba(4,0,50,.7);
+  transition:transform .6s cubic-bezier(.23,1,.32,1)}
+.pk-destaque figure::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  box-shadow:inset 1px 1px 0 rgba(255,255,255,.42),inset 0 0 0 1px rgba(255,255,255,.08),inset -1px -1px 0 rgba(0,0,0,.6)}
+.pk-destaque figure::before{content:'';position:absolute;left:8px;right:8px;top:8px;height:38%;border-radius:7px 7px 0 0;pointer-events:none;z-index:1;
+  background:linear-gradient(165deg,rgba(255,255,255,.10),rgba(255,255,255,0) 60%)}
+.pk-destaque img{display:block;width:100%;height:100%;object-fit:cover;object-position:0 0;border-radius:7px}
+.pk-destaque:hover figure,.pk-destaque:focus-visible figure{transform:translateY(-6px)}
+.pk-destaque:focus-visible{outline:3px solid var(--amarelo-300);outline-offset:8px;border-radius:14px}
+.pk-txt h3{font:600 clamp(56px,6vw,96px)/.9 'Familjen Grotesk';letter-spacing:-.05em;margin:0;color:var(--creme-100)}
+.pk-txt p{font:400 clamp(19px,1.5vw,22px)/1.4 'Familjen Grotesk';color:var(--azul-100);margin:18px 0 16px;max-width:24ch}
+.pk-ver{display:inline-block;margin-top:24px;font:500 18px 'Familjen Grotesk';color:var(--amarelo-300)}
+
+/* ---------- showcase: os demais ---------- */
+.pk-show{list-style:none;padding:0;margin:120px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:72px 32px}
+.sc>a,.sc-abre{display:block;text-decoration:none;color:inherit}
+.sc figure,.sc .placa{margin:0 0 22px;position:relative;aspect-ratio:16/10;border-radius:10px}
+.sc figure{padding:4px;
+  background:linear-gradient(170deg,#2b2c33 0%,#17181d 55%,#0e0f12 100%);
+  box-shadow:1px 1px 0 #1c1d23,2px 2px 0 #141519,3px 3px 0 #0e0f12,8px 12px 8px rgba(7,0,60,.45),26px 50px 70px -26px rgba(7,0,75,.8)}
+.sc figure::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  box-shadow:inset 1px 1px 0 rgba(255,255,255,.3),inset 0 0 0 1px rgba(255,255,255,.06),inset -1px -1px 0 rgba(0,0,0,.6)}
+.sc figure::before{content:'';position:absolute;left:4px;right:4px;top:4px;height:40%;border-radius:6px 6px 0 0;pointer-events:none;z-index:1;
+  background:linear-gradient(165deg,rgba(255,255,255,.10),rgba(255,255,255,0) 60%)}
+.sc figure img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 0;border-radius:6px}
+/* Ghofi: a placa creme (tratamento do QR do bento) até chegar a tela definitiva */
+.sc .placa{display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:clamp(20px,2.2vw,32px);color:var(--creme-900);
+  background:linear-gradient(170deg,#fffaf0 0%,var(--creme-100) 55%,#e9dfc6 100%);
+  box-shadow:inset 1px 1px 0 #fff,inset -1px -1px 0 rgba(120,100,60,.25),1px 1px 0 #ddd2b6,2px 3px 0 #d3c6a6,3px 5px 0 #c7b895,6px 10px 8px rgba(7,0,60,.45),24px 50px 70px -20px rgba(7,0,75,.7)}
+.sc .placa b{font:600 clamp(40px,4vw,64px)/.9 'Familjen Grotesk';letter-spacing:-.05em}
+.sc .placa span{font:400 16px/1.4 'Familjen Grotesk';color:var(--creme-700);max-width:24ch}
+.sc h3{font:600 clamp(24px,2vw,30px)/1.05 'Familjen Grotesk';letter-spacing:-.03em;margin:0 0 6px;color:var(--creme-100)}
+.sc p{font:400 16px/1.45 'Familjen Grotesk';color:var(--azul-100);margin:0;max-width:34ch}
+.sc>a:focus-visible,.sc-abre:focus-visible{outline:3px solid var(--amarelo-300);outline-offset:8px;border-radius:10px}
+
+/* inclinadas no espaço, voltadas para o centro; o hover endireita (só desktop e com movimento) */
+@media (min-width:860px) and (min-width:0px){
+  .sc figure,.sc .placa{transform:perspective(1400px) rotateX(6deg) rotateY(var(--ry,0deg));transform-origin:50% 100%;transition:transform .6s cubic-bezier(.23,1,.32,1)}
+  .sc:nth-child(3n+1) figure,.sc:nth-child(3n+1) .placa{--ry:6deg}
+  .sc:nth-child(3n) figure,.sc:nth-child(3n) .placa{--ry:-6deg}
+  .sc:hover figure,.sc:hover .placa,.sc>a:focus-visible figure,.sc>a:focus-visible .placa{transform:perspective(1400px) rotateX(0) rotateY(0) translateY(-8px)}
+}
+
+/* banca r5: fins de seção sem sobra; grama encosta no fim do currículo */
+.s-proj{padding-bottom:104px}
+.sobre-jardim{margin-top:24px!important}
+
+@media (max-width:1100px){
+  .pk-destaque{grid-template-columns:1fr;gap:28px}
+  .pk-show{grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 24px}
+}
+@media (max-width:859px){
+  .s-proj{padding:96px 0}
+  .s-proj h2{margin-bottom:36px!important}
+  /* a Akrus inteira, reduzida, sem recorte lateral (o destaque não pode aparecer pela metade) */
+  .pk-destaque figure{aspect-ratio:1024/599!important}
+  .pk-destaque img{object-position:0 0!important}
+  .pk-show{margin-top:72px}
+  .mo .s-sobre,.s-sobre{padding:96px 0 96px}
+  .sobre-jardim{margin-top:40px!important}
+}
+/* Ghofi removido (pedido da Laura, 14/11): cinco itens em 2 + 3 — Youbbe e Zouti maiores em cima, LiqPay, Gassen e Century embaixo */
+@media (min-width:1101px){
+  .pk-show{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .sc{grid-column:span 2}.sc:nth-child(-n+2){grid-column:span 3}
+}
+@media (min-width:860px) and (min-width:0px){
+  .sc:nth-child(n) figure{--ry:0deg}
+  .sc:nth-child(1) figure,.sc:nth-child(3) figure{--ry:6deg}
+  .sc:nth-child(2) figure,.sc:nth-child(5) figure{--ry:-6deg}
+}
+@media (min-width:601px) and (max-width:1100px){.sc:last-child{grid-column:1/-1;width:calc((100% - 24px)/2);justify-self:center}}
+/* showcase em 2 colunas até 600 px: só a Akrus ocupa a largura inteira */
+@media (max-width:600px){
+  .pk-show{grid-template-columns:1fr;gap:40px}
+  .sc{width:86%}.sc:nth-child(even){justify-self:end}
+}
+
+/* rodapé v3 (pedido da Laura, 14/11): sem a assinatura gigante; marca, contato, páginas e redes em colunas; o jogo num card pintado */
+#rodape{padding:104px 0 36px}
+#rodape .ft-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) minmax(0,.7fr) minmax(0,.7fr);gap:40px;align-items:start;padding-top:0}
+#rodape .ft-col{gap:28px}
+#rodape .ft-nav{display:flex;flex-direction:column;gap:14px}
+#rodape .ft-nav .ft-links{flex-direction:column;gap:10px}
+#rodape .ft-logo{display:inline-flex;color:var(--creme-100);text-decoration:none}
+#rodape .ft-logo svg{height:64px;width:auto;display:block}
+#rodape .ft-logo:focus-visible{outline:2px solid var(--amarelo-300);outline-offset:6px;border-radius:4px}
+#rodape .ft-game{margin-top:88px}
+#rodape .ft-quadro{padding:3.2% 3.6%;border-radius:22px}
+#rodape .ft-quadro #game{border:0!important;border-radius:10px;
+  box-shadow:1px 1px 0 #1c1d23,2px 2px 0 #141519,3px 3px 0 #0e0f12,6px 10px 10px rgba(16,28,8,.45),20px 40px 60px -20px rgba(12,24,6,.6)}
+#rodape .ft-bottom{margin-top:72px;padding-top:24px;border-top:1px solid rgba(203,216,255,.28)}
+@media (max-width:1100px){#rodape .ft-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);row-gap:48px}}
+@media (max-width:600px){#rodape{padding:72px 0 28px}#rodape .ft-grid{grid-template-columns:1fr 1fr;gap:40px 24px}
+  #rodape .ft-marca,#rodape .ft-col{grid-column:1/-1}#rodape .ft-logo svg{height:52px}
+  #rodape .ft-game{margin-top:56px}#rodape .ft-quadro{padding:5% 5%;border-radius:16px}#rodape .ft-bottom{margin-top:48px}
+  #rodape .ft-nav .ft-links a{display:inline-block;padding:6px 0}}
+
+
+/* ---------- cards pintados (pedido da Laura, 14/11): cada mockup num card com um campo florido pintado em código ----------
+   O card é o objeto; o mockup fica reto dentro dele, com margem, como na referência. As inclinações saem. */
+.quadro{position:relative;overflow:hidden;border-radius:20px;padding:7.5% 8.5%;background:#62804F;isolation:isolate;
+  box-shadow:0 1px 0 rgba(255,255,255,.18) inset,0 2px 4px rgba(7,0,60,.35),0 30px 60px -24px rgba(7,0,75,.75)}
+.quadro .q-tinta{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:-1}
+.pk-destaque .quadro{border-radius:26px;padding:6.5% 7.5%}
+.sc .quadro{margin:0 0 22px}
+.sc .quadro figure,.pk-destaque .quadro figure{margin:0;transform:none!important}
+.quadro figure{box-shadow:1px 1px 0 #1c1d23,2px 2px 0 #141519,3px 3px 0 #0e0f12,6px 10px 10px rgba(16,28,8,.45),20px 40px 60px -20px rgba(12,24,6,.6)!important;
+  transition:translate .6s cubic-bezier(.23,1,.32,1)}
+@media (hover:hover) and (min-width:0px){
+  .sc:hover .quadro figure,.sc>a:focus-visible .quadro figure,.sc-abre:focus-visible .quadro figure,.pk-destaque:hover .quadro figure,.pk-destaque:focus-visible .quadro figure{translate:0 -6px}
+}
+@media (max-width:600px){.quadro{border-radius:16px;padding:7% 7%}.pk-destaque .quadro{border-radius:18px}}
+/* banca r7: moldura mais larga nos cards menores, para o campo respirar como na referência */
+@media (min-width:1101px){.sc:nth-child(n+3) .quadro{padding:10% 11%}}
+@media (max-width:1100px){.sc .quadro{padding:10% 11%}}
+@media (max-width:600px){.quadro,.sc .quadro{padding:12% 12%}.pk-destaque .quadro{padding:11% 10%}}
+#rodape .ft-quadro #game{margin:0!important}
+/* banca r8: celular sem zigue-zague; telas maiores nos cards menores; rodapé mais junto */
+@media (max-width:600px){.sc{width:auto}.sc:nth-child(even){justify-self:stretch}.quadro,.sc .quadro{padding:8% 8%}.pk-destaque .quadro{padding:8% 8%}}
+@media (min-width:1101px){.sc:nth-child(n+3) .quadro{padding:8.5% 9.5%}}
+@media (min-width:601px) and (max-width:1100px){.sc .quadro{padding:8.5% 9.5%}}
+#rodape .ft-grid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr) minmax(0,.6fr) minmax(0,.6fr)}
+#rodape .ft-h3{font:500 15px 'Familjen Grotesk';color:var(--azul-200);letter-spacing:0}
+#rodape .ft-col{gap:14px}
+#rodape .ft-clock{font-size:18px}#rodape .ft-cidade{font:500 17px 'Familjen Grotesk';color:var(--azul-200)}
+#rodape .ft-game{margin-top:64px}
+@media (max-width:1100px){#rodape .ft-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media (max-width:600px){#rodape .ft-grid{grid-template-columns:1fr 1fr}}
+#rodape .ft-hora{display:flex;align-items:baseline;gap:10px}
+
+/* ================= LP 15/11: hero nova, redes em ícone, Serviços e CTA das referências da Laura ================= */
+.h-lead{max-width:30ch}
+
+/* ---------- redes: botões redondos de borda tracejada (referência dela) ---------- */
+.soc{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:14px}
+.soc a{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;color:var(--creme-100);
+  border:1.5px dashed rgba(244,235,211,.42);background:rgba(244,235,211,.06);
+  transition:transform .45s cubic-bezier(.23,1,.32,1),background .25s,border-color .25s,color .25s}
+.soc svg{width:22px;height:22px;display:block}
+.soc a:hover,.soc a:focus-visible{background:var(--amarelo-300);border-color:var(--amarelo-300);border-style:solid;color:var(--azul-950);outline:none;transform:translateY(-3px) rotate(-6deg)}
+.soc a:focus-visible{box-shadow:0 0 0 3px var(--azul-950),0 0 0 5px var(--amarelo-300)}
+.sobre-esq .soc{margin-top:40px}.sobre-esq .soc+.gh{margin-top:28px}
+@media (max-width:859px){.sobre-esq .soc{order:6;margin:8px 0 0}}
+#rodape .soc-ft{gap:10px}#rodape .soc-ft a{width:48px;height:48px}#rodape .soc-ft svg{width:19px;height:19px}
+
+/* ---------- Serviços ---------- */
+.s-serv{background:var(--creme-100);padding:130px 0 120px;color:var(--creme-900)}
+.sv-h{font:600 clamp(80px,13vw,220px)/.82 'Familjen Grotesk';letter-spacing:-.06em;margin:0 0 64px;color:var(--creme-900)}
+.sv-row{list-style:none;padding:0;margin:0;display:flex;border-top:1.5px solid var(--creme-300);border-bottom:1.5px solid var(--creme-300);min-height:540px}
+.sv{flex:1 1 0;min-width:0;border-left:1.5px solid var(--creme-300);display:flex;flex-direction:column;transition:flex-grow .7s cubic-bezier(.77,0,.18,1)}
+.sv:first-child{border-left:0}
+.sv.is-on{flex-grow:3.2}
+.sv-tab{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:22px;padding:36px 22px 0;box-sizing:border-box;width:100%}
+.sv-tab:focus-visible{outline:3px solid var(--azul-700);outline-offset:-6px;border-radius:6px}
+.sv-n{font:400 15px 'Monocraft',monospace;color:var(--creme-500);transition:color .3s,font-size .5s}
+.sv-t{font:600 clamp(19px,1.5vw,25px)/1.05 'Familjen Grotesk';letter-spacing:-.03em;color:var(--creme-900);max-width:100%;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word;transition:color .3s}
+.sv.is-on .sv-n{color:var(--laranja-500);font-size:18px}
+.sv.is-on .sv-t{max-width:none;hyphens:manual;font-size:clamp(30px,2.8vw,46px)}
+.sv.is-on .sv-t::before{content:'// ';color:var(--laranja-500)}
+.sv:not(.is-on) .sv-tab:hover .sv-t{color:var(--azul-700)}
+.sv-p{display:none;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:40px;padding:40px 22px 36px;flex:1;align-items:end}
+.sv.is-on .sv-p{display:grid}
+.sv-l{list-style:none;padding:0;margin:0 0 36px;display:grid;gap:8px}
+.sv-l li{font:600 clamp(20px,1.6vw,26px)/1.1 'Familjen Grotesk';letter-spacing:-.02em}
+.sv-l li::before{content:'/ ';color:var(--laranja-500)}
+.sv-txt p{font:400 14px/1.75 'Monocraft',monospace;color:var(--creme-700);margin:0;max-width:38ch;text-transform:uppercase;letter-spacing:.02em}
+.sv-img{margin:0;border-radius:12px;overflow:hidden;aspect-ratio:16/10;background:var(--creme-200);
+  box-shadow:0 1px 0 #fff inset,0 2px 4px rgba(29,26,21,.12),0 24px 50px -24px rgba(29,26,21,.45)}
+.sv-img img{width:100%;height:100%;object-fit:cover;object-position:50% 0;display:block}
+
+/* tablet e celular: acordeão vertical */
+@media (max-width:1100px){
+  .s-serv{padding:96px 0}.sv-h{margin-bottom:36px;font-size:clamp(72px,18vw,180px)}
+  .sv-row{flex-direction:column;min-height:0}
+  .sv{border-left:0;border-top:1.5px solid var(--creme-300)}.sv:first-child{border-top:0}
+  .sv-tab{flex-direction:row;align-items:baseline;gap:16px;padding:22px 0;min-height:44px}
+  .sv-t,.sv.is-on .sv-t{max-width:none;font-size:26px}
+  .sv-p{padding:0 0 28px;gap:24px}
+}
+@media (min-width:600px) and (max-width:1100px){.sv-p{grid-template-columns:1fr 1fr;align-items:start}}
+@media (max-width:599px){.sv-p{grid-template-columns:1fr}.sv-img{order:-1}}
+
+/* ---------- CTA (referência dela): título grande, e-mail e flores em caracteres ---------- */
+html[data-cta] .s-cta.cta2{background:var(--azul-950);color:var(--creme-100);padding:150px 0 160px;position:relative;overflow:hidden;text-align:left;min-height:min(92vh,860px);display:flex;align-items:center}
+.cta2-in{position:relative;z-index:2;width:100%}
+.cta2-txt{max-width:54%}
+html[data-cta] .s-cta.cta2 h2{font-weight:600!important;font-size:clamp(56px,6.1vw,112px)!important;line-height:.9!important;font-family:'Familjen Grotesk'!important;letter-spacing:-.055em;color:var(--creme-100);max-width:none!important;margin:0}
+.c2-l{display:block}@media (min-width:860px){.c2-l{white-space:nowrap}}.c2-hl{color:var(--laranja-500)}
+.cta2-mail{display:inline-flex;gap:14px;align-items:baseline;margin-top:56px;font:400 clamp(20px,2.3vw,34px) 'Monocraft',monospace;color:var(--creme-100);text-decoration:none;
+  background:linear-gradient(var(--laranja-500),var(--laranja-500)) 0 100%/0 2px no-repeat;padding-bottom:6px;transition:background-size .5s cubic-bezier(.23,1,.32,1)}
+.cta2-mail span{font-size:.7em;color:var(--laranja-500);transition:transform .4s cubic-bezier(.23,1,.32,1)}
+.cta2-mail:hover,.cta2-mail:focus-visible{background-size:100% 2px;outline:none}
+.cta2-mail:hover span,.cta2-mail:focus-visible span{transform:translate(4px,-4px)}
+.cta2-mail:focus-visible{box-shadow:0 0 0 3px var(--amarelo-300);border-radius:4px}
+.cta2-art{position:absolute;right:0;top:0;height:100%;width:46%;display:block;z-index:1}
+@media (max-width:859px){
+  html[data-cta] .s-cta.cta2{padding:96px 0 0;display:block;min-height:0}
+  .cta2-txt{max-width:none}html[data-cta] .s-cta.cta2 h2{font-size:14vw!important}
+  .cta2-mail{margin-top:36px;font-size:5.2vw}
+  .cta2-art{position:relative;width:100%;height:360px;margin-top:24px}
+}
+/* Serviços: o conteúdo da coluna aberta tem largura fixa; a coluna cresce e revela, sem reflow (gravação 15/11) */
+@media (min-width:1101px){.sv-row{container-type:inline-size}.sv{overflow:hidden}.sv.is-on .sv-p,.sv.is-on .sv-tab{min-width:calc(100cqw * 3.2 / 7.2 - 2px)}}
+/* banca r9 (15/11): Serviços recomposto — imagem grande em cima, lista e descrição embaixo; colunas fechadas com sinal de abrir */
+.sv-h{line-height:.9;margin-bottom:84px}
+.sv-row{min-height:0}
+.sv.is-on{flex-grow:4.2}
+@media (min-width:1101px){.sv.is-on .sv-p,.sv.is-on .sv-tab{min-width:calc(100cqw * 4.2 / 8.2 - 2px)}
+  .sv-p{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"img img" "lista desc";gap:28px 32px;padding:28px 22px 36px;align-items:start}
+  .sv-img{grid-area:img}.sv-txt{display:contents}.sv-l{grid-area:lista;margin:0}.sv-txt p{grid-area:desc}}
+.sv:not(.is-on) .sv-tab{position:relative}
+.sv:not(.is-on) .sv-tab::after{content:'+';position:absolute;top:30px;right:20px;font:400 22px 'Monocraft',monospace;color:var(--creme-500);transition:transform .4s cubic-bezier(.23,1,.32,1),color .25s}
+.sv:not(.is-on) .sv-tab:hover::after,.sv:not(.is-on) .sv-tab:focus-visible::after{color:var(--laranja-500);transform:rotate(90deg)}
+@media (max-width:1100px){.sv:not(.is-on) .sv-tab::after{top:22px;right:0}}
+/* redes no celular: as seis numa linha */
+@media (max-width:600px){.soc{gap:8px}.soc a{width:50px;height:50px}.soc svg{width:20px;height:20px}.sobre-esq .soc{margin-bottom:16px}}
+/* banca r9b: "#site h2" (ID) anulava tamanho e margem do título de Serviços */
+#site .sv-h{font-size:clamp(88px,11vw,190px);line-height:.88;margin:0 0 .3em}
+@media (max-width:1100px){#site .sv-h{font-size:clamp(64px,17vw,160px)}}
+.sv-tab:focus-visible{outline-offset:4px}
+
+/* ================= HERO 2 (15/11, referência budarina): título gigante e campo de flores em duas camadas ================= */
+.s-hero.hz{position:relative;height:max(100svh,720px);min-height:0;padding:0!important;overflow:hidden;background:var(--creme-100);isolation:isolate}
+.hz-back,.hz-front,.hz-bug{position:absolute;left:0;right:0;bottom:0;width:100%;height:100%;display:block;pointer-events:none}
+.hz-back{z-index:1}.hz-foto{z-index:2}.hz-tit{z-index:3}.hz-front{z-index:4}.hz-bug{z-index:5}.hz-pe{z-index:6}
+.hz-tit{position:absolute;left:0;right:0;top:15%;margin:0;text-align:center;font:600 clamp(96px,15.6vw,300px)/.8 'Familjen Grotesk';letter-spacing:-.065em;color:var(--creme-900);pointer-events:none}
+.hz-foto{position:absolute;right:7%;top:44%;width:clamp(170px,15vw,280px);margin:0;padding:10px 10px 36px;background:#FFFDF6;border-radius:3px;transform:rotate(6deg);
+  box-shadow:0 1px 0 #fff inset,0 2px 3px rgba(29,26,21,.18),0 22px 40px -14px rgba(29,26,21,.45)}
+.hz-foto img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;border-radius:1px}
+.hz-pe{position:absolute;left:max(24px,calc((100vw - 1280px)/2));bottom:56px;max-width:min(380px,30vw);padding:22px 24px 24px;border-radius:16px;
+  background:rgba(244,235,211,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 18px 40px -22px rgba(29,26,21,.35)}
+.hz-pe .h-who{font:600 22px/1.1 'Familjen Grotesk';color:var(--azul-700);margin:0 0 8px;letter-spacing:-.02em}
+.hz-pe .h-lead{font:400 17px/1.45 'Familjen Grotesk';color:var(--creme-800);margin:0 0 18px;max-width:none}
+@media (max-width:859px){
+  .s-hero.hz{height:auto;min-height:0;display:flex;flex-direction:column}
+  .hz-scene{position:relative}
+  .hz-tit{top:96px;font-size:20.5vw}
+  .hz-back,.hz-front,.hz-bug{height:640px;bottom:auto;top:0}
+  .s-hero.hz{padding-top:0!important}
+  .hz-foto{right:6%;top:300px;width:38vw;padding:7px 7px 24px}
+  .hz-pe{position:relative;left:auto;bottom:auto;margin:600px 16px 40px;max-width:none}
+}
+
+/* ---------- som: pílula fixa embaixo, como a da referência ---------- */
+.som{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:90;display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 18px 0 14px;border:0;border-radius:99px;
+  background:var(--azul-950);color:var(--creme-100);font:500 14px 'Familjen Grotesk';cursor:pointer;box-shadow:0 10px 30px -10px rgba(7,0,75,.6);transition:background .25s,transform .4s cubic-bezier(.23,1,.32,1)}
+.som:hover{background:var(--azul-800);transform:translateX(-50%) translateY(-2px)}
+.som:focus-visible{outline:3px solid var(--amarelo-300);outline-offset:3px}
+.som-i{display:inline-flex;align-items:flex-end;gap:2px;height:14px}
+.som-i i{width:3px;height:4px;border-radius:2px;background:var(--creme-300);transition:height .3s}
+.som[aria-pressed="true"] .som-i i{background:var(--amarelo-300);animation:somb 1s ease-in-out infinite}
+.som[aria-pressed="true"] .som-i i:nth-child(2){animation-delay:-.33s}.som[aria-pressed="true"] .som-i i:nth-child(3){animation-delay:-.66s}
+@keyframes somb{0%,100%{height:4px}50%{height:14px}}
+
+/* ---------- mentoria: pastas de arquivo retrô com post-its ---------- */
+.mentoria .pastas{grid-column:1/-1;margin-top:24px}
+.pastas-t{font:400 14px 'Monocraft',monospace;color:var(--amarelo-300);margin:0 0 18px}
+.pasta-abas{display:flex;gap:4px;padding-left:18px;position:relative;z-index:2;flex-wrap:wrap}
+.pasta-aba{all:unset;cursor:pointer;box-sizing:border-box;font:400 14px 'Monocraft',monospace;color:var(--creme-800);padding:12px 20px 14px;min-height:44px;border-radius:12px 12px 0 0;
+  background:linear-gradient(#e8dcbc,#dccfa9);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 1px 0 0 rgba(255,255,255,.3);transform:translateY(6px);transition:transform .35s cubic-bezier(.23,1,.32,1),background .25s,color .25s}
+.pasta-aba span{color:var(--laranja-600)}
+.pasta-aba:hover{transform:translateY(0)}
+.pasta-aba[aria-selected="true"]{background:#F3E7C6;color:var(--creme-900);transform:translateY(0)}
+.pasta-aba:focus-visible{outline:3px solid var(--amarelo-300);outline-offset:2px}
+.pasta-pilha{position:relative;display:grid}
+.pasta{grid-area:1/1;display:none;position:relative;min-height:300px;padding:34px 36px 40px;border-radius:4px 14px 14px 14px;color:var(--creme-900);
+  background:
+    repeating-linear-gradient(0deg,transparent 0 31px,rgba(120,100,60,.12) 31px 32px),
+    linear-gradient(170deg,#F7ECCD 0%,#F3E7C6 50%,#E9DBB4 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7),inset -1px -1px 0 rgba(120,100,60,.25),0 1px 0 #d8c99f,0 3px 0 #cdbd92,0 5px 0 #c1b083,0 24px 50px -18px rgba(0,0,0,.6)}
+.pasta.is-on{display:block}
+.pasta::after{content:'';position:absolute;inset:auto 0 0 0;height:10px;border-radius:0 0 14px 14px;background:linear-gradient(transparent,rgba(120,100,60,.12))}
+.pasta-cab{display:flex;align-items:baseline;gap:14px;margin-bottom:26px;padding-bottom:14px;border-bottom:1.5px dashed rgba(120,100,60,.35)}
+.pasta-n{font:400 14px 'Monocraft',monospace;color:var(--laranja-600)}
+.pasta-cab h3{margin:0;font:600 clamp(26px,2.4vw,38px)/1 'Familjen Grotesk';letter-spacing:-.03em;color:var(--creme-900)}
+.posts{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:22px 26px}
+.post{position:relative;width:clamp(170px,15vw,220px);min-height:150px;padding:30px 18px 18px;font:500 19px/1.25 'Familjen Grotesk';letter-spacing:-.01em;color:var(--creme-900);
+  transform:rotate(var(--r,0deg));box-shadow:0 1px 1px rgba(0,0,0,.08),0 12px 18px -10px rgba(29,26,21,.45);background-image:linear-gradient(170deg,rgba(255,255,255,.35),transparent 45%)}
+.post::before{content:'';position:absolute;top:-10px;left:50%;width:74px;height:22px;transform:translateX(-50%) rotate(-3deg);background:rgba(255,253,246,.62);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.post-amarelo{background-color:var(--amarelo-200)}.post-laranja{background-color:var(--laranja-100)}.post-azul{background-color:var(--azul-100)}
+@media (max-width:859px){.pasta{padding:26px 20px 30px}.posts{gap:18px}.post{width:calc(50% - 9px);min-height:120px;font-size:17px}.pasta-abas{padding-left:8px}.pasta-aba{padding:10px 12px 12px;font-size:12px}}
+/* hero 2: altura descontando a navbar; polaroide menor, no meio do campo */
+.s-hero.hz{height:max(calc(100svh - 88px),640px)}
+.hz-foto{width:clamp(150px,11.5vw,220px);top:auto;bottom:16%;right:7%}
+@media (max-width:859px){.s-hero.hz{height:auto}.hz-foto{bottom:auto;top:300px;width:38vw}}
+/* a polaroide não herda a .moldura antiga (altura 100%%, proporção, recorte) */
+.hz .hz-foto{height:auto;aspect-ratio:auto;overflow:visible;border-radius:3px;max-width:none}
+.hz .hz-foto img{height:auto;aspect-ratio:4/5}
+.hz .hz-foto img{aspect-ratio:4/5!important;height:auto!important;width:100%%!important}
+
+/* ================= hero 2, banca r10: texto direto no creme, no alto; título mais baixo; polaroide dentro do campo ================= */
+.hz-pe{top:28px;bottom:auto;left:max(24px,calc((100vw - 1280px)/2));right:max(24px,calc((100vw - 1280px)/2));max-width:none;padding:0;border-radius:0;background:none;
+  -webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none;display:flex;justify-content:space-between;align-items:flex-start;gap:32px}
+.hz-pe .h-lead{font:400 18px/1.45 'Familjen Grotesk';color:var(--creme-800);max-width:42ch;margin:0}
+.hz-pe .h-lead b{font-weight:600;color:var(--azul-700)}
+.hz-tit{top:22%}
+.hz .hz-foto{right:17%;bottom:7%;width:clamp(150px,12vw,210px)}
+@media (max-width:859px){
+  .s-hero.hz{height:max(calc(100svh - 72px),620px);display:block}
+  .hz-back,.hz-front,.hz-bug{height:100%;top:auto;bottom:0}
+  .hz-pe{position:absolute;top:20px;left:16px;right:16px;margin:0;flex-direction:column;gap:14px}
+  .hz-pe .h-lead{font-size:15px;max-width:none}
+  .hz-pe .btn{min-height:44px}
+  .hz-tit{top:31%;font-size:21vw}
+  .hz .hz-foto{top:auto;bottom:5%;right:9%;width:30vw;padding:6px 6px 20px}
+  /* som compacto no celular: só o ícone, no canto, longe do texto e do botão */
+  .som{left:auto;right:16px;transform:none;width:48px;height:48px;padding:0;justify-content:center}
+  .som:hover{transform:translateY(-2px)}
+  .som-t{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+}
+
+/* ================= mentoria, banca r10: pilha de pastas manila com abas escalonadas e etiqueta datilografada ================= */
+.mentoria .pastas{margin-top:40px}
+.pasta-pilha{position:relative;display:block;height:520px}
+.pasta-abas{position:absolute;inset:0;pointer-events:none;padding:0;display:block;z-index:auto}
+.pasta-aba{pointer-events:auto;position:absolute;left:calc(14px + var(--i) * 19.2%);bottom:calc(420px + var(--o,0) * 16px);width:18%;min-width:0;height:48px;padding:8px 10px 0;transform:none;
+  border-radius:12px 12px 0 0;z-index:calc(20 - var(--o,0));background:var(--pc,#EBDDB7);box-shadow:inset 0 1px 0 rgba(255,255,255,.55);transition:bottom .6s cubic-bezier(.34,1.3,.5,1),background .3s}
+.pasta-aba:hover{transform:translateY(-4px)}
+.etq{display:block;background:#FFFDF6;border-radius:2px;padding:6px 8px;font:400 13px 'Monocraft',monospace;color:var(--creme-800);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-shadow:0 1px 1px rgba(0,0,0,.1)}
+.etq span{color:var(--laranja-600)}
+.pasta-aba[aria-selected="true"] .etq{color:var(--creme-900)}
+.pasta{display:block!important;position:absolute;left:0;right:0;bottom:0;height:420px;min-height:0;transform:translateY(calc(var(--o,0) * -16px)) scale(calc(1 - var(--o,0) * .012));transform-origin:50% 100%;
+  z-index:calc(19 - var(--o,0));background-color:var(--pc,#EBDDB7);transition:transform .6s cubic-bezier(.34,1.3,.5,1);border-radius:4px 14px 14px 14px}
+.pasta:not(.is-on)>*{visibility:hidden}
+.pasta:nth-child(2),.pasta-aba:nth-child(1){--pc:#F1E3BC}.pasta:nth-child(3),.pasta-aba:nth-child(2){--pc:#E9D9AE}.pasta:nth-child(4),.pasta-aba:nth-child(3){--pc:#EFDFB4}.pasta:nth-child(5),.pasta-aba:nth-child(4){--pc:#E6D4A6}.pasta:nth-child(6),.pasta-aba:nth-child(5){--pc:#EEDCB0}
+.pasta.is-on{background:repeating-linear-gradient(0deg,transparent 0 31px,rgba(120,100,60,.1) 31px 32px),linear-gradient(170deg,#F7ECCD 0%,#F3E7C6 50%,#E9DBB4 100%)}
+.pasta-aba[aria-selected="true"]{background:#F6EACB}
+.posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.post{width:auto;min-height:210px;padding:34px 22px 22px;font:500 clamp(20px,1.9vw,27px)/1.18 'Familjen Grotesk'}
+@media (max-width:859px){
+  .pasta-pilha{height:600px}
+  .pasta{height:520px;padding:24px 18px}
+  .pasta-aba{bottom:calc(520px + var(--o,0) * 12px);left:calc(4px + var(--i) * 19.4%);width:21%;padding:6px 4px 0;height:42px}
+  .etq{font-size:10px;padding:5px 4px;text-overflow:clip}
+  .pasta{transform:translateY(calc(var(--o,0) * -12px))}
+  .posts{grid-template-columns:1fr;gap:16px}.post{min-height:96px;font-size:19px;padding:26px 18px 16px}
+}
+
+/* ================= CTA: "memorável." iridescente (Inspora, adaptado às cores da marca) ================= */
+.iri{position:relative;display:inline-block;--sx:1;--blur:0;--dx:0;isolation:isolate}
+.iri::before,.iri::after{content:attr(data-t);position:absolute;left:0;top:0;pointer-events:none;mix-blend-mode:screen;transform-origin:0 50%;filter:blur(calc(var(--blur) * 1px))}
+.iri::before{color:var(--azul-400);transform:translateX(calc(var(--dx) * -1em)) scaleX(var(--sx))}
+.iri::after{color:var(--amarelo-300);transform:translateX(calc(var(--dx) * 1em)) scaleX(calc(1 + (var(--sx) - 1) * .6))}
+.iri::before,.iri::after{opacity:calc((var(--sx) - 1) * 1.6)}
+.etq b{font-weight:400}
+.iri::before,.iri::after{opacity:calc((var(--sx) - 1) * 2.4)}
+@media (max-width:859px){.etq .nm{display:none}.etq{text-align:center;font-size:12px}.pasta-aba{width:17%;left:calc(6px + var(--i) * 19%)}}
+
+/* banca r10b: ícone de alto-falante (riscado = desligado); post-its no tamanho das frases; pasta sem pauta; celular mais junto */
+.som-i{width:18px;height:18px;display:block;color:var(--creme-100)}
+.som .som-on{display:none}.som[aria-pressed="true"] .som-on{display:inline}.som[aria-pressed="true"] .som-off{display:none}
+.som[aria-pressed="true"] .som-i{color:var(--amarelo-300)}
+.posts{grid-template-columns:repeat(3,minmax(0,250px));gap:28px 32px}
+.post{min-height:128px;padding:30px 20px 18px;font-size:clamp(19px,1.5vw,22px)}
+.pasta.is-on{background:linear-gradient(170deg,#F7ECCD 0%,#F3E7C6 50%,#E9DBB4 100%)}
+.pasta-pilha{height:420px}.pasta{height:330px}.pasta-aba{bottom:calc(330px + var(--o,0) * 16px)}
+.hz-tit{word-spacing:.06em}
+@media (max-width:859px){
+  .s-hero.hz{height:clamp(600px,calc(100svh - 72px),700px)}
+  .hz-tit{top:34%;word-spacing:.1em}
+  .hz .hz-foto{bottom:9%}
+  .posts{grid-template-columns:1fr}.post{min-height:84px}
+  .pasta-pilha{height:520px}.pasta{height:440px}.pasta-aba{bottom:calc(440px + var(--o,0) * 12px)}
+}
+
+/* r11: pastas dentro da coluna do texto da mentoria; título das credenciais */
+.ment-txt .pastas{margin-top:48px}
+.mentoria{align-items:start}
+.ment-txt .pasta-pilha{height:400px}.ment-txt .pasta{height:310px;padding:26px 24px 28px}.ment-txt .pasta-aba{bottom:calc(310px + var(--o,0) * 14px);height:44px}
+.ment-txt .pasta{transform:translateY(calc(var(--o,0) * -14px)) scale(calc(1 - var(--o,0) * .012))}
+.ment-txt .etq{font-size:11px;padding:5px 6px}
+.ment-txt .posts{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.ment-txt .post{min-height:118px;padding:26px 14px 14px;font-size:clamp(16px,1.25vw,19px)}
+.ment-txt .pasta-cab{margin-bottom:20px}
+.cred-h3{margin-top:40px}
+@media (max-width:859px){.ment-txt .pasta-pilha{height:520px}.ment-txt .pasta{height:440px}.ment-txt .pasta-aba{bottom:calc(440px + var(--o,0) * 12px)}.ment-txt .posts{grid-template-columns:1fr}.ment-txt .post{min-height:84px;font-size:18px}}
+.sobre-txt .cred-h3{order:6}
+@media (max-width:859px){.sobre-txt .cred-h3{margin-top:32px}}
+@media (min-width:860px){.ment-txt .pasta-pilha{height:350px}.ment-txt .pasta{height:262px}.ment-txt .pasta-aba{bottom:calc(262px + var(--o,0) * 14px)}}
+/* r12: "Também sou mentora." à esquerda, polaroide à direita (pedido 15/11) */
+@media (min-width:861px){.mentoria{grid-template-columns:6fr 5fr}.mentoria .ment-txt{order:-1}.mentoria .c3{transform:rotate(3deg)}}
+
+/* ======================= showcase: botões que abrem o modal; janela de navegador (15/11/2026) =======================
+   A janela (moldura de navegador da Dia) veste as telas do modal e do case da Akrus. */
+.sc-abre{width:100%;padding:0;border:0;background:none;font:inherit;text-align:left;cursor:pointer}
+/* janela de navegador: a moldura da Dia em volta das telas */
+.janela,.quadro .janela{margin:0;position:relative;border-radius:12px;overflow:hidden;background:var(--creme-50);
+  box-shadow:0 0 0 1px rgba(7,0,60,.18),0 2px 4px rgba(7,0,60,.18),0 24px 50px -18px rgba(7,0,60,.55)!important}
+.quadro .janela{padding:0}
+.jn-bar{display:flex;align-items:center;gap:7px;height:34px;padding:0 14px;background:var(--creme-100);border-bottom:1px solid rgba(17,13,114,.08)}
+.jn-bar i{width:10px;height:10px;border-radius:50%;background:var(--creme-400)}
+.jn-bar i:first-child{background:#E8695C}.jn-bar i:nth-child(2){background:var(--amarelo-400)}.jn-bar i:nth-child(3){background:#7DB46C}
+.jn-bar span{margin:0 auto;transform:translateX(-24px);padding:3px 14px;border-radius:7px;background:rgba(17,13,114,.06);
+  font:500 12px/1.4 'Familjen Grotesk';color:var(--azul-800);letter-spacing:.01em}
+.janela img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:50% 0;border-radius:0}
+
+
+/* ======================= modal dos projetos (referência radilson.com, pedido da Laura 15/11: "mas com personalidade") =======================
+   Tela cheia: a galeria de telas à esquerda rola sobre o campo pintado do próprio card (mesma semente e paleta, então o card
+   "abre" no modal), e a ficha fica num painel de papel à direita. Personalidade: aquarela por projeto, janelas em desnível,
+   rótulos em Monocraft, divisórias tracejadas como os botões das redes, selo com a inicial em pixel. URL ?projeto=. */
+html.pm-aberto{overflow:hidden}
+.pj-modal{position:fixed;inset:0;width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:var(--azul-900);color:var(--creme-900);
+  display:grid;grid-template-columns:minmax(0,1fr) clamp(360px,30vw,480px);overflow:hidden}
+.pj-modal:not([open]){display:none}
+.pj-modal::backdrop{background:rgba(9,6,60,.5)}
+.pm-esq{position:relative;overflow:hidden;isolation:isolate;background:var(--azul-800)}
+.pm-tinta{position:absolute;inset:-4%;width:108%;height:108%;display:block;z-index:-1}
+.pm-galeria{height:100%;overflow:auto;overscroll-behavior:contain;padding:clamp(28px,4vw,72px) clamp(24px,5vw,96px) 120px;
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:max-content;align-items:start;gap:clamp(24px,3vw,48px) clamp(20px,2.6vw,40px);align-content:start}
+.pm-galeria:focus,.pm-galeria:focus-visible{outline:none}
+.pm-galeria .janela{opacity:0;translate:0 40px;rotate:var(--rz,0deg);transition:opacity .7s cubic-bezier(.23,1,.32,1),translate .9s cubic-bezier(.23,1,.32,1)}
+.pm-galeria .janela.in{opacity:1;translate:0 0}
+.pm-galeria .janela:first-child{grid-column:1/-1}
+.pm-galeria .janela:nth-child(2){--rz:-1.2deg;margin-top:28px}
+.pm-galeria .janela:nth-child(3){--rz:1.4deg;margin-top:96px}
+.pm-galeria .janela:nth-child(4){grid-column:1/-1;width:82%;justify-self:center;--rz:-.6deg}
+.pm-galeria .janela img{aspect-ratio:auto}
+.pm-lado{position:relative;overflow:auto;padding:28px clamp(24px,2.6vw,40px) 40px;background:var(--creme-100);border-left:2px solid var(--azul-900);
+  box-shadow:-1px 0 0 rgba(17,13,114,.12),-30px 0 60px -30px rgba(4,0,40,.6);display:flex;flex-direction:column}
+.pm-topo{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:44px}
+.pm-meta{font:400 13px/1.4 'Monocraft',ui-monospace,monospace;color:var(--creme-700);letter-spacing:.02em}
+.pm-fechar{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1.5px dashed rgba(17,13,114,.35);background:none;color:var(--azul-900);
+  font:400 24px/1 'Familjen Grotesk';cursor:pointer;transition:background .25s,border-color .25s,rotate .4s cubic-bezier(.23,1,.32,1)}
+.pm-fechar:hover{background:var(--creme-200);border-style:solid;rotate:90deg}
+.pm-selo{width:64px;height:64px;margin:32px 0 28px;border-radius:14px;display:grid;place-items:center;overflow:hidden;position:relative;
+  font:400 30px/1 'Monocraft',monospace;color:var(--creme-50);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 6px 14px -6px rgba(7,0,60,.5)}
+.pm-selo canvas{position:absolute;inset:0;width:100%;height:100%}
+.pm-selo b{position:relative;font-weight:400;text-shadow:0 1px 0 rgba(0,0,0,.25)}
+.pm-lado h3{margin:56px 0 0;font:600 clamp(30px,2.4vw,40px)/1 'Familjen Grotesk';letter-spacing:-.04em;color:var(--azul-950)}
+.pm-lead{margin:16px 0 0;font:500 19px/1.45 'Familjen Grotesk';color:var(--creme-900);max-width:32ch}
+.pm-ficha{margin:40px 0 0;padding:0}
+.pm-ficha>div{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:14px 0;border-top:1.5px dashed rgba(17,13,114,.22)}
+.pm-ficha>div:last-child{border-bottom:1.5px dashed rgba(17,13,114,.22)}
+.pm-ficha dt{font:400 12px/1.7 'Monocraft',monospace;color:var(--creme-700);text-transform:uppercase;letter-spacing:.04em}
+.pm-ficha dd{margin:0;text-align:right;font:400 16px/1.5 'Familjen Grotesk';color:var(--creme-900)}
+.pm-ficha dd span{display:block}
+.pm-link{align-self:flex-start;margin-top:28px;display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:99px;background:var(--azul-700);color:var(--creme-50);
+  font:500 16px 'Familjen Grotesk';text-decoration:none;transition:background .2s,translate .3s cubic-bezier(.23,1,.32,1)}
+.pm-link:hover{background:var(--azul-800);translate:0 -2px}
+.pm-link[hidden]{display:none}
+.pm-nav-w{margin-top:0;padding-top:48px;display:flex;justify-content:space-between;gap:12px}
+.pm-nav{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:99px;border:1.5px dashed rgba(17,13,114,.35);background:none;
+  color:var(--azul-900);font:500 15px 'Familjen Grotesk';cursor:pointer;transition:background .2s,border-color .2s}
+.pm-nav:hover{background:var(--creme-200);border-style:solid}
+.pm-nav:focus-visible,.pm-fechar:focus-visible,.pm-link:focus-visible{outline:2px solid var(--azul-700);outline-offset:3px}
+/* entrada: a galeria abre do card (view transition) e o painel desliza da direita */
+.pj-modal[open] .pm-lado{animation:pm-lado .7s cubic-bezier(.23,1,.32,1) both}
+.pj-modal[open] .pm-lado>*{animation:pm-sobe .7s cubic-bezier(.23,1,.32,1) both}
+.pj-modal[open] .pm-lado>:nth-child(2){animation-delay:.08s}.pj-modal[open] .pm-lado>:nth-child(3){animation-delay:.12s}
+.pj-modal[open] .pm-lado>:nth-child(4){animation-delay:.16s}.pj-modal[open] .pm-lado>:nth-child(5){animation-delay:.2s}.pj-modal[open] .pm-lado>:nth-child(n+6){animation-delay:.24s}
+.pj-modal.saindo{animation:pm-out .28s ease-in forwards}
+@keyframes pm-lado{from{translate:100% 0}}
+@keyframes pm-sobe{from{opacity:0;translate:0 14px}}
+@keyframes pm-out{to{opacity:0}}
+::view-transition-group(pm-tinta){animation-duration:.6s;animation-timing-function:cubic-bezier(.23,1,.32,1)}
+@media (max-width:900px){
+  .pj-modal{grid-template-columns:1fr;grid-template-rows:auto 1fr;overflow:auto}
+  .pm-esq{height:auto;min-height:0}
+  .pm-galeria{height:auto;overflow:visible;padding:76px 16px 32px;grid-template-columns:1fr;gap:20px}
+  .pm-galeria .janela:nth-child(n){grid-column:auto;width:auto;margin-top:0}
+  .pm-lado{overflow:visible;box-shadow:0 -20px 40px -20px rgba(4,0,40,.5)}
+  .pm-topo{position:fixed;top:12px;right:12px;left:12px;z-index:3;pointer-events:none}
+  .pm-meta{padding:6px 12px;border-radius:99px;background:var(--creme-100);pointer-events:auto}
+  .pm-fechar{background:var(--creme-100);border-style:solid;pointer-events:auto}
+  .pm-selo{margin-top:8px}
+  @keyframes pm-lado{from{translate:0 40px;opacity:0}}
+}
+
+/* ---------- selos da mentoria (pedido da Laura, 15/11): Framer Expert, Google Developer, Superteam PRO ----------
+   Carimbos redondos com o texto girando na borda, inclinados como os post-its das pastas. */
+.selos{list-style:none;margin:28px 0 0;padding:0;display:flex;gap:14px;flex-wrap:wrap}
+.selo{position:relative;display:grid;place-items:center;width:112px;height:112px;border-radius:50%;text-decoration:none;color:var(--creme-900);
+  background:var(--creme-100);box-shadow:inset 0 0 0 2px var(--creme-100),inset 0 0 0 3.5px rgba(17,13,114,.25),0 2px 0 rgba(0,0,0,.18),0 12px 22px -10px rgba(4,0,40,.6);
+  transition:rotate .6s cubic-bezier(.23,1,.32,1),translate .4s cubic-bezier(.23,1,.32,1)}
+.selos li:nth-child(1) .selo{rotate:-7deg}.selos li:nth-child(2) .selo{rotate:5deg}.selos li:nth-child(3) .selo{rotate:-3deg}
+.selo-r{position:absolute;inset:0;width:100%;height:100%;transform-origin:50% 50%;animation:selo-gira 26s linear infinite}
+.selo-r text{font:400 9.6px 'Monocraft',monospace;letter-spacing:.06em;fill:currentColor}
+.selo-c{position:relative;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:#fff;box-shadow:0 0 0 1px rgba(17,13,114,.12)}
+.selo-framer .selo-c{background:var(--azul-950);color:#fff}
+.selo-st .selo-c{background:var(--amarelo-300)}
+.selo-st .selo-c b{font:400 14px 'Monocraft',monospace;color:var(--azul-950)}
+a.selo:hover,a.selo:focus-visible{rotate:0deg;translate:0 -4px}
+a.selo:hover .selo-r{animation-duration:6s}
+a.selo:focus-visible{outline:3px solid var(--amarelo-300);outline-offset:4px}
+@keyframes selo-gira{to{rotate:360deg}}
+@media (max-width:600px){.selo{width:96px;height:96px}.selo-c{width:44px;height:44px}}
+
+/* galeria com uma tela só: a janela grande, centrada na altura */
+.pm-galeria.so1{align-content:center;grid-template-columns:1fr}
+.pm-galeria.so1 .janela{width:min(100%,1100px);justify-self:center}
+@media (max-width:900px){.pm-lado h3{margin-top:24px}}
+.pm-tinta{opacity:0;transition:opacity .8s ease}.pm-tinta.pintado{opacity:1}
+
+/* ================= mentoria r13 (pedido 15/11): "Quer aprender comigo?"; selos embaixo da foto, sem sticky;
+   as pastas viram a gaveta inteira da seção: abas largas com o nome inteiro, pasta aberta em duas folhas
+   (assunto à esquerda, post-its à direita) e a troca puxa a pasta para cima antes de assentar ================= */
+.mentoria{row-gap:72px}
+@media (min-width:861px){.mentoria{align-items:center}}
+.ment-foto{display:flex;flex-direction:column;align-items:center}
+.ment-foto .c3{width:94%}
+.ment-foto .selos{margin:36px 0 0;justify-content:center;gap:18px}
+.mentoria>.pastas{grid-column:1/-1;margin:0}
+.mentoria>.pastas .pasta-pilha{height:476px}
+.mentoria>.pastas .pasta{height:380px;padding:0;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,2.3fr);border-radius:6px 16px 16px 16px;
+  transform:translateY(calc(var(--o,0) * -14px)) scale(calc(1 - var(--o,0) * .01));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7),inset -1px -1px 0 rgba(120,100,60,.25),0 2px 0 #d3c397,0 4px 0 #c6b588,0 30px 60px -24px rgba(0,0,0,.7)}
+.mentoria>.pastas .pasta-aba{width:18.6%;left:calc(var(--i) * 20.35%);height:54px;padding:9px 12px 0;bottom:calc(380px + var(--o,0) * 14px);border-radius:14px 14px 0 0}
+.mentoria>.pastas .etq{font-size:14px;padding:8px 12px;text-overflow:clip}
+.mentoria>.pastas .etq .nm{display:inline}
+.mentoria>.pastas .pasta-aba[aria-selected="true"]{z-index:30}
+/* folha da esquerda: o assunto; a dobra tracejada separa as folhas */
+.mentoria>.pastas .pasta-cab{position:relative;flex-direction:column;align-items:flex-start;gap:18px;margin:0;padding:44px 36px;border:0;border-right:1.5px dashed rgba(120,100,60,.38)}
+.mentoria>.pastas .pasta-n{font-size:15px}
+.mentoria>.pastas .pasta-cab h3{font-size:clamp(40px,4.4vw,64px);letter-spacing:-.045em}
+.mentoria>.pastas .pasta-cab::after{content:'';position:absolute;top:-16px;right:30px;width:26px;height:64px;border:3px solid #9C9384;border-radius:13px;border-bottom-color:transparent;rotate:8deg;
+  box-shadow:inset 0 0 0 3px transparent;opacity:.9}
+/* folha da direita: post-its colados */
+.mentoria>.pastas .posts{align-self:center;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;padding:0 44px}
+.mentoria>.pastas .post{min-height:172px;padding:36px 22px 20px;font-size:clamp(20px,1.65vw,24px);line-height:1.2}
+/* troca: a pasta sobe da gaveta e assenta; post-its colam um a um */
+@keyframes gaveta{0%{translate:0 0}35%{translate:0 -26px}100%{translate:0 0}}
+@keyframes cola{from{opacity:0;scale:1.12;translate:0 -10px}}
+@media (prefers-reduced-motion:reduce){.mentoria>.pastas .pasta.is-on,.mentoria>.pastas .pasta.is-on .post{animation:none}}
+@media (max-width:860px){
+  .mentoria{row-gap:56px}
+  .ment-foto .selos{gap:12px}
+  .mentoria>.pastas .pasta-pilha{height:640px}
+  .mentoria>.pastas .pasta{height:560px;grid-template-columns:1fr;grid-template-rows:auto 1fr;transform:translateY(calc(var(--o,0) * -10px))}
+  .mentoria>.pastas .pasta-aba{width:19.4%;left:calc(var(--i) * 20.15%);height:44px;padding:6px 3px 0;bottom:calc(560px + var(--o,0) * 10px)}
+  .mentoria>.pastas .etq{font-size:10.5px;padding:6px 2px;text-align:center;letter-spacing:-.02em}
+  .mentoria>.pastas .etq>span{display:none}
+  .mentoria>.pastas .pasta-cab{padding:26px 20px 18px;border-right:0;border-bottom:1.5px dashed rgba(120,100,60,.38);flex-direction:row;align-items:baseline;gap:12px}
+  .mentoria>.pastas .pasta-cab h3{font-size:38px}
+  .mentoria>.pastas .pasta-cab::after{top:-14px;right:22px;height:52px;width:22px}
+  .mentoria>.pastas .posts{grid-template-columns:1fr;gap:18px;padding:24px 20px;align-self:start}
+  .mentoria>.pastas .post{min-height:0;padding:26px 18px 18px;font-size:20px}
+}
+/* r13b: pasta mais baixa; número no alto e assunto embaixo na folha da esquerda; sem clipe solto */
+.mentoria>.pastas .pasta-pilha{height:426px}
+.mentoria>.pastas .pasta{height:330px}
+.mentoria>.pastas .pasta-aba{bottom:calc(330px + var(--o,0) * 14px)}
+.mentoria>.pastas .pasta-cab{justify-content:space-between;padding:40px 36px 44px}
+.mentoria>.pastas .pasta-cab::after{display:none}
+@media (max-width:860px){
+  .mentoria>.pastas .pasta-pilha{height:540px}
+  .mentoria>.pastas .pasta{height:460px}
+  .mentoria>.pastas .pasta-aba{bottom:calc(460px + var(--o,0) * 10px)}
+  .mentoria>.pastas .pasta-cab{justify-content:flex-start;padding:24px 20px 18px}
+}
+@media (max-width:860px){.mentoria>.pastas .pasta-pilha{height:470px}.mentoria>.pastas .pasta{height:390px}.mentoria>.pastas .pasta-aba{bottom:calc(390px + var(--o,0) * 10px)}}
+
+/* ================= outros projetos em slideshow (pedido da Laura, 15/11: "um ao lado do outro como slideshow")
+   Trilho horizontal com snap que sangra até a borda direita; setas, arraste com o mouse e teclado. ================= */
+.pk-topo{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin:120px 0 36px}
+.pk-h{margin:0;font:600 clamp(28px,2.6vw,40px)/1 'Familjen Grotesk';letter-spacing:-.035em;color:var(--creme-100)}
+.pk-ctrl{display:flex;gap:10px}
+.pk-seta{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;border:1.5px solid rgba(244,235,211,.55);background:none;color:var(--creme-100);
+  font:400 18px 'Monocraft',monospace;cursor:pointer;transition:background .2s,color .2s,border-color .2s,opacity .2s}
+.pk-seta:hover:not(:disabled){background:var(--creme-100);color:var(--azul-800);border-color:var(--creme-100)}
+.pk-seta:disabled{opacity:.35;cursor:default}
+.pk-seta:focus-visible{outline:3px solid var(--amarelo-300);outline-offset:3px}
+.pk-show{display:flex!important;gap:32px!important;margin:0 calc(50% - 50vw) 0 0!important;padding:0 max(24px,calc(50vw - 50% + 0px)) 8px 0;overflow-x:auto;scroll-snap-type:x mandatory;
+  scrollbar-width:none;overscroll-behavior-x:contain;cursor:grab}
+.pk-show::-webkit-scrollbar{display:none}
+.pk-show.arrasta{cursor:grabbing;scroll-snap-type:none;user-select:none}
+.pk-show.arrasta .sc-abre{pointer-events:none}
+.pk-show:focus-visible{outline:3px solid var(--amarelo-300);outline-offset:6px}
+.pk-show .sc{flex:none;width:clamp(300px,40vw,580px)!important;grid-column:auto!important;justify-self:auto!important;scroll-snap-align:start}
+@media (max-width:860px){.pk-topo{margin:72px 0 24px}.pk-show{gap:16px!important}.pk-show .sc{width:84vw!important}.pk-seta{width:44px;height:44px}}
+/* projetos em construção (pedido 15/11): a aquarela do card com o nome grande e uma fita; sem modal até ter tela */
+.sc-obra .sc-abre{cursor:default}
+.sc-obra .quadro{aspect-ratio:auto}
+.obra{position:relative;display:grid;place-items:center;aspect-ratio:16/10;border-radius:10px;background:color-mix(in srgb,var(--creme-50) 86%,transparent);box-shadow:0 0 0 1px rgba(7,0,60,.18),0 24px 50px -18px rgba(7,0,60,.55);overflow:hidden}
+.obra-n{font:600 clamp(30px,3.4vw,54px)/1 'Familjen Grotesk';letter-spacing:-.045em;color:var(--azul-900);text-align:center;padding:0 8%}
+.fita-obra{position:absolute;left:-12%;right:-12%;top:20%;rotate:-8deg;padding:9px 0;text-align:center;background:var(--amarelo-300);color:var(--azul-950);
+  font:400 13px 'Monocraft',monospace;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 2px 0 rgba(0,0,0,.12);
+  background-image:repeating-linear-gradient(-45deg,transparent 0 14px,rgba(17,13,114,.09) 14px 28px)}
+/* banca r6: pasta aberta sem vazio (o número já está na aba); trilho sangra dos dois lados */
+@media (min-width:861px){.mentoria>.pastas .pasta-n{display:none}.mentoria>.pastas .pasta-cab{justify-content:center}}
+.pk-show{margin-left:calc(50% - 50vw)!important;padding-left:calc(50vw - 50%)!important;scroll-padding-left:calc(50vw - 50%)}
+/* ecossistema Akrus (15/11): título do grupo, etiquetas [apps]/[site]; o card do site espelha o dos apps */
+.eco-topo{margin:72px 0 32px}
+.eco-tag{display:inline-block;margin-bottom:14px;font:400 15px 'Monocraft',monospace;color:var(--amarelo-300);letter-spacing:.02em}
+.pk-site{display:grid!important;align-items:end;gap:56px;width:100%;margin-top:72px;padding:0;border:0;background:none;font:inherit;text-align:left;cursor:pointer;grid-template-columns:minmax(240px,1fr) minmax(0,1024px)}
+.pk-site .pk-txt{order:-1}
+@media (max-width:860px){.eco-topo{margin:48px 0 24px}.pk-site{grid-template-columns:1fr;margin-top:56px}.pk-site .pk-txt{order:0}}
