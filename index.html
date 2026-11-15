@@ -1692,7 +1692,7 @@ console.log('%cvocê abriu o console. é assim que se investiga.\nhello@lauraeck
 .aviso-obra i{width:8px;height:8px;background:#F24100;flex:none;animation:aviso-pisca 1.2s steps(2) infinite}
 .aviso-obra button{all:unset;pointer-events:auto;position:relative;cursor:pointer;width:24px;height:24px;flex:none;
   border-radius:50%;display:grid;place-items:center;color:#2B35C9}
-.aviso-obra button::before{content:"";position:absolute;inset:-10px}
+.aviso-obra button::before{content:"";position:absolute;inset:-10px -10px -10px 0}
 .aviso-obra button svg{width:10px;height:10px}
 .aviso-obra button:hover{background:#E4EBFF}
 .aviso-obra button:focus-visible{outline:2px solid #2B35C9;outline-offset:2px}
@@ -1701,7 +1701,7 @@ console.log('%cvocê abriu o console. é assim que se investiga.\nhello@lauraeck
 @media (max-width:520px){.aviso-obra{left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));animation:none}}
 </style>
 <div class="aviso-obra">
-  <div role="status"><i aria-hidden="true"></i><span data-pt="Site em construção" data-en="Site under construction"></span></div>
+  <div role="status"><i aria-hidden="true"></i><span data-pt="Site em construção" data-en="Site under construction">Site em construção</span></div>
   <button type="button" aria-label="Fechar aviso" data-pt-label="Fechar aviso" data-en-label="Close notice"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 1l8 8M9 1L1 9" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg></button>
 </div>
 <script>
@@ -1709,7 +1709,7 @@ console.log('%cvocê abriu o console. é assim que se investiga.\nhello@lauraeck
 try{if(sessionStorage.getItem('aviso-obra')==='x'){a.remove();return}}catch(e){}
 const s=a.querySelector('span'),b=a.querySelector('button');
 const sync=()=>{const en=document.documentElement.lang==='en';s.textContent=en?s.dataset.en:s.dataset.pt;b.setAttribute('aria-label',en?b.dataset.enLabel:b.dataset.ptLabel)};
-setTimeout(sync,800);new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+sync();new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
 b.addEventListener('click',()=>{const alvo=document.querySelector('header a, nav a');a.remove();alvo&&alvo.focus();try{sessionStorage.setItem('aviso-obra','x')}catch(e){}});})();
 </script>
 </body>
