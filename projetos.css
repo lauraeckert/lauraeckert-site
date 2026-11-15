@@ -607,10 +607,11 @@ a.selo:focus-visible{outline:3px solid var(--amarelo-300);outline-offset:4px}
   background-image:repeating-linear-gradient(-45deg,transparent 0 14px,rgba(17,13,114,.09) 14px 28px)}
 /* banca r6: pasta aberta sem vazio (o número já está na aba); trilho sangra dos dois lados */
 @media (min-width:861px){.mentoria>.pastas .pasta-n{display:none}.mentoria>.pastas .pasta-cab{justify-content:center}}
-.pk-show{margin-left:calc(50% - 50vw)!important;padding-left:calc(50vw - 50%)!important;scroll-padding-left:calc(50vw - 50%)}
+.pk-show{margin-left:calc(50% - 50vw)!important;padding-left:calc(50vw - 50%)!important}
 /* ecossistema Akrus (15/11): título do grupo, etiquetas [apps]/[site]; o card do site espelha o dos apps */
 .eco-topo{margin:72px 0 32px}
 .eco-tag{display:inline-block;margin-bottom:14px;font:400 15px 'Monocraft',monospace;color:var(--amarelo-300);letter-spacing:.02em}
 .pk-site{display:grid!important;align-items:end;gap:56px;width:100%;margin-top:72px;padding:0;border:0;background:none;font:inherit;text-align:left;cursor:pointer;grid-template-columns:minmax(240px,1fr) minmax(0,1024px)}
 .pk-site .pk-txt{order:-1}
 @media (max-width:860px){.eco-topo{margin:48px 0 24px}.pk-site{grid-template-columns:1fr;margin-top:56px}.pk-site .pk-txt{order:0}}
+@media (min-width:861px){.mentoria>.pastas .pasta-pilha{height:396px}.mentoria>.pastas .pasta{height:300px}.mentoria>.pastas .pasta-aba{bottom:calc(300px + var(--o,0) * 14px)}}

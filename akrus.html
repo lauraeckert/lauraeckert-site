@@ -3,9 +3,32 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Akrus · case de Laura Eckert</title>
-<meta name="description" content="Akrus: uma plataforma que paga criadores brasileiros em dólar. Produto, design e front-end de Laura Eckert.">
-<link rel="icon" id="fav" href="data:,">
+<title>Akrus: case de produto e design · Laura Eckert</title>
+<link rel="canonical" href="https://lauraeckert.com.br/akrus.html">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Laura Eckert">
+<meta name="theme-color" content="#2B35C9">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Laura Eckert">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Akrus: case de produto e design · Laura Eckert">
+<meta property="og:description" content="Akrus, plataforma que paga criadores brasileiros em dólar. Case de produto, design e front-end de Laura Eckert, da pesquisa ao produto no ar.">
+<meta property="og:url" content="https://lauraeckert.com.br/akrus.html">
+<meta property="og:image" content="https://lauraeckert.com.br/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Laura Eckert — Building the beyond.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@eckertlaura_">
+<meta name="twitter:title" content="Akrus: case de produto e design · Laura Eckert">
+<meta name="twitter:description" content="Akrus, plataforma que paga criadores brasileiros em dólar. Case de produto, design e front-end de Laura Eckert, da pesquisa ao produto no ar.">
+<meta name="twitter:image" content="https://lauraeckert.com.br/og.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "CreativeWork", "name": "Akrus — case de Laura Eckert", "url": "https://lauraeckert.com.br/akrus.html", "author": {"@type": "Person", "name": "Laura Eckert", "url": "https://lauraeckert.com.br/"}}</script>
+
+<meta name="description" content="Akrus, plataforma que paga criadores brasileiros em dólar. Case de produto, design e front-end de Laura Eckert, da pesquisa ao produto no ar.">
+<link rel="icon" id="fav" type="image/png" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
@@ -143,11 +166,12 @@ body{overflow-x:clip}#case{background:var(--papel);color:var(--tinta);font:400 1
   background:var(--papel);box-shadow:0 -1px 0 rgba(27,24,19,.06),0 -20px 50px -20px rgba(27,24,19,.22)}
 .doca a{pointer-events:auto;position:absolute;left:50%;top:62px;transform:translateX(-50%)}
 .doca.fora{opacity:0;translate:0 60px}
+.doca::before{display:none!important}.doca{height:96px!important}.doca a{top:24px!important;box-shadow:0 10px 30px -10px rgba(7,0,60,.55)}
 .doca.fora a{pointer-events:none}
 
 /* ---------- seções ---------- */
 main section{scroll-margin-top:80px}
-.wrap{width:min(1300px,100% - 40px);margin:0 auto}
+#case .wrap{width:min(1300px,100% - 40px);margin:0 auto;padding:0}
 .s-h2{margin:0 auto;max-width:20ch;text-align:center;font:600 clamp(34px,3.6vw,54px)/1.04 'Familjen Grotesk';letter-spacing:-.04em;text-wrap:balance}
 .sobe{opacity:0;translate:0 36px;transition:opacity .9s var(--ease),translate 1.1s var(--ease)}
 .sobe.in{opacity:1;translate:0 0}
@@ -208,7 +232,7 @@ main section{scroll-margin-top:80px}
 /* CTA e rodapé */
 .fim{padding:120px 0 80px;text-align:center}
 .fim .s-h2{margin-bottom:44px}
-.fim .volta{display:block;width:max-content;margin:22px auto 0;font:500 16px 'Familjen Grotesk';color:var(--apoio)}
+.fim .volta{display:flex;align-items:center;min-height:44px;width:max-content;margin:14px auto 0;font:500 16px 'Familjen Grotesk';color:var(--apoio)}
 .rod{border-top:1px solid var(--linha);padding:40px 0 48px}
 .rod .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font:400 12px/1.9 'Monocraft',monospace;text-transform:uppercase;letter-spacing:.06em;color:var(--apoio)}
 .rod a{text-decoration:none}.rod a:hover{color:var(--tinta)}
@@ -325,7 +349,7 @@ main section{scroll-margin-top:80px}
 /* línguas */
 .lingua{padding:30px;background:#fff;border-radius:18px;box-shadow:0 0 0 1px var(--linha)}
 .chave-l{position:relative;display:inline-grid;grid-template-columns:1fr 1fr;padding:4px;border-radius:99px;background:#F3F0E8}
-.chave-l button{position:relative;z-index:1;min-width:120px;height:40px;border:0;border-radius:99px;background:none;font:500 15px 'Familjen Grotesk';color:var(--apoio);cursor:pointer;transition:color .3s}
+.chave-l button{position:relative;z-index:1;min-width:120px;height:44px;border:0;border-radius:99px;background:none;font:500 15px 'Familjen Grotesk';color:var(--apoio);cursor:pointer;transition:color .3s}
 .chave-l button.on{color:var(--papel)}
 .chave-m{position:absolute;left:4px;top:4px;bottom:4px;width:calc(50% - 4px);border-radius:99px;background:var(--tinta);transition:translate .5s var(--ease)}
 .chave-l.inv .chave-m{translate:100% 0}
@@ -703,7 +727,7 @@ main section{scroll-margin-top:80px}
 .biz-h{margin:0;font:600 clamp(48px,6vw,96px)/.92 'Familjen Grotesk';letter-spacing:-.055em}
 .biz-lead{margin:0;font:400 19px/1.55 'Familjen Grotesk';color:rgba(251,250,246,.75);max-width:48ch}
 .biz-lp{margin-top:56px}
-.biz-g{display:grid;grid-template-columns:1.3fr 1.1fr .55fr;gap:20px;margin-top:20px;align-items:start}
+.biz-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:20px;align-items:start}
 .biz-c{margin:0;border-radius:16px;overflow:hidden;background:#1E1A15;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
 .biz-c img{display:block;width:100%;height:auto}
 .biz-c figcaption{padding:16px 18px 20px;font:400 15px/1.5 'Familjen Grotesk';color:rgba(251,250,246,.7)}
@@ -726,7 +750,7 @@ main section{scroll-margin-top:80px}
   .pn-aba{padding:14px}.pn-nome{font-size:18px}.pn-num{font-size:22px}.pn-d{display:none}
   .pn-fita button{width:120px}
   .biz{padding:88px 0}.biz-top{grid-template-columns:1fr;gap:20px}.biz-lp{margin-top:36px}
-  .biz-g{grid-template-columns:1fr}.biz-cel{max-width:300px}
+  .biz-g{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 }
 </style>
 <body class="intro">
@@ -1421,7 +1445,7 @@ addEventListener('load',()=>{
       <div class="mp-ficha" aria-live="polite"></div>
     </div>
     <ol class="mp-lista">
-      <li data-f="produto" data-d="2026-10-06"><b>Discovery do app</b><span class="m">297 rotas inventariadas, 37 visitas, 32 telas renderizadas</span><span class="a">A prioridade é dar continuidade entre as etapas, do cadastro à primeira venda.</span></li>
+      <li data-f="produto" data-d="2026-10-06"><b>Discovery do app</b><span class="m">297 rotas inventariadas e 37 visitas ao app</span><span class="a">A prioridade é dar continuidade entre as etapas, do cadastro à primeira venda.</span></li>
       <li data-f="concorrencia" data-d="2026-10-08"><b>Camadas competitivas</b><span class="m">Fontes oficiais de cada concorrente</span><span class="a">A disputa acontece em cinco camadas: IA, DeFi, dólar, saque e taxa.</span></li>
       <li data-f="concorrencia" data-d="2026-10-22"><b>Benchmark de landing pages</b><span class="m">7 sites, depois 17, capturados inteiros em 1440 px</span><span class="a">Um mapa de seções do mercado; os números dos concorrentes entram como alegação, não como fato.</span></li>
       <li data-f="produto" data-d="2026-10-22"><b>Teste A/B da LP</b><span class="m">Produto demonstrado × narrativa do fundador</span><span class="a">Proposta registrada; sem medição de conversão, nenhuma versão foi declarada vencedora.</span></li>
@@ -1432,7 +1456,7 @@ addEventListener('load',()=>{
       <li data-f="concorrencia" data-d="2026-11-09"><b>Cartografia ampliada</b><span class="m">379 plataformas em 19 áreas</span><span class="a">A área mais cheia é a de membros e cursos, com 86 plataformas.</span></li>
       <li data-f="concorrencia" data-d="2026-11-09"><b>Infraestrutura da Business</b><span class="m">13 empresas, depois 75 nomes</span><span class="a">Comparar primeiro com Finuse, 4Pay e Tylt.</span></li>
       <li data-f="comportamento" data-d="2026-11-09"><b>Perfis com fit</b><span class="m">81 perfis, 2.035 posts, 1.669 comentários</span><span class="a">Ninguém fala em dolarizar o Pix; a objeção mais citada é imposto e Receita, com 108 menções.</span></li>
-      <li data-f="produto" data-d="2026-11-09"><b>Engenharia reversa da área de membros</b><span class="m">244 campos de uma referência do setor</span><span class="a">22 itens de backlog para a área do aluno.</span></li>
+      <li data-f="produto" data-d="2026-11-09"><b>Engenharia reversa da área de membros</b><span class="m">Uma referência do setor; 244 campos propostos em 27 grupos</span><span class="a">22 itens de backlog, com critérios de aceite, para a área do aluno.</span></li>
       <li data-f="concorrencia" data-d="2026-11-11"><b>Benchmark da LP Partners</b><span class="m">6 páginas de programas de parceiros</span><span class="a">A sequência convite, identificação, valor, remuneração, simulação e candidatura.</span></li>
       <li data-f="produto" data-d="2026-11-12"><b>Jornadas de checkout</b><span class="m">6 plataformas, em 1440 e 390 px</span><span class="a">Cartão e boleto não geravam evento de funil na Akrus.</span></li>
       <li data-f="produto" data-d="2026-11-12"><b>Pesquisa focal do checkout</b><span class="m">4 fontes primárias</span><span class="a">Medir primeiro o custo e o esforço da primeira compra no celular.</span></li>
@@ -1440,7 +1464,7 @@ addEventListener('load',()=>{
   </div>
 </section>
 
-<!-- A3 · os painéis: um produto, quatro trabalhos, telas reais (apps/web/public/telas, LP Partners) -->
+<!-- A3 · os painéis: telas reais de apps/web/public/telas e da LP Partners; rotas = page.tsx em apps/web/src/app: (app)/produtor 91, (app)/aluno 30, partner 6, (admin)/admin 105 -->
 <section class="paineis" id="dentro" aria-labelledby="h-pain">
   <div class="wrap">
     <h2 class="s-h2 sobe" id="h-pain">Quatro painéis, um produto</h2>
@@ -1470,9 +1494,10 @@ addEventListener('load',()=>{
     </div>
     <figure class="janela biz-lp sobe"><div class="jn-bar" aria-hidden="true"><i></i><i></i><i></i><span>Akrus Business</span></div><img src="img/akbz-lp.jpg" width="1440" height="824" loading="lazy" alt="Página da Akrus Business: Sua empresa vai mais longe. Seu dinheiro também pode."></figure>
     <div class="biz-g">
-      <figure class="biz-c sobe"><img src="img/akb2-desktop-cobranca-dial-celular.jpg" width="1400" height="1064" loading="lazy" alt="Cobrança Pix, parte em dólar escolhida num dial e o painel no celular"><figcaption><b>Parte em dólar, você escolhe.</b> Em cada cobrança, quanto fica em real na chave Pix e quanto vai em dólar para a carteira.</figcaption></figure>
-      <figure class="biz-c sobe"><img src="img/akb2-cobranca-paga.jpg" width="1200" height="969" loading="lazy" alt="Cobrança paga, com o valor confirmado"><figcaption><b>Cobrar vira um toque.</b> Valor, vencimento e destino do dinheiro, por link ou QR, até a confirmação.</figcaption></figure>
-      <figure class="biz-c biz-cel sobe"><img src="img/akbz-cobrar.jpg" width="390" height="844" loading="lazy" alt="App da Business no celular: tela Receber com o valor e a moeda"><figcaption><b>No celular.</b> Receber em duas etapas, com a moeda escolhida antes do código Pix.</figcaption></figure>
+      <figure class="biz-c sobe"><img src="img/akbz-qr.jpg" width="330" height="498" loading="lazy" alt="QR fixo: não expira, quem paga digita o valor. Para o balcão, a recepção ou o cartão de visita."></figure>
+      <figure class="biz-c sobe"><img src="img/akbz-sacar.jpg" width="329" height="466" loading="lazy" alt="Precisa antes? Sacar: o que o cliente pagou vai no próximo envio, ou na hora para a chave Pix da empresa."></figure>
+      <figure class="biz-c sobe"><img src="img/akbz-dolar.jpg" width="330" height="405" loading="lazy" alt="Parte em dólar, você escolhe: em cada cobrança, quanto fica em real na chave Pix e quanto vai em dólar para a carteira."></figure>
+      <figure class="biz-c sobe"><img src="img/akbz-bolso.jpg" width="330" height="482" loading="lazy" alt="O mesmo painel no bolso: cobre entre um atendimento e outro e saque sem abrir o computador."></figure>
     </div>
   </div>
 </section>
@@ -2539,7 +2564,7 @@ console.log('%cvocê abriu o console. é assim que se investiga.\nhello@lauraeck
   // painéis: aba escolhe o painel; a fita escolhe a tela
   const abas=$$('.pn-aba'),palcos=$$('.pn-p');
   palcos.forEach(p=>{const T=JSON.parse(p.dataset.telas);
-    p.innerHTML='<figure class="janela pn-jan"><div class="jn-bar" aria-hidden="true"><i></i><i></i><i></i><span></span></div><img loading="lazy" width="1600" height="1000"></figure><div class="pn-fita"></div>';
+    p.innerHTML='<figure class="janela pn-jan"><div class="jn-bar" aria-hidden="true"><i></i><i></i><i></i><span></span></div><img loading="lazy" width="1600" height="930"></figure><div class="pn-fita"></div>';
     const img=p.querySelector('img'),rot=p.querySelector('.jn-bar span'),fita=p.querySelector('.pn-fita'),jan=p.querySelector('.pn-jan');
     const mostra=(i,anim)=>{const [src,nome,alt]=T[i];const ir=()=>{img.src=src;img.alt=alt;rot.textContent=nome;jan.classList.remove('troca')};
       if(anim){jan.classList.add('troca');setTimeout(ir,180)}else ir();[...fita.children].forEach((b,k)=>b.setAttribute('aria-current',k===i))};

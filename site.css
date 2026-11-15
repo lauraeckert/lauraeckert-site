@@ -263,3 +263,6 @@ html[data-cta="b"] .s-cta h2{font-size:clamp(48px,6.6vw,112px)!important;max-wid
 @media (max-width:860px){.btn{min-height:48px;padding:0 22px!important}.btn-lg{min-height:52px;font-size:17px!important}#nv .nv-cta .btn{min-height:44px;padding:0 16px!important}}
 /* banca r6: "Voltar ao topo" com alvo de 44 px (o all:unset do rodapé anulava) */
 #rodape .ft-top{display:inline-flex!important;align-items:center;min-height:44px!important;padding:0 20px!important;box-sizing:border-box}
+/* banca r6 final: alvo de toque de 44 px nos links e no e-mail do rodapé */
+#rodape .ft-links a{display:inline-flex;align-items:center;min-height:44px}
+#rodape .ft-mail{min-height:44px;display:inline-flex;align-items:center}

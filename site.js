@@ -587,7 +587,8 @@ window.HERO2=true;
   const passo=()=>{const c=tr.querySelector('.sc');return c?c.getBoundingClientRect().width+parseFloat(getComputedStyle(tr).columnGap||32):tr.clientWidth*.8};
   const estado=()=>{const m=tr.scrollWidth-tr.clientWidth-4;setas[0].disabled=tr.scrollLeft<=4;setas[1].disabled=tr.scrollLeft>=m};
   setas.forEach(b=>b.addEventListener('click',()=>{tr.scrollBy({left:passo()*+b.dataset.d,behavior:'smooth'});window.somTocar&&window.somTocar('select',.3)}));
-  tr.addEventListener('scroll',()=>requestAnimationFrame(estado),{passive:true});addEventListener('resize',estado);estado();
+  const recuo=()=>{tr.style.scrollPaddingLeft=getComputedStyle(tr).paddingLeft};recuo();tr.scrollLeft=0;  // o snap alinha o card ao título, não à borda
+  tr.addEventListener('scroll',()=>requestAnimationFrame(estado),{passive:true});addEventListener('resize',()=>{recuo();estado()});estado();
   tr.addEventListener('keydown',e=>{if(e.target!==tr)return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();tr.scrollBy({left:passo()*(e.key==='ArrowRight'?1:-1),behavior:'smooth'})}});
   // arraste com o mouse; um arraste não vira clique no card
   let x0=0,s0=0,mov=false,ativo=false;
