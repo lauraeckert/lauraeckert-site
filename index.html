@@ -814,14 +814,12 @@ addEventListener('load',()=>{
   </div>
 </section>
 <!-- 5 · CTA (referência dela, 15/11): título grande, e-mail e flores em caracteres -->
-<section class="s-cta cta2" id="contato" aria-labelledby="h-cta">
-  <div class="wrap cta2-in">
-    <div class="cta2-txt">
-      <h2 id="h-cta"><span class="c2-l">Vamos construir</span> <span class="c2-l">algo</span> <span class="c2-l c2-hl"><span class="iri" data-t="memorável.">memorável.</span></span></h2>
-      <a class="cta2-mail" href="mailto:hello@lauraeckert.com.br">hello@lauraeckert.com.br <span aria-hidden="true">↗</span></a>
-    </div>
+<section class="s-cta cta2 cta3" id="contato" aria-labelledby="h-cta">
+  <div class="wrap cta3-in">
+    <h2 id="h-cta"><span class="c2-l">Vamos construir</span> <span class="c2-l">algo <span class="iri" data-t="memorável.">memorável.</span></span></h2>
+    <a class="btn btn-p btn-lg cta3-btn" href="mailto:hello@lauraeckert.com.br">Fale comigo <span class="ar" aria-hidden="true">→</span></a>
   </div>
-  <canvas class="cta2-art" aria-hidden="true"></canvas>
+  <canvas class="cta3-art" aria-hidden="true"></canvas>
 </section>
 
 </main>
@@ -1684,5 +1682,32 @@ console.log('%cvocê abriu o console. é assim que se investiga.\nhello@lauraeck
 <script src="/site.js"></script>
 <script src="/i18n-en.js"></script>
 <script src="/i18n.js"></script>
+<!-- aviso-construcao -->
+<style>
+.aviso-obra{position:fixed;left:16px;bottom:16px;z-index:2147483000;display:flex;align-items:center;gap:10px;
+  padding:9px 10px 9px 14px;border-radius:999px;background:#FEF6E2;color:#2B35C9;border:1.5px dashed #2B35C9;
+  font:500 12px/1.2 'Monocraft',ui-monospace,monospace;letter-spacing:.01em;box-shadow:0 6px 20px rgba(17,13,114,.14);
+  max-width:calc(100vw - 32px);width:max-content;white-space:nowrap;animation:aviso-in .5s cubic-bezier(.2,.8,.2,1) both .6s}
+.aviso-obra i{width:8px;height:8px;background:#F2601C;flex:none;animation:aviso-pisca 1.2s steps(2) infinite}
+.aviso-obra button{all:unset;cursor:pointer;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;
+  font:16px/1 system-ui,sans-serif;color:#2B35C9}
+.aviso-obra button:hover{background:#E4EBFF}
+.aviso-obra button:focus-visible{outline:2px solid #2B35C9;outline-offset:2px}
+@keyframes aviso-in{from{opacity:0;transform:translateY(12px)}}
+@keyframes aviso-pisca{50%{opacity:.25}}
+@media (max-width:520px){.aviso-obra{left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));animation:none}}
+</style>
+<div class="aviso-obra" role="status">
+  <i aria-hidden="true"></i><span data-pt="Site em construção" data-en="Site under construction">Site em construção</span>
+  <button type="button" aria-label="Fechar aviso" data-pt-label="Fechar aviso" data-en-label="Close notice">×</button>
+</div>
+<script>
+(()=>{const a=document.querySelector('.aviso-obra');if(!a)return;
+try{if(sessionStorage.getItem('aviso-obra')==='x'){a.remove();return}}catch(e){}
+const s=a.querySelector('span'),b=a.querySelector('button');
+const sync=()=>{const en=document.documentElement.lang==='en';s.textContent=en?s.dataset.en:s.dataset.pt;b.setAttribute('aria-label',en?b.dataset.enLabel:b.dataset.ptLabel)};
+sync();new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+b.addEventListener('click',()=>{a.remove();try{sessionStorage.setItem('aviso-obra','x')}catch(e){}});})();
+</script>
 </body>
 </html>

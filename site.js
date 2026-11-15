@@ -122,7 +122,7 @@ magnetic($('.btn-y'));magnetic($('.s-cta .btn-lg'));
   const redes=el('nav','ft-nav','<div class="ft-k ft-h3">Redes</div><ul class="ft-links"><li><a href="https://www.instagram.com/eckertlaura_" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/in/eckertlaura" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.youtube.com/@eckert_laura" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://x.com/eckertlaura_" target="_blank" rel="noopener">X</a></li><li><a href="https://github.com/lauraeckert" target="_blank" rel="noopener">GitHub</a></li></ul>');
   redes.setAttribute('aria-label','Redes sociais');
   grid.prepend(marca);grid.append(pag,redes);
-  const q=el('div','quadro ft-quadro','<canvas class="q-tinta" data-seed="9" aria-hidden="true"></canvas>');game.parentNode.insertBefore(q,game);q.append(game);
+  const q=el('div','quadro ft-quadro','');  // sem a pintura atrás do jogo (pedido da Laura, 15/11)game.parentNode.insertBefore(q,game);q.append(game);
   const big=R.querySelector('#ftBig');big&&big.remove();
   // sem microtexto decorativo (memória sem-microtexto-em-lp): o e-mail fala por si; o relógio vira "Recife, 23:52"; a assinatura do © sai
   R.querySelectorAll('.ft-col .ft-k').forEach(k=>k.remove());
@@ -346,7 +346,7 @@ addEventListener('load',()=>{const idle=window.requestIdleCallback||(f=>setTimeo
     ['#h-sobre','#h-proj','.sv-h','#h-ment'].forEach(s=>{const el=$(s);el&&io.observe(el)})});
   // CTA: as três linhas sobem uma a uma e o destaque se acende
   const l2=$$('.c2-l');if(l2.length){G.from(l2,{yPercent:100,autoAlpha:0,duration:1.1,stagger:.12,ease:'expo.out',scrollTrigger:{trigger:'.cta2',start:'top 70%',once:true}});
-    G.from('.cta2-mail',{y:20,autoAlpha:0,duration:.9,ease:'expo.out',delay:.4,scrollTrigger:{trigger:'.cta2',start:'top 70%',once:true}})}
+    G.from('.cta3-btn',{y:20,autoAlpha:0,duration:.9,ease:'expo.out',delay:.4,scrollTrigger:{trigger:'.cta2',start:'top 70%',once:true}})}
   // Serviços: o título grande desliza com a rolagem; colunas entram em sequência
   G.fromTo('.sv-h',{xPercent:4},{xPercent:-3,ease:'none',scrollTrigger:{trigger:'.s-serv',start:'top bottom',end:'bottom top',scrub:.6}});
   G.from('.sv',{y:40,autoAlpha:0,duration:.9,stagger:.07,ease:'expo.out',scrollTrigger:{trigger:'.sv-row',start:'top 85%',once:true}});
@@ -596,4 +596,25 @@ window.HERO2=true;
   addEventListener('pointermove',e=>{if(!ativo)return;const dx=e.clientX-x0;if(!mov&&Math.abs(dx)>6){mov=true;tr.classList.add('arrasta')}if(mov)tr.scrollLeft=s0-dx});
   addEventListener('pointerup',()=>{if(!ativo)return;ativo=false;if(!mov)return;tr.classList.remove('arrasta');
     const p=passo(),alvo=Math.round(tr.scrollLeft/p)*p;tr.scrollTo({left:alvo,behavior:'smooth'})});
+})();
+
+/* ================= CTA v3 (pedido da Laura, 15/11: "melhore o cta, tá muito feio") =================
+   As mesmas flores de aquarela da hero (não caracteres), nascendo da borda de baixo nas laterais e enquadrando o
+   título; crescem de baixo para cima com a rolagem. Fechamento no creme da hero, uma ação só. */
+(()=>{
+  const cv=document.querySelector('.cta3-art');if(!cv||typeof wcSprite!=='function'||typeof flowerSpec!=='function')return;
+  const ctx=cv.getContext('2d');let base=null,W=0,H=0,prog=0;
+  const seedFor=(type,from)=>{for(let s=from;s<from+4000;s++)if(flowerSpec(s,PAL_LIGHT).type===type)return s;return from};
+  const build=()=>{const r=cv.getBoundingClientRect();if(!r.width)return;const k=Math.min(devicePixelRatio||1,2);W=Math.round(r.width*k);H=Math.round(r.height*k);cv.width=W;cv.height=H;
+    const mob=innerWidth<860,U=H/(mob?9:12);base=document.createElement('canvas');base.width=W;base.height=H;const bx=base.getContext('2d');
+    const L=mob?[['papoula',.1,.62,-.06],['margarida',.3,.42,.08],['centaurea',.52,.5,-.04],['papoula',.74,.58,.06],['margarida',.92,.46,-.08]]
+               :[['papoula',.05,.92,-.1],['centaurea',.13,.66,.12],['margarida',.19,.5,.06],['margarida',.81,.56,-.06],['papoula',.87,.84,.1],['centaurea',.95,.62,-.12]];
+    const q=window.WCQ;window.WCQ=.7;
+    L.forEach(([t,fx,fh,lean],i)=>{const sp=flowerSpec(seedFor(t,800+i*97),PAL_LIGHT);Object.assign(sp,{lean,branch:false,buds:1});sp.h=(H/U)*fh;const s=wcSprite(sp,U);bx.drawImage(s.can,fx*W-s.gx,H-s.H,s.W,s.H)});
+    window.WCQ=q;draw()};
+  const draw=()=>{if(!base)return;ctx.clearRect(0,0,W,H);const top=H*(1-prog);ctx.save();ctx.beginPath();ctx.rect(0,top,W,H-top);ctx.clip();ctx.drawImage(base,0,0);ctx.restore()};
+  const io=new IntersectionObserver(es=>{if(es[0].isIntersecting&&!base){io.disconnect();(window.requestIdleCallback?requestIdleCallback(build,{timeout:700}):setTimeout(build,1))}},{rootMargin:'1200px 0px'});io.observe(cv);
+  let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{if(base)build()},300)});
+  const G=window.gsap,ST=window.ScrollTrigger;
+  if(G&&ST)ST.create({trigger:'.cta3',start:'top 90%',end:'top 20%',scrub:.6,onUpdate:s=>{prog=s.progress;draw()},onLeave:()=>{prog=1;draw()}});else{prog=1}
 })();

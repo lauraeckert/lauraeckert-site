@@ -2575,5 +2575,32 @@ console.log('%cvocê abriu o console. é assim que se investiga.\nhello@lauraeck
     a.addEventListener('keydown',e=>{const d=e.key==='ArrowDown'||e.key==='ArrowRight'?1:e.key==='ArrowUp'||e.key==='ArrowLeft'?-1:0;if(!d)return;e.preventDefault();const n=(i+d+abas.length)%abas.length;sel(n);abas[n].focus()})});
 })();
 </script>
+<!-- aviso-construcao -->
+<style>
+.aviso-obra{position:fixed;left:16px;bottom:16px;z-index:2147483000;display:flex;align-items:center;gap:10px;
+  padding:9px 10px 9px 14px;border-radius:999px;background:#FEF6E2;color:#2B35C9;border:1.5px dashed #2B35C9;
+  font:500 12px/1.2 'Monocraft',ui-monospace,monospace;letter-spacing:.01em;box-shadow:0 6px 20px rgba(17,13,114,.14);
+  max-width:calc(100vw - 32px);width:max-content;white-space:nowrap;animation:aviso-in .5s cubic-bezier(.2,.8,.2,1) both .6s}
+.aviso-obra i{width:8px;height:8px;background:#F2601C;flex:none;animation:aviso-pisca 1.2s steps(2) infinite}
+.aviso-obra button{all:unset;cursor:pointer;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;
+  font:16px/1 system-ui,sans-serif;color:#2B35C9}
+.aviso-obra button:hover{background:#E4EBFF}
+.aviso-obra button:focus-visible{outline:2px solid #2B35C9;outline-offset:2px}
+@keyframes aviso-in{from{opacity:0;transform:translateY(12px)}}
+@keyframes aviso-pisca{50%{opacity:.25}}
+@media (max-width:520px){.aviso-obra{left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));animation:none}}
+</style>
+<div class="aviso-obra" role="status">
+  <i aria-hidden="true"></i><span data-pt="Site em construção" data-en="Site under construction">Site em construção</span>
+  <button type="button" aria-label="Fechar aviso" data-pt-label="Fechar aviso" data-en-label="Close notice">×</button>
+</div>
+<script>
+(()=>{const a=document.querySelector('.aviso-obra');if(!a)return;
+try{if(sessionStorage.getItem('aviso-obra')==='x'){a.remove();return}}catch(e){}
+const s=a.querySelector('span'),b=a.querySelector('button');
+const sync=()=>{const en=document.documentElement.lang==='en';s.textContent=en?s.dataset.en:s.dataset.pt;b.setAttribute('aria-label',en?b.dataset.enLabel:b.dataset.ptLabel)};
+sync();new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+b.addEventListener('click',()=>{a.remove();try{sessionStorage.setItem('aviso-obra','x')}catch(e){}});})();
+</script>
 </body>
 </html>
