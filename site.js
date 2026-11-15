@@ -606,15 +606,17 @@ window.HERO2=true;
   const ctx=cv.getContext('2d');let base=null,W=0,H=0,prog=0;
   const seedFor=(type,from)=>{for(let s=from;s<from+4000;s++)if(flowerSpec(s,PAL_LIGHT).type===type)return s;return from};
   const build=()=>{const r=cv.getBoundingClientRect();if(!r.width)return;const k=Math.min(devicePixelRatio||1,2);W=Math.round(r.width*k);H=Math.round(r.height*k);cv.width=W;cv.height=H;
-    const mob=innerWidth<860,U=H/(mob?9:12);base=document.createElement('canvas');base.width=W;base.height=H;const bx=base.getContext('2d');
-    const L=mob?[['papoula',.1,.62,-.06],['margarida',.3,.42,.08],['centaurea',.52,.5,-.04],['papoula',.74,.58,.06],['margarida',.92,.46,-.08]]
-               :[['papoula',.05,.92,-.1],['centaurea',.13,.66,.12],['margarida',.19,.5,.06],['margarida',.81,.56,-.06],['papoula',.87,.84,.1],['centaurea',.95,.62,-.12]];
+    const mob=innerWidth<860,U0=H/(mob?9:12);base=document.createElement('canvas');base.width=W;base.height=H;const bx=base.getContext('2d');
+    // [tipo, x, altura, inclinação, escala]: grupos diferentes de cada lado, sobrepostos como na hero; as da borda saem cortadas
+    const L=mob?[['papoula',-.02,.78,.08,1.15],['margarida',.3,.42,-.06,.9],['centaurea',.64,.6,.05,1],['papoula',1.0,.55,-.1,1.05]]
+               :[['papoula',-.01,.68,.1,1.3],['centaurea',.08,.62,-.08,1],['margarida',.135,.34,.06,.85],['papoula',.06,.4,-.04,.8],
+                 ['margarida',.87,.5,-.08,1],['centaurea',.95,.7,.1,1.05],['papoula',1.01,.6,-.12,1.25],['margarida',.97,.3,.05,.8]];
     const q=window.WCQ;window.WCQ=.7;
-    L.forEach(([t,fx,fh,lean],i)=>{const sp=flowerSpec(seedFor(t,800+i*97),PAL_LIGHT);Object.assign(sp,{lean,branch:false,buds:1});sp.h=(H/U)*fh;const s=wcSprite(sp,U);bx.drawImage(s.can,fx*W-s.gx,H-s.H,s.W,s.H)});
+    L.forEach(([t,fx,fh,lean,sc],i)=>{const U=U0*sc,sp=flowerSpec(seedFor(t,800+i*97),PAL_LIGHT);Object.assign(sp,{lean,branch:false,buds:1});sp.h=(H/U)*fh;const s=wcSprite(sp,U);bx.drawImage(s.can,fx*W-s.gx,H-s.H,s.W,s.H)});
     window.WCQ=q;draw()};
   const draw=()=>{if(!base)return;ctx.clearRect(0,0,W,H);const top=H*(1-prog);ctx.save();ctx.beginPath();ctx.rect(0,top,W,H-top);ctx.clip();ctx.drawImage(base,0,0);ctx.restore()};
   const io=new IntersectionObserver(es=>{if(es[0].isIntersecting&&!base){io.disconnect();(window.requestIdleCallback?requestIdleCallback(build,{timeout:700}):setTimeout(build,1))}},{rootMargin:'1200px 0px'});io.observe(cv);
   let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{if(base)build()},300)});
   const G=window.gsap,ST=window.ScrollTrigger;
-  if(G&&ST)ST.create({trigger:'.cta3',start:'top 90%',end:'top 20%',scrub:.6,onUpdate:s=>{prog=s.progress;draw()},onLeave:()=>{prog=1;draw()}});else{prog=1}
+  if(G&&ST)ST.create({trigger:'.cta3',start:'top 95%',end:'top 45%',scrub:.6,onUpdate:s=>{prog=s.progress;draw()},onLeave:()=>{prog=1;draw()}});else{prog=1}
 })();

@@ -616,20 +616,23 @@ a.selo:focus-visible{outline:3px solid var(--amarelo-300);outline-offset:4px}
 @media (max-width:860px){.eco-topo{margin:48px 0 24px}.pk-site{grid-template-columns:1fr;margin-top:56px}.pk-site .pk-txt{order:0}}
 @media (min-width:861px){.mentoria>.pastas .pasta-pilha{height:396px}.mentoria>.pastas .pasta{height:300px}.mentoria>.pastas .pasta-aba{bottom:calc(300px + var(--o,0) * 14px)}}
 
-/* ================= CTA v3 (15/11): creme da hero, título na escala da hero, uma ação, aquarela nascendo da borda ================= */
-html[data-cta] .s-cta.cta2.cta3{background:var(--bg,var(--creme-100));color:var(--creme-900);display:block;min-height:0;padding:180px 0 0;text-align:center;position:relative;overflow:hidden}
+/* ================= CTA v3 (15/11; banca: escala máxima, tela inteira, flores assimétricas) ================= */
+html[data-cta] .s-cta.cta2.cta3{background:var(--bg,var(--creme-100));color:var(--creme-900);display:flex;flex-direction:column;justify-content:center;min-height:100svh;padding:120px 0 220px;text-align:center;position:relative;overflow:hidden;border-top:0}
 .cta3-in{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
-html[data-cta] .s-cta.cta2.cta3 h2{font:600 clamp(60px,8.4vw,144px)/.88 'Familjen Grotesk'!important;letter-spacing:-.06em;color:var(--creme-900);max-width:none;margin:0;text-wrap:balance}
+html[data-cta] .s-cta.cta2.cta3 h2{font:600 clamp(64px,12vw,180px)/.86 'Familjen Grotesk'!important;letter-spacing:-.062em;color:var(--creme-900);max-width:none;margin:0;text-wrap:balance}
 .cta3 h2 .c2-l{display:block}
 .cta3 h2 .iri{color:var(--azul-700)}
 .cta3-btn{margin-top:56px}
-.cta3-art{position:relative;display:block;width:100%;height:clamp(420px,40vw,600px);margin-top:clamp(-460px,-30vw,-300px);z-index:1;pointer-events:none}
+.cta3-art{position:absolute;left:0;right:0;bottom:0;display:block;width:100%;height:clamp(460px,66vh,680px);z-index:1;pointer-events:none}
+.s-serv{padding-bottom:40px}
 @media (max-width:860px){
-  html[data-cta] .s-cta.cta2.cta3{padding:120px 0 0}
+  html[data-cta] .s-cta.cta2.cta3{display:block;min-height:0;padding:120px 0 0}
   html[data-cta] .s-cta.cta2.cta3 h2{font-size:12.6vw!important}
   .cta3-btn{margin-top:36px}
-  .cta3-art{height:280px;margin-top:8px}
+  .cta3-art{position:relative;height:300px;margin-top:-4px}
+  .s-serv{padding-bottom:48px}
 }
 /* rodapé: o jogo sem o card pintado atrás (15/11) */
 #rodape .ft-quadro{padding:0!important;background:none!important;box-shadow:none!important;border-radius:12px}
-#rodape .ft-quadro #game{border-radius:12px;box-shadow:0 0 0 1px rgba(244,235,211,.18)!important}
+#rodape .ft-quadro #game{border-radius:12px;border:1px solid rgba(244,235,211,.3)!important;box-shadow:none!important}
+#rodape #game{border:1px solid rgba(244,235,211,.3)!important;border-radius:12px!important}
