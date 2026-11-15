@@ -1,0 +1,103 @@
+/* ================= HERO 3 · variantes com flores pintadas (15/11, "odiei a hero" + "odiei as flores") =================
+   As flores são pranchas botânicas do século XIX em domínio público (Flora Batava, Masclef), recortadas do papel:
+   pintura à mão, não procedural e não IA (fontes em img/flora/FONTES.md). Ativas por ?hero=a|b|c até a Laura escolher.
+   Sem o botão "Ver projetos" (ela: "pra que ter ver projetos abaixo dnv"). */
+.hz.h3{--paper:#F4EBD3;background:var(--paper);overflow:hidden}
+.hz.h3::before{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.55;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .25 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+/* luz única de cima à esquerda, como uma janela sobre a mesa */
+.hz.h3::after{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(120% 90% at 18% 0%,rgba(255,252,240,.55),transparent 55%),radial-gradient(90% 70% at 100% 100%,rgba(120,95,55,.10),transparent 60%)}
+.hz.h3 .fl{position:absolute;z-index:2;pointer-events:none;transform-origin:50% 100%}
+.hz.h3 .fl img{display:block;height:100%;width:auto;transform-origin:50% 100%;
+  filter:drop-shadow(0 1px 0 rgba(255,255,255,.35)) drop-shadow(2px 10px 14px rgba(70,52,28,.22));animation:fl-ar 7s ease-in-out infinite alternate}
+.hz.h3 .fl.fr{z-index:4}
+.hz.h3 .fl .ancora{position:absolute;width:1px;height:1px}
+.hz.h3 .fl:nth-child(2n) img{animation-duration:8.5s;animation-delay:-2s}
+.hz.h3 .fl:nth-child(3n) img{animation-duration:6.2s;animation-delay:-4s}
+@keyframes fl-ar{from{rotate:-1.1deg}to{rotate:1.2deg}}
+.hz.h3 .hz-tit{z-index:3}
+.hz.h3 .hz-foto{z-index:3}
+.hz.h3 .hz-bug{z-index:6}
+.hz.h3 .hz-pe{z-index:5}
+.hz.h3 .hz-pe .h-lead{max-width:44ch}
+/* fita crepe segurando o caule cortado (prancha de herbário) */
+.hz.h3 .fita{position:absolute;z-index:5;width:86px;height:26px;background:rgba(248,240,214,.78);box-shadow:0 1px 2px rgba(60,45,20,.18);
+  mask:linear-gradient(90deg,transparent 0 3px,#000 3px calc(100% - 3px),transparent calc(100% - 3px));pointer-events:none}
+
+/* ---------- A · Prancha botânica ---------- */
+.hz.v-a .moldura-p{position:absolute;inset:22px;z-index:1;border:1px solid rgba(53,51,44,.28);pointer-events:none}
+.hz.v-a .moldura-p::after{content:'';position:absolute;inset:6px;border:1px solid rgba(53,51,44,.14)}
+.hz.v-a .hz-tit{top:13%;font-size:clamp(84px,11vw,196px);line-height:.82}
+.hz.v-a .hz-pe{top:52px;left:max(52px,calc((100vw - 1280px)/2));right:auto}
+.hz.v-a .fl-pap{left:5%;bottom:7%;height:56%;rotate:-7deg}
+.hz.v-a .fl-mar{left:31%;bottom:9%;height:40%;rotate:5deg}
+.hz.v-a .fl-cen{right:7%;bottom:8%;height:54%;rotate:8deg}
+.hz.v-a .hz-foto{right:auto;left:55%;top:auto;bottom:11%;width:clamp(150px,12vw,210px);rotate:4deg;transform:none}
+.hz.v-a .f1{left:calc(5% + 5.5vw);bottom:calc(7% - 4px);rotate:-10deg}
+.hz.v-a .f2{left:calc(31% + 1.9vw);bottom:calc(9% - 6px);rotate:7deg}
+.hz.v-a .f3{right:calc(7% + 6vw);bottom:calc(8% - 4px);rotate:-4deg}
+.hz.v-a .f4{left:calc(55% + 3vw);bottom:calc(11% + clamp(150px,12vw,210px) * 1.36);rotate:-3deg;width:96px}
+
+/* ---------- B · Diagonal macro: a prancha inteira da papoula em escala gigante ---------- */
+.hz.v-b .fl-cab{right:-34%;top:-30%;height:178%;rotate:-14deg;transform-origin:50% 50%}
+.hz.v-b .fl-cab img{transform-origin:50% 50%}
+.hz.v-b .fl-mar{left:43%;bottom:-8%;height:50%;rotate:9deg}
+.hz.v-b .fl-cen{right:2%;bottom:-12%;height:62%;rotate:-12deg}
+.hz.v-b .hz-tit{top:auto;bottom:9%;left:max(24px,calc((100vw - 1280px)/2));right:auto;text-align:left;font-size:clamp(84px,10.4vw,186px);line-height:.82}
+.hz.v-b .hz-foto{right:auto;left:35%;top:22%;bottom:auto;width:clamp(150px,12vw,210px);rotate:-6deg;transform:none}
+.hz.v-b .hz-pe{justify-content:flex-start}
+
+/* ---------- C · Retrato no jardim ---------- */
+.hz.v-c .hz-foto{left:50%;right:auto;top:12%;bottom:auto;width:clamp(240px,23vw,390px);translate:-50% 0;rotate:-2deg;transform:none;padding:14px 14px 52px}
+.hz.v-c .fl-mar{left:30%;bottom:-6%;height:72%;rotate:-12deg}
+.hz.v-c .fl-cen{right:28%;bottom:-8%;height:76%;rotate:13deg}
+.hz.v-c .fl-pap{left:33%;bottom:-24%;height:66%;rotate:-3deg}
+.hz.v-c .hz-tit{top:44%;left:max(24px,calc((100vw - 1280px)/2));right:max(24px,calc((100vw - 1280px)/2));font-size:clamp(64px,8.2vw,148px);line-height:.84;
+  display:flex;justify-content:space-between;align-items:flex-start;text-align:left}
+.hz.v-c .hz-tit .t2{text-align:right}
+.hz.v-c .hz-pe{justify-content:flex-start}
+
+@media (max-width:859px){
+  .hz.h3 .fita{width:56px;height:18px}
+  .hz.v-a .moldura-p{inset:12px}
+  .hz.v-a .hz-tit{top:22%;font-size:17vw}
+  .hz.v-a .hz-pe{top:30px;left:28px;right:28px}
+  .hz.v-a .fl-pap{left:-4%;bottom:4%;height:44%}
+  .hz.v-a .fl-mar{left:30%;bottom:6%;height:36%}
+  .hz.v-a .fl-cen{right:-2%;bottom:5%;height:42%}
+  .hz.v-a .hz-foto{left:50%;bottom:8%;width:30vw}
+  .hz.v-a .f4{display:none}
+  .hz.v-a .f1{left:12%}.hz.v-a .f2{left:38%}.hz.v-a .f3{right:14%}
+  .hz.v-b .fl-cab{right:-95%;top:2%;height:96%}
+  .hz.v-b .fl-mar{left:auto;right:30%;bottom:20%;height:28%}
+  .hz.v-b .fl-cen{right:-10%;bottom:24%;height:30%}
+  .hz.v-b .hz-tit{left:16px;bottom:6%;font-size:17vw}
+  .hz.v-b .hz-foto{left:7%;top:38%;width:32vw}
+  .hz.v-c .hz-foto{top:38%;width:50vw;padding:8px 8px 30px}
+  .hz.v-c .hz-tit{top:17%;left:16px;right:16px;display:block;text-align:center;font-size:16vw}
+  .hz.v-c .hz-tit .t1{display:block}.hz.v-c .hz-tit .t2 br{display:none}
+  .hz.v-c .hz-tit .t2{text-align:center}
+  .hz.v-c .fl-mar{left:6%;height:48%}.hz.v-c .fl-cen{right:4%;height:50%}.hz.v-c .fl-pap{left:22%;bottom:-14%;height:44%}
+}
+/* r8 · banca: C com o título junto da foto (Building | foto | the beyond.), margarida abaixo do "g"; B celular sem cobrir a frase */
+@media (min-width:860px){
+  .hz.v-c .hz-tit{display:grid;grid-template-columns:1fr clamp(240px,23vw,390px) 1fr;column-gap:clamp(28px,3.2vw,56px);justify-content:stretch}
+  .hz.v-c .hz-tit .t1{grid-column:1;justify-self:end;text-align:right}
+  .hz.v-c .hz-tit .t2{grid-column:3;justify-self:start;text-align:left}
+  .hz.v-c .fl-mar{left:31%;height:58%}
+}
+@media (max-width:859px){.hz.v-b .fl-cab{top:16%}}
+@media (min-width:860px){.hz.v-c .fl-mar{left:30%;height:44%;rotate:-14deg}}
+@media (min-width:860px){.hz.v-c .fl-cen{right:17%}}
+/* r8 · banca final: B de 860 a 1279 com a prancha mais à direita (a papoula voltava para baixo da frase); C celular com a foto mais baixa (joaninha encostava no "y") */
+@media (min-width:860px) and (max-width:1279px){.hz.v-b .fl-cab{right:-58%;top:-24%;height:168%}.hz.v-b .hz-foto{left:34%;top:30%}.hz.v-b .hz-pe .h-lead{max-width:36ch}}
+@media (max-width:859px){.hz.v-c .hz-foto{top:42%}}
+/* r9 · B em pixel: as camadas de canvas, ampliadas sem suavizar, numa grade alinhada à tela */
+.hz.px .fl{visibility:hidden}
+.hz.px .px-camada{position:absolute;left:0;top:0;image-rendering:pixelated;image-rendering:crisp-edges;pointer-events:none}
+.hz.px .px-tras{z-index:2}.hz.px .px-frente{z-index:4}
+.hz.px .fl img{animation:none}
+@media (max-width:859px){.hz.v-b.px .fl-cab{right:-118%}.hz.v-b.px .fl-mar{right:20%;bottom:30%}}
+/* r9c · banca: no celular, uma flor inteira reconhecível em vez de uma fatia densa; nada atrás de "beyond." */
+@media (max-width:859px){.hz.v-b.px .fl-cab{right:-58%;top:8%;height:74%}.hz.v-b.px .fl-mar{right:auto;left:52%;bottom:26%;height:26%}.hz.v-b.px .fl-cen{right:-14%;bottom:30%;height:26%}}

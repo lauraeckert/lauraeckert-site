@@ -636,3 +636,135 @@ html[data-cta] .s-cta.cta2.cta3 h2{font:600 clamp(64px,12vw,180px)/.86 'Familjen
 #rodape .ft-quadro{padding:0!important;background:none!important;box-shadow:none!important;border-radius:12px}
 #rodape .ft-quadro #game{border-radius:12px;border:1px solid rgba(244,235,211,.3)!important;box-shadow:none!important}
 #rodape #game{border:1px solid rgba(244,235,211,.3)!important;border-radius:12px!important}
+
+/* ================= r7 (15/11): auditoria do site inteiro ================= */
+/* Serviços: a descrição volta à caixa normal, na grotesca, para ser lida */
+.sv-txt p{font:400 16px/1.6 'Familjen Grotesk',sans-serif;text-transform:none;letter-spacing:0;color:var(--creme-800);max-width:40ch}
+/* hero em 600–859 (iPad em pé): as regras do celular escalavam título e foto pela largura com a altura presa em 700 px,
+   e o título cobria o rosto da polaroide. Aqui a altura acompanha a tela e título/foto têm teto. */
+@media (min-width:600px) and (max-width:859px){
+  .s-hero.hz{height:clamp(760px,calc(100svh - 72px),1100px)}
+  .hz-tit{top:27%;font-size:min(21vw,150px)}
+  .hz .hz-foto{width:min(26vw,190px);bottom:6%;right:8%}
+}
+/* r7 · banca: contraste dos números de Serviços (2,8:1 → >7:1 e >6:1) */
+.sv-n{color:var(--creme-700)}
+.sv.is-on .sv-n{color:var(--laranja-700)}
+/* r7 · banca: rótulos das pastas da mentoria legíveis no celular */
+@media (max-width:859px){.mentoria>.pastas .etq,.ment-txt .etq{font-size:12px;letter-spacing:-.03em;padding:6px 1px}}
+/* r7 · banca: em 600–679 a papoula da frente ainda cobria o "the"; o título sobe */
+@media (min-width:600px) and (max-width:679px){.hz-tit{top:22%}}
+/* r7 · "aqui tá quebrado" (aba 05 Carreira solta): as pastas de trás encolhem (scale 1 − o·1,2%) a partir do pé,
+   então a aba precisa descer o mesmo tanto e caber dentro da largura encolhida da pasta mais ao fundo */
+@media (min-width:861px){
+  .mentoria>.pastas .pasta-aba{bottom:calc(300px * (1 - var(--o,0) * .012) + var(--o,0) * 14px);left:calc(1.2% + var(--i) * 19.4%);width:17.4%}
+}
+/* r7 · pedido 15/11: "a pasta do curso deve ocupar o container direito, as badges podem ir abaixo do botão de entrar no grupo".
+   Esquerda: título, texto, botão e selos. Direita: a pilha de pastas. A foto do palco saiu da seção. */
+.mentoria .ment-txt .selos{margin:40px 0 0;justify-content:flex-start;gap:18px}
+@media (min-width:861px){
+  .mentoria{grid-template-columns:minmax(0,4.2fr) minmax(0,6fr)!important;column-gap:64px;align-items:center!important}
+  .mentoria .ment-txt{order:0;grid-column:1;grid-row:1}
+  .mentoria>.pastas{grid-column:2!important;grid-row:1;margin:0}
+  .mentoria>.pastas .pasta-pilha{height:500px}
+  .mentoria>.pastas .pasta{height:400px;grid-template-columns:1fr;grid-template-rows:auto 1fr}
+  .mentoria>.pastas .pasta-aba{bottom:calc(400px * (1 - var(--o,0) * .012) + var(--o,0) * 14px);height:50px;padding:8px 8px 0}
+  .mentoria>.pastas .etq{font-size:13px;padding:7px 8px}
+  .mentoria>.pastas .pasta-cab{flex-direction:row;align-items:baseline;justify-content:flex-start;padding:30px 32px 18px;border-right:0;border-bottom:1.5px dashed rgba(120,100,60,.38)}
+  .mentoria>.pastas .pasta-cab h3{font-size:clamp(34px,3vw,48px)}
+  .mentoria>.pastas .posts{align-self:center;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding:20px 28px 28px}
+  .mentoria>.pastas .post{min-height:150px;padding:32px 16px 16px;font-size:clamp(17px,1.35vw,21px)}
+}
+@media (min-width:861px){.mentoria>.pastas .etq{font-size:12px;padding:7px 6px;letter-spacing:-.02em}}
+@media (min-width:861px) and (max-width:1279px){.mentoria>.pastas .etq>span{display:none}.mentoria>.pastas .etq{text-align:center;padding:7px 3px}}
+@media (min-width:861px) and (max-width:1279px){.mentoria .ment-txt .selos{gap:10px;flex-wrap:nowrap}.mentoria .ment-txt .selo{width:100px;height:100px}}
+/* r8 · "não era para remover minha foto na parte de mentora": a polaroide volta, no alto da coluna do texto */
+.mentoria .ment-txt .c3{position:relative;display:block;width:min(360px,78%);margin:0 0 56px 6px;transform:rotate(-3deg)}
+.mentoria .ment-txt .c3 img{aspect-ratio:4/3}
+@media (min-width:861px){.mentoria{align-items:center!important}}
+@media (max-width:860px){.mentoria .ment-txt .c3{width:86%;margin:0 auto 48px}}
+/* ================= r8 · rodapé na referência dela (15/11): fundo preto, links grandes em linha à esquerda,
+   "Redes" com botões redondos à direita, fio fino; o jogo e o "Voltar ao topo" ficam; e-mail e marca vão para a barra de baixo ================= */
+#rodape{background:var(--escuro)!important;color:var(--creme-100);padding:120px 0 36px}
+#rodape .ft-grid{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;grid-template-areas:"pag redes" "col col";gap:40px 64px;align-items:end}
+#rodape .ft-nav:not(.ft-redes){grid-area:pag}
+#rodape .ft-nav:not(.ft-redes) .ft-h3{display:none}
+#rodape .ft-nav:not(.ft-redes) .ft-links{flex-direction:row!important;flex-wrap:wrap;gap:8px clamp(24px,3.4vw,52px)}
+#rodape .ft-nav:not(.ft-redes) .ft-links a{font:500 clamp(30px,3.1vw,46px)/1.1 'Familjen Grotesk';letter-spacing:-.035em;color:var(--creme-50);
+  background:linear-gradient(currentColor,currentColor) 0 100%/0 2px no-repeat;padding-bottom:4px;transition:background-size .32s cubic-bezier(.23,1,.32,1),color .2s}
+#rodape .ft-nav:not(.ft-redes) .ft-links a:hover,#rodape .ft-nav:not(.ft-redes) .ft-links a:focus-visible{background-size:100% 2px;outline:none}
+#rodape .ft-nav:not(.ft-redes) .ft-links a:focus-visible{outline:2px solid var(--amarelo-300);outline-offset:6px;border-radius:4px}
+#rodape .ft-redes{grid-area:redes;gap:18px}
+#rodape .ft-redes .ft-h3{font:500 22px 'Familjen Grotesk';letter-spacing:-.02em;color:var(--creme-50)}
+#rodape .soc-ft{gap:14px;flex-wrap:nowrap}
+#rodape .soc-ft a{width:58px;height:58px;border:1px solid var(--escuro-linha)!important;border-style:solid!important;background:var(--creme-950);color:var(--creme-50);transition:border-color .25s,background .25s,transform .3s cubic-bezier(.23,1,.32,1)}
+#rodape .soc-ft a:hover{border-color:var(--creme-600)!important;background:var(--escuro-2);transform:translateY(-2px)}
+#rodape .soc-ft svg{width:22px;height:22px}
+#rodape .ft-col{grid-area:col;display:none!important}
+#rodape .ft-game{margin-top:72px;padding-top:72px;border-top:1px solid var(--escuro-linha)}
+#rodape .ft-game #hint{color:var(--creme-500)}
+#rodape .ft-bottom{margin-top:48px;padding-top:24px;border-top:1px solid var(--escuro-linha);color:var(--creme-500);flex-wrap:wrap}
+#rodape .ft-bottom .ft-logo svg{height:40px}
+#rodape .ft-bottom .ft-mail{font:500 17px 'Familjen Grotesk';color:var(--creme-100)}
+#rodape .ft-bottom .ft-mail::after{height:2px;background:currentColor}
+#rodape .ft-top{border:1px solid var(--escuro-linha)!important;color:var(--creme-100)}
+#rodape .ft-top:hover{background:var(--escuro-2)!important;border-color:var(--creme-600)!important}
+@media (max-width:860px){
+  #rodape{padding:88px 0 28px}
+  #rodape .ft-grid{grid-template-columns:1fr!important;grid-template-areas:"pag" "redes" "col";gap:48px}
+  #rodape .ft-nav:not(.ft-redes) .ft-links{gap:4px 28px}
+  #rodape .ft-nav:not(.ft-redes) .ft-links a{font-size:34px}
+  #rodape .soc-ft{flex-wrap:wrap}
+  #rodape .soc-ft a{width:52px;height:52px}
+  #rodape .ft-game{margin-top:56px;padding-top:48px}
+}
+#rodape .ft-grid{grid-template-areas:"pag redes"!important;row-gap:0;padding-bottom:64px;border-bottom:1px solid var(--escuro-linha)}
+#rodape .ft-game{margin-top:64px;padding-top:0;border-top:0}
+#rodape .ft-bottom .ft-mail::after{transform:scaleX(0)}
+#rodape .ft-bottom .ft-mail:hover::after,#rodape .ft-bottom .ft-mail:focus-visible::after{transform:scaleX(1)}
+@media (max-width:860px){#rodape .ft-grid{grid-template-areas:"pag" "redes"!important;row-gap:44px;padding-bottom:48px}#rodape .ft-game{margin-top:48px}}
+@media (max-width:860px){#rodape .soc-ft{flex-wrap:nowrap;gap:10px}#rodape .soc-ft a{width:48px;height:48px}#rodape .soc-ft svg{width:19px;height:19px}}
+/* r9 · "na mentora coloca minha imagem atrás das pastas": a polaroide fica atrás da pilha, nítida, aparecendo por cima das abas */
+.mentoria>.pastas{position:relative}
+.mentoria>.pastas .c3{position:absolute;z-index:0;right:6%;top:0;width:min(330px,46%);margin:0;transform:rotate(5deg)}
+.mentoria>.pastas .c3 img{aspect-ratio:4/3}
+.mentoria>.pastas .pasta-pilha{position:relative;z-index:1}
+@media (min-width:861px){.mentoria>.pastas{padding-top:170px}}
+@media (max-width:860px){.mentoria>.pastas{padding-top:150px}.mentoria>.pastas .c3{right:4%;width:62%}}
+/* r9 · rodapé v2: assinatura acima do jogo */
+#rodape .ft-assina{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-top:64px}
+#rodape .ft-assina .ft-logo svg{height:88px;width:auto;display:block}
+#rodape .ft-assina .ft-mail{font:500 clamp(24px,2.3vw,32px)/1.1 'Familjen Grotesk';letter-spacing:-.025em;color:var(--creme-50);padding-bottom:6px}
+#rodape .ft-assina .ft-mail::after{height:2px;background:currentColor;transform:scaleX(0)}
+#rodape .ft-assina .ft-mail:hover::after,#rodape .ft-assina .ft-mail:focus-visible::after{transform:scaleX(1)}
+#rodape .ft-game{margin-top:48px}
+#rodape .ft-bottom{margin-top:56px}
+@media (max-width:860px){#rodape .ft-assina{margin-top:44px;align-items:flex-start;flex-direction:column;gap:20px}#rodape .ft-assina .ft-logo svg{height:64px}#rodape .ft-assina .ft-mail{font-size:22px}#rodape .ft-game{margin-top:36px}#rodape .ft-bottom{margin-top:40px}}
+
+/* ================= motion 15/11 (estudo Awwwards, Son Daven) =================
+   1 · Sobre: o parágrafo acende linha a linha com a rolagem. Um span inline com duas camadas de fundo recortadas no
+   texto: como o fundo de um inline corre pelas linhas em sequência (box-decoration-break: slice), a parte acesa
+   avança linha por linha sem quebrar o texto em pedaços (o i18n troca o nó de texto inteiro). */
+.sobre-p .acende{--acende:100%;color:var(--creme-100)}
+.mo .sobre-p .acende{color:transparent;-webkit-background-clip:text;background-clip:text;
+  background-image:linear-gradient(var(--creme-100),var(--creme-100)),linear-gradient(color-mix(in srgb,var(--creme-100) 60%,transparent),color-mix(in srgb,var(--creme-100) 60%,transparent));
+  background-size:var(--acende) 100%,100% 100%;background-repeat:no-repeat;-webkit-box-decoration-break:slice;box-decoration-break:slice}
+@media (forced-colors:active){.mo .sobre-p .acende{background:none;color:CanvasText;-webkit-background-clip:border-box;background-clip:border-box}}
+/* 2 · troca de cor em pixels: a cor da seção anterior escorre em blocos e se recolhe com a rolagem (canvas por cima do
+   topo da seção, sem ocupar espaço nem receber clique) */
+.pix-borda{position:absolute;left:0;top:-1px;width:100%;pointer-events:none;z-index:2;image-rendering:pixelated}
+/* r9c · pedido 15/11: pastas mais baixas, foto maior e mais à esquerda */
+@media (min-width:861px){
+  .mentoria>.pastas{padding-top:250px}
+  .mentoria>.pastas .c3{left:0;right:auto;top:0;width:min(470px,66%);transform:rotate(-4deg)}
+  .mentoria>.pastas .pasta-pilha{height:384px}
+  .mentoria>.pastas .pasta{height:300px}
+  .mentoria>.pastas .pasta-aba{bottom:calc(300px * (1 - var(--o,0) * .012) + var(--o,0) * 14px)}
+  .mentoria>.pastas .pasta-cab{padding:22px 30px 14px}
+  .mentoria>.pastas .posts{padding:14px 26px 22px;gap:18px}
+  .mentoria>.pastas .post{min-height:112px;padding:28px 16px 14px}
+}
+@media (max-width:860px){
+  .mentoria>.pastas{padding-top:200px}
+  .mentoria>.pastas .c3{left:0;right:auto;width:80%;transform:rotate(-4deg)}
+}

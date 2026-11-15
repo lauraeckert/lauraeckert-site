@@ -115,6 +115,7 @@ footer .wm{width:min(420px,70vw);height:auto}
 <link rel="stylesheet" href="/material.css">
 <link rel="stylesheet" href="/projetos.css">
 <link rel="stylesheet" href="/nav.css">
+<link rel="stylesheet" href="/hero3.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
@@ -145,7 +146,7 @@ footer .wm{width:min(420px,70vw);height:auto}
   <ul class="nv-links" id="nvLinks">
     <li><a href="#sobre">Sobre</a></li><li><a href="#projetos">Projetos</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#contato">Contato</a></li>
   </ul>
-  <div class="nv-cta"><button class="lang" type="button" aria-pressed="false" aria-label="Switch to English" lang="en" data-i18n-pula><span>PT</span><span>EN</span></button><button class="som" type="button" aria-pressed="false" title="Som"><span class="nvsi" aria-hidden="true"><b></b><b></b><b></b><b></b></span><span class="som-t">Som desligado</span></button><a class="btn btn-p" href="mailto:hello@lauraeckert.com.br" id="nvCta">Fale comigo <span class="ar" aria-hidden="true">→</span></a></div>
+  <div class="nv-cta"><button class="lang" type="button" aria-pressed="false" aria-label="English" lang="en" data-i18n-pula><span>PT</span><span>EN</span></button><button class="som" type="button" aria-pressed="false" title="Som"><span class="nvsi" aria-hidden="true"><b></b><b></b><b></b><b></b></span><span class="som-t">Som desligado</span></button><a class="btn btn-p" href="mailto:hello@lauraeckert.com.br" id="nvCta">Fale comigo <span class="ar" aria-hidden="true">→</span></a></div>
 </div></nav>
 
 <div id="v8stub" hidden aria-hidden="true" inert>
@@ -658,7 +659,6 @@ addEventListener('load',()=>{
   <canvas class="hz-bug" aria-hidden="true"></canvas>
   <div class="hz-pe">
     <p class="h-lead"><b>Laura Eckert.</b> I'm a design engineer who designs, codes, and ships memorable web experiences for brands of all sizes.</p>
-    <a class="btn btn-p" href="#projetos">Ver projetos <span class="ar" aria-hidden="true">↓</span></a>
   </div>
 </section>
 
@@ -674,13 +674,13 @@ addEventListener('load',()=>{
       <a class="gh" href="https://github.com/lauraeckert" target="_blank" rel="noopener">
         <span class="gh-t"><b id="gh-total">—</b> contribuições no GitHub no último ano</span>
         <svg class="gh-grid" aria-hidden="true" focusable="false"></svg>
-        <span class="gh-u">github.com/lauraeckert ↗</span>
+        <span class="gh-u">github.com/lauraeckert <svg class="gh-seta" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 9 9 3M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
 
     </div>
     <div class="sobre-txt">
       <h2 id="h-sobre">Sobre mim.</h2>
-      <p class="sobre-p">Sou design engineer. Pesquiso, desenho, escrevo o código e coloco o produto no ar, sozinha e do começo ao fim. Antes do design, passei pela contabilidade, pelo marketing e pela gestão de projetos, e uso tudo isso no mesmo trabalho.</p>
+      <p class="sobre-p"><span class="acende">Sou design engineer. Pesquiso, desenho, escrevo o código e coloco o produto no ar, sozinha e do começo ao fim. Antes do design, passei pela contabilidade, pelo marketing e pela gestão de projetos, e uso tudo isso no mesmo trabalho.</span></p>
       <h3 class="sobre-h3">Experiência</h3>
       <ol class="exp">
         <li><span class="exp-d">2022 – hoje</span><div><b>Design engineer, prática independente</b><p>Clientes no Brasil, América Latina, Estados Unidos e Europa.</p></div></li>
@@ -702,14 +702,14 @@ addEventListener('load',()=>{
   </div>
   <div class="wrap sobre-jardim"><canvas id="garden" class="px" width="1600" height="480" aria-hidden="true"></canvas></div>
   <div class="wrap mentoria" id="mentoria">
-    <div class="ment-foto"><figure class="clip c3"><i class="clipe" aria-hidden="true"></i><img src="/img/mentoria-superteam.jpg" alt="Laura Eckert no palco do Superteam Brasil" loading="lazy" width="1400" height="1050"></figure>
-      <ul class="selos" aria-label="Selos e comunidades"><li><span class="selo selo-framer" role="img" aria-label="Official Framer Expert, 2025"><svg class="selo-r" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="sp-framer" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs><text><textPath textLength="274" lengthAdjust="spacing" href="#sp-framer">OFFICIAL FRAMER EXPERT · 2025 · </textPath></text></svg><span class="selo-c" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30"><path fill="currentColor" d="M5 2h14v7h-7zM5 9h7l7 7H5zM5 16h7v7z"/></svg></span></span></li><li><a class="selo selo-google" href="https://me.developers.google.com/badges/profile/created-profile?u=102861540568491901322" target="_blank" rel="noopener" aria-label="Perfil Google Developer (abre em nova aba)"><svg class="selo-r" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="sp-google" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs><text><textPath textLength="274" lengthAdjust="spacing" href="#sp-google">GOOGLE DEVELOPER · GOOGLE DEVELOPER · </textPath></text></svg><span class="selo-c" aria-hidden="true"><svg viewBox="0 0 30 30" width="34" height="34"><path d="M11 9 5 15l6 6" fill="none" stroke="#4285F4" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="m19 9 6 6-6 6" fill="none" stroke="#EA4335" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13" cy="15" r="1.9" fill="#FBBC04"/><circle cx="17.5" cy="15" r="1.9" fill="#34A853"/></svg></span></a></li><li><a class="selo selo-st" href="https://superteam.fun/earn/t/lauraeckert" target="_blank" rel="noopener" aria-label="Superteam, membro PRO (abre em nova aba)"><svg class="selo-r" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="sp-st" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs><text><textPath textLength="274" lengthAdjust="spacing" href="#sp-st">SUPERTEAM · PRO MEMBER · </textPath></text></svg><span class="selo-c" aria-hidden="true"><b>PRO</b></span></a></li></ul></div>
     <div class="ment-txt">
       <h2 id="h-ment">Quer aprender comigo?</h2>
       <p>Mentoro quem quer pesquisar, desenhar e colocar um produto no ar. As conversas acontecem no meu grupo do WhatsApp.</p>
       <a class="btn btn-y" href="https://chat.whatsapp.com/LL4m8AkT0yN2wZHV4AFpBp?mode=gi_t" target="_blank" rel="noopener" aria-label="Entrar no grupo do WhatsApp (abre em nova aba)">Entrar no grupo do WhatsApp <span class="ar" aria-hidden="true">→</span></a>
+      <ul class="selos" aria-label="Selos e comunidades"><li><span class="selo selo-framer" role="img" aria-label="Official Framer Expert, 2025"><svg class="selo-r" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="sp-framer" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs><text><textPath textLength="274" lengthAdjust="spacing" href="#sp-framer">OFFICIAL FRAMER EXPERT · 2025 · </textPath></text></svg><span class="selo-c" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30"><path fill="currentColor" d="M5 2h14v7h-7zM5 9h7l7 7H5zM5 16h7v7z"/></svg></span></span></li><li><a class="selo selo-google" href="https://me.developers.google.com/badges/profile/created-profile?u=102861540568491901322" target="_blank" rel="noopener" aria-label="Perfil Google Developer (abre em nova aba)"><svg class="selo-r" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="sp-google" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs><text><textPath textLength="274" lengthAdjust="spacing" href="#sp-google">GOOGLE DEVELOPER · GOOGLE DEVELOPER · </textPath></text></svg><span class="selo-c" aria-hidden="true"><svg viewBox="0 0 30 30" width="34" height="34"><path d="M11 9 5 15l6 6" fill="none" stroke="#4285F4" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="m19 9 6 6-6 6" fill="none" stroke="#EA4335" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13" cy="15" r="1.9" fill="#FBBC04"/><circle cx="17.5" cy="15" r="1.9" fill="#34A853"/></svg></span></a></li><li><a class="selo selo-st" href="https://superteam.fun/earn/t/lauraeckert" target="_blank" rel="noopener" aria-label="Superteam, membro PRO (abre em nova aba)"><svg class="selo-r" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="sp-st" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs><text><textPath textLength="274" lengthAdjust="spacing" href="#sp-st">SUPERTEAM · PRO MEMBER · </textPath></text></svg><span class="selo-c" aria-hidden="true"><b>PRO</b></span></a></li></ul>
     </div>
     <div class="pastas">
+        <figure class="clip c3"><i class="clipe" aria-hidden="true"></i><img src="/img/mentoria-superteam.jpg" alt="Laura Eckert no palco do Superteam Brasil" loading="lazy" width="1400" height="1050"></figure>
         <div class="pasta-pilha"><div class="pasta-abas" role="tablist" aria-label="O que dá para aprender comigo"><button class="pasta-aba" role="tab" id="pa-01" aria-controls="pp-01" aria-selected="false" tabindex="-1" style="--i:0"><span class="etq"><span>01</span><b class="nm"> Pesquisa</b></span></button><button class="pasta-aba" role="tab" id="pa-02" aria-controls="pp-02" aria-selected="false" tabindex="-1" style="--i:1"><span class="etq"><span>02</span><b class="nm"> Design</b></span></button><button class="pasta-aba" role="tab" id="pa-03" aria-controls="pp-03" aria-selected="false" tabindex="-1" style="--i:2"><span class="etq"><span>03</span><b class="nm"> Código</b></span></button><button class="pasta-aba" role="tab" id="pa-04" aria-controls="pp-04" aria-selected="false" tabindex="-1" style="--i:3"><span class="etq"><span>04</span><b class="nm"> Produto</b></span></button><button class="pasta-aba" role="tab" id="pa-05" aria-controls="pp-05" aria-selected="false" tabindex="-1" style="--i:4"><span class="etq"><span>05</span><b class="nm"> Carreira</b></span></button></div>
         <div class="pasta" role="tabpanel" id="pp-01" aria-labelledby="pa-01">
             <div class="pasta-cab"><span class="pasta-n">01</span><h3>Pesquisa</h3></div>
@@ -738,7 +738,7 @@ addEventListener('load',()=>{
     <!-- ecossistema Akrus (pedido da Laura, 15/11): os apps abrem o case; o site da Akrus Digital abre o modal -->
     <div class="pk-topo eco-topo"><h3 class="pk-h" id="h-eco">Ecossistema Akrus</h3></div>
     <a class="pk-destaque" href="/akrus.html">
-      <div class="quadro"><canvas class="q-tinta" aria-hidden="true"></canvas><figure><img src="/site/assets/akrus-preview.png" alt="Painel da Akrus: vendas e faturamento do dia" loading="lazy" width="1024" height="599"></figure></div>
+      <div class="quadro"><canvas class="q-tinta" aria-hidden="true"></canvas><figure><img src="/img/ak-checkout-c.jpg" alt="Checkout da Akrus confirmando o pagamento: vendeu em real, recebeu em dólar" loading="lazy" width="1600" height="936"></figure></div>
       <div class="pk-txt"><span class="eco-tag">[apps]</span><h3>Akrus</h3><p>Uma plataforma que paga criadores brasileiros em dólar.</p><span class="pj-m">Co-fundadora · produto, design e front-end</span><span class="pk-ver" aria-hidden="true">Ver o case ↗</span></div>
     </a>
     <button class="pk-destaque pk-site sc-abre" type="button" aria-haspopup="dialog" data-p="akrusdigital" data-img="/img/pj-akd-0.jpg" data-w="1440" data-h="811" data-alt="Site da Akrus Digital" data-link="https://akrus.digital/"><div class="quadro"><canvas class="q-tinta" data-seed="12" aria-hidden="true"></canvas><figure><img src="/img/pj-akd-0.jpg" alt="" loading="lazy" width="1440" height="811"></figure></div><div class="pk-txt"><span class="eco-tag">[site]</span><h3>Akrus Digital</h3><p>O site da plataforma: vender em real, receber em dólar.</p><span class="pj-m">Site · design e front-end</span><span class="pk-ver" aria-hidden="true">Ver o site ↗</span></div></button>
@@ -766,7 +766,7 @@ addEventListener('load',()=>{
       <div class="pm-nav-w"><button class="pm-nav" type="button" data-d="-1"><span aria-hidden="true">←</span> <span class="pm-nav-t"></span></button><button class="pm-nav" type="button" data-d="1"><span class="pm-nav-t"></span> <span aria-hidden="true">→</span></button></div>
     </aside>
   </dialog>
-  <script type="application/json" id="pj-dados">{"akrusdigital": {"nome": "Akrus Digital", "meta": "Akrus Digital · site", "lead": "O site da Akrus Digital: vender em real, receber em dólar, com a jornada da compra à primeira aula mostrada no celular.", "ficha": [["Entregas", ["Site", "Design", "Front-end"]]], "link": "https://akrus.digital/", "linkT": "Ver o site", "seed": 12, "cor": "var(--azul-300)", "telas": [["/img/pj-akd-0.jpg", 1440, 811, "Akrus Digital: Venda em Real, Receba em Dólar"], ["/img/pj-akd-1.jpg", 1440, 900, "Da compra à primeira aula: o checkout no celular"], ["/img/pj-akd-4.jpg", 1440, 900, "Sua marca, do primeiro clique ao pagamento: o checkout"], ["/img/pj-akd-6.jpg", 1440, 900, "Um negócio em torno do que você sabe"]]}, "youbbe": {"nome": "Youbbe", "meta": "Youbbe · 2025", "lead": "Painel de faturamento e comissões para uma rede de vendas.", "ficha": [["Papel", "Produto, desenvolvimento e IA"], ["Ano", "2025"], ["Entregas", ["Produto", "Desenvolvimento", "IA"]]], "link": "/site/youbbe/", "linkT": "Ver o case", "seed": 4, "telas": [["/img/youbbe.jpg", 1600, 1000, "Youbbe: painel de faturamento e comissões"]], "cor": "var(--amarelo-300)"}, "zouti": {"nome": "Zouti", "meta": "Zouti · pagamentos", "lead": "Plataforma de pagamentos: marca, site e checkout.", "ficha": [["Entregas", ["Marca", "Site", "Checkout"]]], "seed": 5, "telas": [["/site/assets/zouti-preview.png", 1440, 900, "Site da Zouti"]], "cor": "var(--laranja-500)"}, "liqpay": {"nome": "LiqPay", "meta": "LiqPay · checkout", "lead": "Checkout para quem vende online, com pagamento em cripto.", "ficha": [["Entregas", ["Site", "Checkout"]]], "seed": 6, "telas": [["/site/assets/liqpay-preview.png", 1440, 900, "Site da LiqPay"]], "cor": "var(--creme-400)"}, "gassen": {"nome": "Gassen", "meta": "Gassen · indústria", "lead": "Marca e site para uma fábrica de estruturas metálicas.", "ficha": [["Entregas", ["Marca", "Site"]]], "seed": 7, "telas": [["/img/gassen.png", 1440, 900, "Site da Gassen"]], "cor": "var(--azul-950)"}, "century": {"nome": "Century", "meta": "Century · imobiliário", "lead": "Site imobiliário, da busca ao anúncio do imóvel.", "ficha": [["Entregas", ["Site"]], ["Feito em", "Framer"]], "link": "https://centurycommunity.framer.website/", "linkT": "Ver o site", "seed": 8, "telas": [["/site/assets/century-preview.png", 1440, 900, "Site da Century"], ["/img/pj-century-2.jpg", 1440, 840, "Century: linhas de casas por perfil de família"], ["/img/pj-century-3.jpg", 1440, 840, "Century: lançamentos com cidade e estado"]], "cor": "var(--azul-300)"}, "gaia": {"nome": "Gaia", "meta": "Gaia · 2026", "lead": "Workspace clínico para nutricionistas: a Gaia escuta a consulta e monta o prontuário.", "ficha": [["Papel", "Seções em WebGL e desempenho no celular"], ["Ano", "2026"], ["Feito com", ["Next.js", "React Three Fiber", "GSAP"]]], "link": "https://gaia-three-delta.vercel.app/", "linkT": "Ver o site", "seed": 9, "cor": "var(--laranja-300)", "telas": [["/img/pj-gaia-0.jpg", 1440, 900, "Gaia: Volte a olhar pro seu paciente"], ["/img/pj-gaia-3.jpg", 1440, 900, "Gaia: da gravação ao prontuário, em três passos"], ["/img/pj-gaia-1.jpg", 1440, 900, "Gaia: Nutrição é sobre pessoas"], ["/img/pj-gaia-2.jpg", 1440, 900, "Gaia: pacientes e agenda da semana no painel"]]}, "geoai": {"nome": "GEO.AI", "meta": "GEO.AI · geo-aeroespacial", "lead": "Dados territoriais, observações por satélite e inteligência artificial para transformar o território em informação estratégica.", "ficha": [["Entregas", ["Site"]]], "link": "https://geoialatan.com.br/", "linkT": "Ver o site", "seed": 11, "cor": "var(--azul-950)", "telas": [["/img/pj-geo-0.jpg", 1440, 900, "GEO.AI: A Terra tem muito a dizer"], ["/img/pj-geo-3.jpg", 1440, 900, "Cada camada vira leitura do terreno"], ["/img/pj-geo-5.jpg", 1440, 900, "Leitura do terreno no celular, sobre imagem de satélite"], ["/img/pj-geo-7.jpg", 1440, 900, "Um planeta, múltiplas perspectivas: mineração"]]}}</script>
+  <script type="application/json" id="pj-dados">{"akrusdigital": {"nome": "Akrus Digital", "meta": "Akrus Digital · site", "lead": "O site da Akrus Digital: vender em real, receber em dólar, com a jornada da compra à primeira aula mostrada no celular.", "ficha": [["Entregas", ["Site", "Design", "Front-end"]]], "link": "https://akrus.digital/", "linkT": "Ver o site", "seed": 12, "cor": "var(--azul-300)", "telas": [["/img/pj-akd-0.jpg", 1440, 811, "Akrus Digital: Venda em Real, Receba em Dólar"], ["/img/pj-akd-1.jpg", 1440, 900, "Da compra à primeira aula: o checkout no celular"]]}, "youbbe": {"nome": "Youbbe", "meta": "Youbbe · 2025", "lead": "Painel de faturamento e comissões para uma rede de vendas.", "ficha": [["Papel", "Produto, desenvolvimento e IA"], ["Ano", "2025"], ["Entregas", ["Produto", "Desenvolvimento", "IA"]]], "link": "/site/youbbe/", "linkT": "Ver o case", "seed": 4, "telas": [["/img/youbbe.jpg", 1600, 1000, "Youbbe: painel de faturamento e comissões"]], "cor": "var(--amarelo-300)"}, "zouti": {"nome": "Zouti", "meta": "Zouti · pagamentos", "lead": "Plataforma de pagamentos: marca, site e checkout.", "ficha": [["Entregas", ["Marca", "Site", "Checkout"]]], "seed": 5, "telas": [["/site/assets/zouti-preview.png", 1440, 900, "Site da Zouti"]], "cor": "var(--laranja-500)"}, "liqpay": {"nome": "LiqPay", "meta": "LiqPay · checkout", "lead": "Checkout para quem vende online, com pagamento em cripto.", "ficha": [["Entregas", ["Site", "Checkout"]]], "seed": 6, "telas": [["/site/assets/liqpay-preview.png", 1440, 900, "Site da LiqPay"]], "cor": "var(--creme-400)"}, "gassen": {"nome": "Gassen", "meta": "Gassen · indústria", "lead": "Marca e site para uma fábrica de estruturas metálicas.", "ficha": [["Entregas", ["Marca", "Site"]]], "seed": 7, "telas": [["/img/gassen.png", 1440, 900, "Site da Gassen"]], "cor": "var(--azul-950)"}, "century": {"nome": "Century", "meta": "Century · imobiliário", "lead": "Site imobiliário, da busca ao anúncio do imóvel.", "ficha": [["Entregas", ["Site"]], ["Feito em", "Framer"]], "link": "https://centurycommunity.framer.website/", "linkT": "Ver o site", "seed": 8, "telas": [["/site/assets/century-preview.png", 1440, 900, "Site da Century"], ["/img/pj-century-2.jpg", 1440, 840, "Century: linhas de casas por perfil de família"], ["/img/pj-century-3.jpg", 1440, 840, "Century: lançamentos com cidade e estado"]], "cor": "var(--azul-300)"}, "gaia": {"nome": "Gaia", "meta": "Gaia · 2026", "lead": "Workspace clínico para nutricionistas: a Gaia escuta a consulta e monta o prontuário.", "ficha": [["Papel", "Seções em WebGL e desempenho no celular"], ["Ano", "2026"], ["Feito com", ["Next.js", "React Three Fiber", "GSAP"]]], "link": "https://gaia-three-delta.vercel.app/", "linkT": "Ver o site", "seed": 9, "cor": "var(--laranja-300)", "telas": [["/img/pj-gaia-0.jpg", 1440, 900, "Gaia: Volte a olhar pro seu paciente"], ["/img/pj-gaia-3.jpg", 1440, 900, "Gaia: da gravação ao prontuário, em três passos"], ["/img/pj-gaia-1.jpg", 1440, 900, "Gaia: Nutrição é sobre pessoas"], ["/img/pj-gaia-2.jpg", 1440, 900, "Gaia: pacientes e agenda da semana no painel"]]}, "geoai": {"nome": "GEO.AI", "meta": "GEO.AI · geo-aeroespacial", "lead": "Dados territoriais, observações por satélite e inteligência artificial para transformar o território em informação estratégica.", "ficha": [["Entregas", ["Site"]]], "link": "https://geoialatan.com.br/", "linkT": "Ver o site", "seed": 11, "cor": "var(--azul-950)", "telas": [["/img/pj-geo-0.jpg", 1440, 900, "GEO.AI: A Terra tem muito a dizer"], ["/img/pj-geo-3.jpg", 1440, 900, "Cada camada vira leitura do terreno"], ["/img/pj-geo-5.jpg", 1440, 900, "Leitura do terreno no celular, sobre imagem de satélite"], ["/img/pj-geo-7.jpg", 1440, 900, "Um planeta, múltiplas perspectivas: mineração"]]}}</script>
 </section>
 
 
@@ -1525,7 +1525,7 @@ function drawGrass(){if(!gGrass)gGrass=grassTufts();const c1=css('--azul-400'),c
 let gMeadow=null;
 function meadowLayer(){const c=document.createElement('canvas');c.width=GVW;c.height=GH;const x=c.getContext('2d'),r=rng(4242);
   // earth wash along the ground
-  wcBlob(x,[[-20,GROUND-6],[GVW+20,GROUND-10],[GVW+20,GROUND+18],[-20,GROUND+14]],'#2A251D',r,{layers:18,a:.06,v:.06,v2:.04});
+  wcBlob(x,[[-20,GROUND-6],[GVW+20,GROUND-10],[GVW+20,GROUND+18],[-20,GROUND+14]],'#1D1A15',r,{layers:18,a:.06,v:.06,v2:.04});
   // back row: smaller pale flowers
   for(let i=0,n=Math.round(GVW/70);i<n;i++){const sp=flowerSpec(9000+i*13,PAL_LIGHT);sp.h*=.75;sp.lean*=.5;const can=flowerCanvas(sp,GU*.62,GCELL);
     x.globalAlpha=.42;x.drawImage(can,Math.round((i+.5)*GVW/n+(r()-.5)*40-can.bx),GROUND-4-can.height);x.globalAlpha=1}
@@ -1547,10 +1547,10 @@ function drawGarden(now,dt){
   const S=GVW<1000?150:190,P=gPet.st;
   // idle: she flies to the nearest grown flower, lands on its head, rests, then comes down
   if(!gPet.perch&&!reduce&&now-gPet.still>2600&&now>gPet.nextPerch){const cx=gPet.x+S/2;let best=null;
-    for(const p of plants)if(p.can&&(!best||Math.abs(p.x-cx)<Math.abs(best.x-cx)))best=p;
+    for(const p of plants)if(p.can&&p.can.height-GU*1.05<=GROUND-S*1.35&&(!best||Math.abs(p.x-cx)<Math.abs(best.x-cx)))best=p;
     if(best){gPet.perch={p:best,t:0};gTarget=best.x}}
   let ty=0;const pc=gPet.perch;
-  if(pc){if(!plants.includes(pc.p)){gPet.perch=null}else{ty=-(pc.p.can.height-GU*1.05);gTarget=pc.p.x}}
+  if(pc){if(!plants.includes(pc.p)){gPet.perch=null}else{ty=Math.max(-(pc.p.can.height-GU*1.05),-(GROUND-S*1.35));gTarget=pc.p.x}}
   const dx=gTarget-S/2-gPet.x,far=Math.abs(dx)>GVW*.3;
   if(far&&!pc)ty=-S*.35;
   const arrived=Math.abs(dx)<=8&&Math.abs(gPet.y-ty)<3;
@@ -1680,6 +1680,9 @@ let typed='';addEventListener('keydown',e=>{if(e.key.length!==1)return;typed=(ty
 console.log('%cvocê abriu o console. é assim que se investiga.\nhello@lauraeckert.com.br','font:12px monospace;color:#F2601C');
 </script>
 <script src="/site.js"></script>
+<script src="/hero3.js"></script>
+<script src="/hero-px.js"></script>
+<script src="/flora-px.js"></script>
 <script src="/i18n-en.js"></script>
 <script src="/i18n.js"></script>
 <!-- aviso-construcao -->
@@ -1696,9 +1699,14 @@ console.log('%cvocê abriu o console. é assim que se investiga.\nhello@lauraeck
 .aviso-obra button svg{width:10px;height:10px}
 .aviso-obra button:hover{background:#E4EBFF}
 .aviso-obra button:focus-visible{outline:2px solid #2B35C9;outline-offset:2px}
+@media (max-width:760px){.aviso-obra{transition:opacity .35s,translate .45s}.aviso-obra.desce{opacity:0;translate:0 40px}}
 @keyframes aviso-in{from{opacity:0;transform:translateY(12px)}}
 @keyframes aviso-pisca{50%{opacity:.25}}
 @media (max-width:520px){.aviso-obra{left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));animation:none}}
+/* r7: o rodapé ganha a altura do aviso para ele não cobrir o fim da página */
+body:has(.aviso-obra) #rodape::after{content:'';display:block;height:72px}
+/* r7: no case, o botão fixo 'Abrir a Akrus' ocupa o canto de baixo no celular; o aviso sobe acima dele */
+@media (max-width:760px){body:has(.doca:not(.fora)) .aviso-obra{bottom:calc(88px + env(safe-area-inset-bottom))}}
 </style>
 <div class="aviso-obra">
   <div role="status"><i aria-hidden="true"></i><span data-pt="Site em construção" data-en="Site under construction">Site em construção</span></div>
@@ -1710,6 +1718,7 @@ try{if(sessionStorage.getItem('aviso-obra')==='x'){a.remove();return}}catch(e){}
 const s=a.querySelector('span'),b=a.querySelector('button');
 const sync=()=>{const en=document.documentElement.lang==='en';s.textContent=en?s.dataset.en:s.dataset.pt;b.setAttribute('aria-label',en?b.dataset.enLabel:b.dataset.ptLabel)};
 sync();new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+{const mq=matchMedia('(max-width:760px)');let ly=scrollY;addEventListener('scroll',()=>{if(!mq.matches)return;const y=scrollY;if(Math.abs(y-ly)<8)return;a.classList.toggle('desce',y>ly&&y>200);ly=y},{passive:true})}
 b.addEventListener('click',()=>{const alvo=document.querySelector('header a, nav a');a.remove();alvo&&alvo.focus();try{sessionStorage.setItem('aviso-obra','x')}catch(e){}});})();
 </script>
 </body>

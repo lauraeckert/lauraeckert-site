@@ -114,11 +114,13 @@ footer#rodape{margin-top:0}
 .sobre-lady .runners canvas{margin-top:-7%}
 @media (max-width:859px){.sobre-lady .acts{grid-template-columns:repeat(4,1fr)}}
 
-/* GitHub como laje, com o total em destaque */
-.sobre-esq .gh{padding:22px 22px 18px;border-radius:12px;
-  background:linear-gradient(170deg,#24211b 0%,#1a1813 60%,#14120e 100%);
-  box-shadow:inset 1px 1px 0 rgba(255,255,255,.14),inset -1px -1px 0 rgba(0,0,0,.5),2px 3px 0 #0d0c09,10px 22px 40px -14px rgba(0,0,0,.75)}
-.sobre-esq .gh-t b{display:block;font:600 clamp(40px,3.6vw,56px)/1 'Familjen Grotesk';letter-spacing:-.04em;font-variant-numeric:tabular-nums;margin:0 0 4px}
+/* r8 · GitHub: superfície chapada um tom acima do preto, contorno de 1 px, rampa de um azul só (pedido 15/11: "o card do github tá feio") */
+.sobre-esq .gh{padding:24px 24px 20px;border-radius:14px;background:#141416;box-shadow:inset 0 0 0 1px var(--escuro-linha);gap:18px;transition:box-shadow .3s}
+.sobre-esq .gh:hover{box-shadow:inset 0 0 0 1px var(--creme-700)}
+.sobre-esq .gh-t{color:var(--creme-400);font-size:16px}
+.sobre-esq .gh-t b{display:block;font:600 clamp(44px,3.8vw,60px)/1 'Familjen Grotesk';letter-spacing:-.045em;font-variant-numeric:tabular-nums;margin:0 0 6px;color:var(--creme-100)}
+.sobre-esq .gh-u{font:500 15px 'Familjen Grotesk';color:var(--creme-300);text-decoration:underline;text-decoration-color:transparent;text-underline-offset:4px;transition:text-decoration-color .25s,color .25s}
+.sobre-esq .gh:hover .gh-u,.sobre-esq .gh:focus-visible .gh-u{color:var(--creme-100);text-decoration-color:currentColor}
 .s-sobre{padding-bottom:200px}
 @media (min-width:860px){.mo .s-sobre{padding-bottom:240px}}
 
@@ -144,3 +146,7 @@ footer#rodape{margin-top:0}
   /* Akrus no celular: região inteira, da barra lateral ao fim da segunda métrica, sem número cortado */
   .pj-main figure{aspect-ratio:7/8}.pj-main figure img{object-position:0 0}
 }
+/* r8 · banca do card: o grão levantava o preto para ~16,16,18 e o card quase sumia */
+.s-sobre::before{opacity:.25}
+.sobre-esq .gh{background:var(--escuro-2)}
+.sobre-esq .gh-seta{width:11px;height:11px;margin-left:4px;vertical-align:1px}

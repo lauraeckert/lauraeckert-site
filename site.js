@@ -85,10 +85,11 @@ if(cf){ctaSpray=spray(cf,(W,H)=>{const mob=W<860;
 /* ---------- GitHub: calendário real de contribuições ---------- */
 let ghReady=null;
 {const sv=$('.gh-grid'),tot=$('#gh-total');if(sv){ghReady=fetch('/github.json').then(r=>r.json()).then(d=>{
+  const f0=d.weeks.findIndex(w=>w.some(v=>v>0));if(f0>1)d.weeks=d.weeks.slice(f0-1); // r8: começa na primeira semana com atividade
   const NS='http://www.w3.org/2000/svg',W=d.weeks.length,C=11,Gp=3;sv.setAttribute('viewBox',`0 0 ${W*(C+Gp)-Gp} ${7*(C+Gp)-Gp}`);
   const all=d.weeks.flat().filter(v=>v>0).sort((a,b)=>a-b),q=p=>all[Math.floor(all.length*p)]||1;
-  const lv=v=>v===0?0:v<=q(.25)?1:v<=q(.5)?2:v<=q(.8)?3:4,col=['#2A251D','var(--azul-800)','var(--azul-600)','var(--azul-400)','var(--amarelo-300)'];
-  const cols=[];d.weeks.forEach((w,i)=>{const g=document.createElementNS(NS,'g');w.forEach((v,j)=>{const r=document.createElementNS(NS,'rect');r.setAttribute('x',i*(C+Gp));r.setAttribute('y',j*(C+Gp));r.setAttribute('width',C);r.setAttribute('height',C);r.setAttribute('rx',2);r.setAttribute('fill',col[lv(v)]);g.append(r)});sv.append(g);cols.push(g)});
+  const lv=v=>v===0?0:v<=q(.25)?1:v<=q(.5)?2:v<=q(.8)?3:4,col=['#2A2620','var(--azul-800)','var(--azul-700)','var(--azul-500)','var(--azul-300)']; // r8: um matiz só
+  const cols=[];d.weeks.forEach((w,i)=>{const g=document.createElementNS(NS,'g');w.forEach((v,j)=>{const r=document.createElementNS(NS,'rect');r.setAttribute('x',i*(C+Gp));r.setAttribute('y',j*(C+Gp));r.setAttribute('width',C);r.setAttribute('height',C);r.setAttribute('rx',2.5);r.setAttribute('fill',col[lv(v)]);g.append(r)});sv.append(g);cols.push(g)});
   tot.textContent=d.total.toLocaleString('pt-BR');return {cols,total:d.total,tot}}).catch(()=>{$('.gh')?.remove();return null})}}
 
 /* ---------- botão magnético (mentoria e CTA): mola + preenchimento que nasce do ponto de entrada ---------- */
@@ -303,6 +304,14 @@ addEventListener('load',()=>{const idle=window.requestIdleCallback||(f=>setTimeo
   const putSoc=()=>{const nav=$$('#rodape .ft-nav')[1];if(!nav)return false;const ul=nav.querySelector('ul.ft-links');if(!ul)return true;
     const src=$('.soc-sobre');if(!src)return true;const c=src.cloneNode(true);c.classList.remove('soc-sobre');c.classList.add('soc-ft');c.querySelectorAll('[style]').forEach(e=>e.removeAttribute('style'));ul.replaceWith(c);return true};
   const tryS=(n=0)=>{if(!putSoc()&&n<50)setTimeout(()=>tryS(n+1),120)};addEventListener('load',()=>tryS(),{once:true});
+  /* r8 · rodapé na referência dela: a 2ª coluna vira .ft-redes; marca e e-mail descem para a barra de baixo */
+  const putFt=()=>{const R=$('#rodape');if(!R||!R.dataset.v3)return false;if(R.dataset.v8b)return true;R.dataset.v8b=1;
+    const navs=$$('#rodape .ft-nav');navs[1]&&navs[1].classList.add('ft-redes');
+    const bot=R.querySelector('.ft-bottom'),marca=R.querySelector('.ft-marca .ft-logo'),mail=R.querySelector('#ftMail');
+    // r9 · "a logo deve ser acima do game": assinatura (logo + e-mail) entre o fio e o jogo; a barra de baixo fica com © e voltar ao topo
+    const game=R.querySelector('.ft-game');if(game){const as=document.createElement('div');as.className='wrap ft-assina';if(marca)as.append(marca);if(mail)as.append(mail);game.parentNode.insertBefore(as,game)}
+    R.querySelector('.ft-marca')&&R.querySelector('.ft-marca').remove();return true};
+  const tryF=(n=0)=>{if(!putFt()&&n<60)setTimeout(()=>tryF(n+1),120)};addEventListener('load',()=>tryF(),{once:true});
 
   /* ---------- CTA: flores da aquarela redesenhadas em caracteres (como a referência), crescem com a rolagem e reagem ao cursor ---------- */
   const cv=$('.cta2-art');
@@ -364,7 +373,9 @@ addEventListener('load',()=>{const idle=window.requestIdleCallback||(f=>setTimeo
    a foto da Laura é uma polaroide no meio das flores; a joaninha pousa numa margarida. As flores se afastam do cursor
    (vento), as camadas se separam em paralaxe com o mouse e com a rolagem. */
 window.HERO2=true;
+window.HERO_V=(new URLSearchParams(location.search).get('hero')||'b').toLowerCase(); // r9: a B (escolha dela) é a padrão; ?hero=antiga mostra a anterior
 (()=>{
+  if(/^[abc]$/.test(window.HERO_V))return; // r7: variantes da hero com flores pintadas em hero3.js
   const hero=document.querySelector('.hz');if(!hero||typeof wcSprite!=='function')return;
   const G=window.gsap,ST=window.ScrollTrigger,FINE=matchMedia('(hover:hover) and (pointer:fine)').matches;
   const back=hero.querySelector('.hz-back'),front=hero.querySelector('.hz-front'),bugC=hero.querySelector('.hz-bug'),foto=hero.querySelector('.hz-foto');
@@ -620,3 +631,34 @@ window.HERO2=true;
   const G=window.gsap,ST=window.ScrollTrigger;
   if(G&&ST)ST.create({trigger:'.cta3',start:'top 95%',end:'top 45%',scrub:.6,onUpdate:s=>{prog=s.progress;draw()},onLeave:()=>{prog=1;draw()}});else{prog=1}
 })();
+
+/* ================= motion 15/11 (estudo Awwwards: Son Daven) =================
+   1 · o parágrafo do Sobre acende linha a linha com a rolagem (CSS .acende; aqui só o progresso)
+   2 · troca de cor em pixels: nas emendas entre seções de cores diferentes, a cor da seção anterior escorre em blocos de
+       pixel por cima do topo da seção seguinte e se recolhe enquanto ela entra. Mesma grade da joaninha e do jogo. */
+(()=>{const G=window.gsap,ST=window.ScrollTrigger;if(!G||!ST)return;
+  const go=()=>{
+  /* 1 · acende */
+  const ac=document.querySelector('.sobre-p .acende');
+  if(ac)ST.create({trigger:'.sobre-p',start:'top 82%',end:'bottom 60%',scrub:.4,onUpdate:s=>ac.style.setProperty('--acende',(s.progress*100).toFixed(1)+'%'),
+    onLeave:()=>ac.style.setProperty('--acende','100%'),onRefresh:s=>ac.style.setProperty('--acende',(s.progress*100).toFixed(1)+'%')});
+  /* 2 · pixels */
+  const cor=el=>{let c=getComputedStyle(el).backgroundColor;if(!c||c==='rgba(0, 0, 0, 0)'||c==='transparent')c=getComputedStyle(document.body).backgroundColor;return c};
+  const secs=[...document.querySelectorAll('#site > section, #site section.s-hero, #site section.s-sobre, #site section.s-proj, #site section.s-serv, #site section.s-cta, footer#rodape')]
+    .filter((v,i,a)=>a.indexOf(v)===i&&v.offsetHeight>0).sort((a,b)=>a.compareDocumentPosition(b)&Node.DOCUMENT_POSITION_FOLLOWING?-1:1);
+  const fix={'s-proj':getComputedStyle(document.documentElement).getPropertyValue('--azul-700').trim()};
+  const corDe=el=>{for(const k in fix)if(el.classList.contains(k)&&fix[k])return fix[k];return cor(el)};
+  for(let i=1;i<secs.length;i++){const prev=secs[i-1],sec=secs[i],cA=corDe(prev),cB=corDe(sec);if(cA===cB)continue;
+    if(getComputedStyle(sec).position==='static')sec.style.position='relative';
+    const cv=document.createElement('canvas');cv.className='pix-borda';cv.setAttribute('aria-hidden','true');sec.prepend(cv);
+    const x=cv.getContext('2d');let W=0,C=16,R=6,col=[],p=0;
+    const seed=i*977;const rnd=k=>{const t=Math.sin(k*12.9898+seed)*43758.5453;return t-Math.floor(t)};
+    const build=()=>{C=innerWidth<860?8:10;R=innerWidth<860?4:5;W=sec.clientWidth;const n=Math.ceil(W/C);cv.width=W;cv.height=R*C;cv.style.height=R*C+'px';cv.style.width=W+'px';
+      // altura de cada coluna: ruído suave + degrau, como o capim pixel do jogo
+      col=[];for(let c=0;c<n;c++){const a=rnd(c),b=rnd(c+1e3),sm=.55*Math.sin(c*.37+seed)+.45*Math.sin(c*.11+seed*.5);col.push(Math.max(.12,Math.min(1,.5+sm*.2+(a-.5)*.6+(b>.9?.2:0))))};draw()};
+    const draw=()=>{x.clearRect(0,0,cv.width,cv.height);x.fillStyle=cA;const q=1-p; // q=1: tudo coberto; q=0: recolhido
+      const t=Math.max(0,(q-.2)/.8),hs=col.map(v=>Math.round(R*Math.max(0,Math.min(1,t*1.5-v*.5)))); /* zera tudo antes do fim (banca 15/11) */for(let c=0;c<hs.length;c++){let h=hs[c];if(h===1&&!(hs[c-1]>0)&&!(hs[c+1]>0))h=0; /* bloco isolado não aparece: sobra sempre em grupo (banca r2) */if(h>0)x.fillRect(c*C,0,C,h*C)}};
+    build();let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(build,150)});
+    ST.create({trigger:sec,start:'top bottom',end:innerWidth<860?'top 45%':'top 35%',scrub:.3,onUpdate:s=>{p=s.progress;draw()},onRefresh:s=>{p=s.progress;draw()}})}
+  ST.refresh()};
+  (document.fonts?document.fonts.ready:Promise.resolve()).then(()=>document.readyState==='complete'?go():addEventListener('load',go,{once:true}))})();

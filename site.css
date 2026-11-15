@@ -5,7 +5,7 @@
 #site .btn .ar{font-family:'Monocraft',monospace}
 .btn-c{background:var(--creme-100);color:var(--creme-900)}.btn-c:hover{background:var(--amarelo-300)}
 .btn-lg{font-size:19px;min-height:60px;padding:0 30px}
-:root{--escuro:#16130F;--escuro-2:#211D17}
+:root{--escuro:var(--creme-950);--escuro-2:var(--creme-900);--escuro-linha:var(--creme-800)} /* r9: modo escuro da paleta creme (pedido 15/11) */ /* r8: preto neutro, não marrom (pedido 15/11) */
 
 /* 1 · hero */
 .s-hero{background:var(--creme-100);overflow:hidden;padding:24px 0 0}
@@ -44,8 +44,8 @@
 .s-sobre h2{color:var(--creme-100)}
 .sobre-p{font:400 clamp(19px,1.6vw,24px)/1.45 'Familjen Grotesk';color:var(--creme-200);margin:28px 0 48px;max-width:34ch;text-wrap:pretty}
 .sobre-h3{font:400 14px 'Monocraft',monospace;color:var(--amarelo-300);margin:0 0 10px}
-.exp{list-style:none;padding:0;margin:0 0 44px;border-top:1px solid #3a342b}
-.exp li{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid #3a342b}
+.exp{list-style:none;padding:0;margin:0 0 44px;border-top:1px solid var(--escuro-linha)}
+.exp li{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--escuro-linha)}
 .exp-d{font:400 14px/1.6 'Monocraft',monospace;color:var(--creme-400)}
 .exp b{display:block;font:500 20px/1.25 'Familjen Grotesk';letter-spacing:-.01em;color:var(--creme-100)}
 .exp p{margin:4px 0 0;font:400 16px/1.45 'Familjen Grotesk';color:var(--creme-400)}
@@ -113,7 +113,7 @@
 .redes a{font:500 17px 'Familjen Grotesk';color:var(--creme-100);text-decoration:none;background:linear-gradient(var(--amarelo-300),var(--amarelo-300)) 0 100%/0 2px no-repeat;padding-bottom:3px;transition:background-size .28s cubic-bezier(.23,1,.32,1)}
 .redes a::after{content:' ↗';font-family:'Monocraft',monospace;font-size:13px;color:var(--amarelo-300)}
 .redes a:hover,.redes a:focus-visible{background-size:100% 2px;outline:none}
-.mentoria{display:grid;grid-template-columns:5fr 6fr;gap:88px;align-items:center;margin-top:140px;padding-top:100px;border-top:1px solid #3a342b}
+.mentoria{display:grid;grid-template-columns:5fr 6fr;gap:88px;align-items:center;margin-top:140px;padding-top:100px;border-top:1px solid var(--escuro-linha)}
 .c3{position:relative;transform:rotate(-3deg);width:88%;justify-self:center}
 .c3 img{aspect-ratio:4/3}
 .c3 .clipe{left:50%}
@@ -123,7 +123,7 @@
 @media (max-width:860px){.mentoria{grid-template-columns:1fr;gap:48px;margin-top:88px;padding-top:72px}.c3{width:92%}}
 
 /* credenciais sob o GitHub, equilibrando as colunas do Sobre (banca r2) */
-.sobre-esq .cred{margin:44px 0 0;padding-top:28px;border-top:1px solid #3a342b}
+.sobre-esq .cred{margin:44px 0 0;padding-top:28px;border-top:1px solid var(--escuro-linha)}
 
 /* banca r3: título do celular menos comprimido; Sobre do celular como um conjunto; CTA do celular mais curto */
 @media (max-width:860px){
@@ -143,7 +143,7 @@
 .c1{transform-origin:38% 0}.c2{transform-origin:58% 0}
 /* experiência: o fio de 1 px é desenhado antes da linha */
 .mo .exp li{border-bottom:0;position:relative}
-.mo .exp li::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:#3a342b;transform:scaleX(var(--fio,1));transform-origin:0 50%}
+.mo .exp li::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--escuro-linha);transform:scaleX(var(--fio,1));transform-origin:0 50%}
 /* telas dos projetos: Ghofi inteiro sobre o fundo do próprio app; Youbbe termina numa linha inteira */
 .pj-contain figure{background:#0d0d0d}.pj-contain figure img{object-fit:contain;object-position:50% 50%}
 /* CTA na escala da hero */

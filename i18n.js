@@ -19,7 +19,7 @@
   let ocupado=false;
   const aplica=para=>{lang=para;ocupado=true;document.documentElement.lang=para==='en'?'en':'pt-BR';aplicaEm(document.body,para);
     if(EN.__title){document.__ptTitle=document.__ptTitle||document.title;document.title=para==='en'?(EN[norm(document.__ptTitle)]||document.__ptTitle):document.__ptTitle}
-    document.querySelectorAll('.lang').forEach(b=>{b.setAttribute('aria-pressed',para==='en');b.setAttribute('aria-label',para==='en'?'Mudar para português':'Switch to English')});
+    document.querySelectorAll('.lang').forEach(b=>{b.setAttribute('aria-pressed',para==='en');b.setAttribute('aria-label','English')});
     ocupado=false};
   new MutationObserver(ms=>{if(ocupado||lang!=='en')return;ocupado=true;for(const m of ms){if(m.type==='characterData'){const n=m.target;if(n.__pt!==undefined&&norm(n.nodeValue)===norm(EN[norm(n.__pt)]||''))continue;n.__pt=undefined;trNo(n,'en')}else m.addedNodes.forEach(n=>aplicaEm(n,'en'))}ocupado=false})
     .observe(document.documentElement,{childList:true,subtree:true,characterData:true});
