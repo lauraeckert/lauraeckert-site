@@ -124,9 +124,9 @@ magnetic($('.btn-y'));magnetic($('.s-cta .btn-lg'));
   grid.prepend(marca);grid.append(pag,redes);
   const q=el('div','quadro ft-quadro','<canvas class="q-tinta" data-seed="9" aria-hidden="true"></canvas>');game.parentNode.insertBefore(q,game);q.append(game);
   const big=R.querySelector('#ftBig');big&&big.remove();
-  // sem microtexto decorativo (memória sem-microtexto-em-lp): o e-mail fala por si; o relógio vira "São Paulo, 23:52"; a assinatura do © sai
+  // sem microtexto decorativo (memória sem-microtexto-em-lp): o e-mail fala por si; o relógio vira "Recife, 23:52"; a assinatura do © sai
   R.querySelectorAll('.ft-col .ft-k').forEach(k=>k.remove());
-  const ck=R.querySelector('#ftClock');if(ck){const sp=el('span','ft-cidade','São Paulo');ck.parentNode.classList.add('ft-hora');ck.parentNode.insertBefore(sp,ck)}
+  const ck=R.querySelector('#ftClock');if(ck){const sp=el('span','ft-cidade','Recife');ck.parentNode.classList.add('ft-hora');ck.parentNode.insertBefore(sp,ck)}
   const cp=R.querySelector('.ft-bottom > span');if(cp)cp.textContent='© 2026 Laura Eckert';
   window.pintaQuadros&&window.pintaQuadros();return true};
  const tryPut=(n=0)=>{if(!put()&&n<40)setTimeout(()=>tryPut(n+1),100)};
